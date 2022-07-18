@@ -46,27 +46,27 @@ export default function Catalog() {
         {/* Catalogo */}
         <div className='bg-amber-400 grid grid-cols-4 w-full row-start-2 col-start-2 col-span-4 '>
           
-          <NavLink className="m-5 h-48 w-48   transition ease-in-out duration-700 hover:scale-105 " to="/Alwatoba">
+          <NavLink className="m-5 h-48 w-48   transition ease-in-out duration-700 hover:scale-105 " to="/Product">
             <img src={AlwatobaImg} className="w-full h-full" alt="Categ1"/>
             <span>PRODUCTO</span>     
           </NavLink> 
-          <NavLink className="m-5 h-48 w-48   transition ease-in-out duration-700 hover:scale-105 " to="/Alwatoba">
+          <NavLink className="m-5 h-48 w-48   transition ease-in-out duration-700 hover:scale-105 " to="/Product">
             <img src={AlwatobaImg} className="w-full h-full" alt="Categ1"/>
             <span>PRODUCTO</span>     
           </NavLink> 
-          <NavLink className="m-5 h-48 w-48   transition ease-in-out duration-700 hover:scale-105 " to="/Alwatoba">
+          <NavLink className="m-5 h-48 w-48   transition ease-in-out duration-700 hover:scale-105 " to="/Product">
             <img src={AlwatobaImg} className="w-full h-full" alt="Categ1"/>
             <span>PRODUCTO</span>     
           </NavLink> 
-          <NavLink className="m-5 h-48 w-48   transition ease-in-out duration-700 hover:scale-105 " to="/Alwatoba">
+          <NavLink className="m-5 h-48 w-48   transition ease-in-out duration-700 hover:scale-105 " to="/Product">
             <img src={AlwatobaImg} className="w-full h-full" alt="Categ1"/>
             <span>PRODUCTO</span>     
           </NavLink> 
-          <NavLink className="m-5 h-48 w-48   transition ease-in-out duration-700 hover:scale-105 " to="/Alwatoba">
+          <NavLink className="m-5 h-48 w-48   transition ease-in-out duration-700 hover:scale-105 " to="/Product">
             <img src={AlwatobaImg} className="w-full h-full" alt="Categ1"/>
             <span>PRODUCTO</span>     
           </NavLink> 
-          <NavLink className="m-5 h-48 w-48   transition ease-in-out duration-700 hover:scale-105 " to="/Alwatoba">
+          <NavLink className="m-5 h-48 w-48   transition ease-in-out duration-700 hover:scale-105 " to="/Product">
             <img src={AlwatobaImg} className="w-full h-full" alt="Categ1"/>
             <span>PRODUCTO</span>     
           </NavLink> 

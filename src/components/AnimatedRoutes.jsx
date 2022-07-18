@@ -3,6 +3,7 @@ import {Route, Routes, useLocation} from "react-router-dom";
 import { AnimatePresence } from 'framer-motion';
 import HomePage from '../pages/Home';
 import CatalogPage from '../pages/Catalog';
+import ProductEj from '../pages/ProductEj';
 
 
 function AnimatedRoutes() {
@@ -12,7 +13,8 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path='/Alwatoba' element={<HomePage/>}/>
         <Route path='/Catalog' element={<CatalogPage/>}/>
-        <Route path='*' element={<CatalogPage/>}/>
+        <Route path='/Product' element={<ProductEj/>}/>
+        <Route path='*' element={<HomePage/>}/>
       </Routes>
     </AnimatePresence>
   )

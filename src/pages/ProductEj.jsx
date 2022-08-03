@@ -4,7 +4,7 @@ import AlwatobaImg from '../media/AlwatobaBrand.png'
 
 export default function ProductEj() {
   return (
-    <motion.div className="bg-amber-300 grid-cols-5 gap-y-11 grid h-screen" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+    <motion.div className="grid-cols-5 gap-y-11 grid h-screen" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       {/* Titulo */}
       <div className="grid justify-evenly text-center col-start-1 col-end-6 row-start-1 ">
         <h1 className="mt-5 row-start-1">Nombre del Producto</h1>

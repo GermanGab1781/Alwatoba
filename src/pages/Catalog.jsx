@@ -5,7 +5,7 @@ import AlwatobaImg from '../media/AlwatobaBrand.png'
 
 export default function Catalog() {
   return (
-    <motion.div className="bg-amber-300" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+    <motion.div className="bg-amber-300 pt-16" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       <div className="grid text-center ">
         <h1 className="row-start-1 col-start-2 col-span-4 font-bold text-2xl">
           Nuestros Productos

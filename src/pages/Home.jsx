@@ -5,7 +5,7 @@ import AlwatobaImg from '../media/AlwatobaBrand.png'
 
 export default function Home() {
   return (
-    <motion.div className="grid justify-center bg-amber-300" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+    <motion.div className="grid justify-center bg-amber-300 pt-11" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       {/* Presentacion */}
       <div className="sm:mt-7 sm:gap-3 grid sm:grid-cols-4 sm:grid-rows-2 sm:row-start-1">       
         <NavLink to="/Catalog" className="overflow-hidden sm:col-span-2 sm:row-span-2 sm:row-start-1">

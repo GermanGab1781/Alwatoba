@@ -12,8 +12,8 @@ export default function Navbar(){
   const [navButton, setNavButton] = useState(true);
   return (
     <motion.div className={navButton 
-      ?"sm:bg-amber-200 bg-green-400 grid grid-rows-5 grid-cols-9 content-center fixed z-50 w-screen h-10 p-8 pt-8 transition-all ease-in-out duration-1000 delay-75" 
-      :"sm:bg-amber-200 bg-green-400 grid grid-rows-5 grid-cols-9 content-center fixed z-50 w-screen h-screen p-8 pt-8 transition-all ease-in-out duration-1000"}
+      ?"sm:bg-amber-200 md:bg-blue-800 lg:bg-amber-700 bg-green-400 grid grid-rows-1 grid-cols-10 content-center fixed z-50 w-screen h-10 p-8 pt-8 transition-all ease-in-out duration-1000 delay-75" 
+      :"sm:bg-amber-200 md:bg-blue-800 lg:bg-amber-700 bg-green-400 grid grid-rows-1 grid-cols-10 content-center fixed z-50 w-screen h-screen p-8 pt-8 transition-all ease-in-out duration-1000"}
     animate={{opacity:1}} exit={{opacity:0}}>
       
       {/* img Brand */}
@@ -25,18 +25,16 @@ export default function Navbar(){
       </div>
       {/* Nav Items */}
       <div className={navButton 
-        ?"invisible grid sm:col-start-1 sm:col-span-10 col-start-4 text-center gap-y-0 opacity-0 transition-all ease-in-out duration-500"
-        :"visible grid sm:col-start-1 sm:col-span-10 col-start-4 text-center sm:gap-y-12 gap-y-0 opacity-1 transition-all ease-in-out duration-1000 delay-500"
-      }>
-        <NavLink className="whitespace-nowrap row-start-1 sm:text-5xl sm:p-2 p-1" to="/" onClick={()=>clickEv()}>Inicio</NavLink>
-        <NavLink className="whitespace-nowrap row-start-2 sm:text-5xl sm:p-2 p-1" to="/" onClick={()=>clickEv()}>Catalogo</NavLink>
-        <NavLink className="whitespace-nowrap row-start-3 sm:text-5xl sm:p-2 p-1" to="/" onClick={()=>clickEv()}>Collares Mapuches</NavLink>
-        <NavLink className="whitespace-nowrap row-start-4 sm:text-5xl sm:p-2 p-1" to="/" onClick={()=>clickEv()}>Llaveros al por mayor</NavLink>
-        <NavLink className="whitespace-nowrap row-start-5 sm:text-5xl sm:p-2 p-1" to="/" onClick={()=>clickEv()}>Pedidos Especiales</NavLink>
-        <NavLink className="whitespace-nowrap row-start-6 sm:text-5xl sm:p-2 p-1" to="/" onClick={()=>clickEv()}>Mas vendidos</NavLink>
-        <NavLink className="whitespace-nowrap row-start-7 sm:text-5xl sm:p-2 p-1 mt-10" to="/" onClick={()=>clickEv()}>Volver</NavLink>
+        ?"invisible col-start-4 col-span-4 flex flex-col whitespace-nowrap text-center  opacity-0 lg:text-4xl sm:text-lg text-sm transition-all ease-in-out duration-500"
+        :"visible col-start-4 col-span-4 flex flex-col whitespace-nowrap text-center opacity-100 lg:text-4xl sm:text-lg text-sm transition-all ease-in-out duration-500 delay-500"}>
+        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Inicio</NavLink>
+        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Catalogo</NavLink>
+        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Collares Mapuches</NavLink>
+        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Llaveros al por mayor</NavLink>
+        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Pedidos Especiales</NavLink>
+        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Mas vendidos</NavLink>
+        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Volver</NavLink>
       </div>
-      
       
     </motion.div>
   )

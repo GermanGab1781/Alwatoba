@@ -6,7 +6,7 @@ import AlwatobaImg from '../media/AlwatobaBrand.png'
 
 export default function Home() {
   return (
-    <motion.div className="sm:bg-amber-200 md:bg-blue-800 lg:bg-amber-700 bg-green-400 grid gap-y-20 grid-cols-6 pt-20  place-items-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+    <motion.div className="sm:bg-amber-200 md:bg-blue-800 lg:bg-amber-700 bg-green-400 grid gap-y-20 grid-cols-6 pt-20 place-items-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       {/* Presentacion */}
       <div className="row-start-1 col-start-3 col-span-2 border border-amber-300 p-5 rounded-2xl">
         <ReactPlayer width={"70vw"} height={"35vw"} url='https://www.youtube.com/watch?v=cFPkypL_ap8' controls="true" />
@@ -54,38 +54,38 @@ export default function Home() {
         <span className="absolute bg-black bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-md font-bold text-amber-400">"Trabajando de la mano de las comunidades locales"</span>
       </div>
       {/* Blogs */}
-      <div className="flex flex-wrap justify-evenly gap-y-10 row-start-5 col-start-2 col-span-4">
+      <div className="flex flex-wrap justify-evenly md:gap-y-5 lg:gap-y-10 gap-y-3 row-start-5 col-start-2 col-span-4">
 
-        <div className="relative h-52 w-96 border border-black">
+        <div className="relative sm:h-52 sm:w-96 h-4/5 w-2/4 border border-black">
           <img className="h-full w-full" src={AlwatobaImg} alt="Imagen fondo"/>
-          <span className="absolute bottom-6 text-2xl font-semibold whitespace-pre">BLOG EJEMPLO 1</span>
-          <NavLink to="/"><span className="absolute bottom-1 right-1 text-md p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
+          <span className="absolute bottom-6 sm:text-2xl text-xs whitespace font-semibold">BLOG EJEMPLO 1</span>
+          <NavLink to="/"><span className="absolute bottom-1 right-1 sm:text-md text-xs p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
         </div>
-        <div className="relative h-52 w-96 border border-black">
+        <div className="relative sm:h-52 sm:w-96 h-4/5 w-2/4 border border-black">
           <img className="h-full w-full" src={AlwatobaImg} alt="Imagen fondo"/>
-          <span className="absolute bottom-6 text-2xl font-semibold whitespace-pre">BLOG EJEMPLO 1</span>
-          <NavLink to="/"><span className="absolute bottom-1 right-1 text-md p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
+          <span className="absolute bottom-6 sm:text-2xl text-xs whitespace font-semibold">BLOG EJEMPLO 1</span>
+          <NavLink to="/"><span className="absolute bottom-1 right-1 sm:text-md text-xs p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
         </div>
-        <div className="relative h-52 w-96 border border-black">
+        <div className="relative sm:h-52 sm:w-96 h-4/5 w-2/4 border border-black">
           <img className="h-full w-full" src={AlwatobaImg} alt="Imagen fondo"/>
-          <span className="absolute bottom-6 text-2xl font-semibold whitespace-pre">BLOG EJEMPLO 1</span>
-          <NavLink to="/"><span className="absolute bottom-1 right-1 text-md p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
+          <span className="absolute bottom-6 sm:text-2xl text-xs whitespace font-semibold">BLOG EJEMPLO 1</span>
+          <NavLink to="/"><span className="absolute bottom-1 right-1 sm:text-md text-xs p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
         </div>
-        <div className="relative h-52 w-96 border border-black">
+        <div className="relative sm:h-52 sm:w-96 h-4/5 w-2/4 border border-black">
           <img className="h-full w-full" src={AlwatobaImg} alt="Imagen fondo"/>
-          <span className="absolute bottom-6 text-2xl font-semibold whitespace-pre">BLOG EJEMPLO 1</span>
-          <NavLink to="/"><span className="absolute bottom-1 right-1 text-md p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
+          <span className="absolute bottom-6 sm:text-2xl text-xs whitespace font-semibold">BLOG EJEMPLO 1</span>
+          <NavLink to="/"><span className="absolute bottom-1 right-1 sm:text-md text-xs p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
         </div>
 
-        <div className="relative h-52 w-96 border border-black">
+        <div className="relative sm:h-52 sm:w-96 h-4/5 w-2/4 border border-black">
           <img className="h-full w-full" src={AlwatobaImg} alt="Imagen fondo"/>
-          <span className="absolute bottom-6 text-2xl font-semibold whitespace-pre">BLOG EJEMPLO 1</span>
-          <NavLink to="/"><span className="absolute bottom-1 right-1 text-md p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
+          <span className="absolute bottom-6 sm:text-2xl text-xs whitespace font-semibold">BLOG EJEMPLO 1</span>
+          <NavLink to="/"><span className="absolute bottom-1 right-1 sm:text-md text-xs p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
         </div>
-        <div className="relative h-52 w-96 border border-black">
+        <div className="relative sm:h-52 sm:w-96 h-4/5 w-2/4 border border-black">
           <img className="h-full w-full" src={AlwatobaImg} alt="Imagen fondo"/>
-          <span className="absolute bottom-6 text-2xl font-semibold whitespace-pre">BLOG EJEMPLO 1</span>
-          <NavLink to="/"><span className="absolute bottom-1 right-1 text-md p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
+          <span className="absolute bottom-6 sm:text-2xl text-xs whitespace font-semibold">BLOG EJEMPLO 1</span>
+          <NavLink to="/"><span className="absolute bottom-1 right-1 sm:text-md text-xs p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
         </div>
       </div>
     </motion.div>

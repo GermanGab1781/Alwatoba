@@ -12,8 +12,8 @@ export default function Navbar(){
   const [navButton, setNavButton] = useState(true);
   return (
     <motion.div className={navButton 
-      ?"sm:bg-amber-200 md:bg-blue-800 lg:bg-amber-700 bg-green-400 grid grid-rows-1 grid-cols-9 content-center fixed z-50 w-screen h-10 p-8 pt-8 transition-all ease-in-out duration-1000 delay-75" 
-      :"sm:bg-amber-200 md:bg-blue-800 lg:bg-amber-700 bg-green-400 grid grid-rows-1 grid-cols-9 content-center fixed z-50 w-screen h-screen p-8 pt-8 transition-all ease-in-out duration-1000"}
+      ?"sm:bg-amber-200 md:bg-blue-800 lg:bg-amber-700 bg-green-400 grid grid-rows-1 grid-cols-9 content-center fixed z-50 w-screen h-10 sm:p-8 sm:pt-8 p-9 transition-all ease-in-out duration-1000 delay-75" 
+      :"sm:bg-amber-200 md:bg-blue-800 lg:bg-amber-700 bg-green-400 grid grid-rows-1 grid-cols-9 content-center fixed z-50 w-screen h-screen sm:p-8 sm:pt-8 p-9 transition-all ease-in-out duration-1000"}
     animate={{opacity:1}} exit={{opacity:0}}>
       
       {/* img Brand */}

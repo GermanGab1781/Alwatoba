@@ -5,31 +5,20 @@ import AlwatobaImg from '../media/AlwatobaBrand.png'
 
 export default function Home() {
   return (
-    <motion.div className="grid justify-center bg-amber-300 pt-11" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+    <motion.div className="sm:bg-amber-200 md:bg-blue-800 lg:bg-amber-700 bg-green-400 grid grid-rows-6 grid-cols-6 pt-20 place-items-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       {/* Presentacion */}
-      <div className="sm:mt-7 sm:gap-3 grid sm:grid-cols-4 sm:grid-rows-2 sm:row-start-1">       
-        <NavLink to="/Catalog" className="overflow-hidden sm:col-span-2 sm:row-span-2 sm:row-start-1">
-          <img src={AlwatobaImg} alt='alwatoba' className="h-full w-full transition ease-in-out duration-700 hover:scale-110"/>
-        </NavLink>
-        <NavLink to="/Catalog" className="overflow-hidden sm:col-span-2 sm:row-span-1 sm:col-start-3 sm:row-start-1">
-          <img src={AlwatobaImg} alt='alwatoba' className="h-48 w-full transition ease-in-out duration-700 hover:scale-110"/>
-        </NavLink>
-        <NavLink to="/Catalog" className="overflow-hidden sm:col-span-2 sm:row-span-1 sm:col-start-3 sm:row-start-2">
-          <img src={AlwatobaImg} alt='alwatoba' className="h-48 w-full transition ease-in-out duration-700 hover:scale-110"/>
-        </NavLink>
+      <NavLink className="row-start-1 col-start-3 col-span-2" to="/"><img className="w-full h-full" src={AlwatobaImg} alt="Presentacion"/></NavLink>
+      {/* Frase 1 */}
+      <div className="row-start-2 col-start-3 col-span-2 h-32 w-1/2 relative">
+        <img className="h-full w-full rounded-full" src={AlwatobaImg} alt="Imagen fondo"/>
+        <span className="absolute bg-black bottom-1/2 left-1/2 -translate-x-1/2 whitespace-nowrap text-md font-bold text-amber-400">"Conscientes de nuestro impacto en la Cultura"</span>
       </div>
-      {/* Slider */}
-      <div>
-      </div>
-      {/* Categorias */}
-      <div className="grid sm:mt-7 sm:mb-6 sm:text-center sm:justify-evenly">
-        
-        <h2 className="sm:mb-5 sm:col-start-2 sm:col-span-2 sm:row-start-1">Categorias</h2>
-        <NavLink className="sm:row-start-2 sm:h-32 sm:w-32 overflow-hidden" to="/Catalog">
-          <img src={AlwatobaImg} className="sm:w-full sm:h-full transition ease-in-out duration-700 hover:scale-110" alt="Categ1"></img>
-        </NavLink>           
-            
-               
+      {/* Categorias Productos */}
+      <div className="row-start-3 bg-black">
+        <div>
+          <img className="h-full w-full rounded-full" src={AlwatobaImg} alt="Imagen de categoria de producto"/>
+          <NavLink to="/Catalog"><span>Carteras</span></NavLink>
+        </div>
       </div>
     </motion.div>
   )

@@ -14,7 +14,7 @@ export default function Home() {
       {/* Frase 1 */}
       <div className="row-start-2 col-start-3 col-span-2 h-32 w-1/2 relative ">
         <img className="h-full w-full rounded-full" src={AlwatobaImg} alt="Imagen fondo"/>
-        <span className="absolute bg-black bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-md font-bold text-amber-400">"Conscientes de nuestro impacto en la Cultura"</span>
+        <span className="absolute bg-black bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-xs font-bold text-amber-400">"Conscientes de nuestro impacto en la Cultura"</span>
       </div>
       {/* Categorias Productos */}
       <div className="flex flex-row flex-wrap gap-y-12 justify-center col-span-7 gap-x-12 row-start-3 text-center">
@@ -51,7 +51,7 @@ export default function Home() {
       {/* Frase 2 */}
       <div className="row-start-4 col-start-3 col-span-2 h-32 w-1/2 relative">
         <img className="h-full w-full rounded-full" src={AlwatobaImg} alt="Imagen fondo"/>
-        <span className="absolute bg-black bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-md font-bold text-amber-400">"Trabajando de la mano de las comunidades locales"</span>
+        <span className="absolute bg-black bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-xs font-bold text-amber-400">"Trabajando de la mano de las comunidades locales"</span>
       </div>
       {/* Blogs */}
       <div className="flex flex-wrap justify-evenly md:gap-y-5 lg:gap-y-10 gap-y-3 row-start-5 col-start-2 col-span-4">

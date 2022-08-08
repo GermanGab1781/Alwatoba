@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Alwatoba/static/css/main.152d2b09.css",
-    "main.js": "/Alwatoba/static/js/main.e59ee422.js",
+    "main.css": "/Alwatoba/static/css/main.bb8f38c8.css",
+    "main.js": "/Alwatoba/static/js/main.71cdb256.js",
     "static/media/AlwatobaBrand.png": "/Alwatoba/static/media/AlwatobaBrand.b38c21021c72cc841b8c.png",
     "index.html": "/Alwatoba/index.html",
-    "main.152d2b09.css.map": "/Alwatoba/static/css/main.152d2b09.css.map",
-    "main.e59ee422.js.map": "/Alwatoba/static/js/main.e59ee422.js.map"
+    "main.bb8f38c8.css.map": "/Alwatoba/static/css/main.bb8f38c8.css.map",
+    "main.71cdb256.js.map": "/Alwatoba/static/js/main.71cdb256.js.map"
   },
   "entrypoints": [
-    "static/css/main.152d2b09.css",
-    "static/js/main.e59ee422.js"
+    "static/css/main.bb8f38c8.css",
+    "static/js/main.71cdb256.js"
   ]
 }

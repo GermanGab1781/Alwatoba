@@ -18,14 +18,14 @@ export default function Home() {
         <span className="absolute bg-black bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-xs font-bold text-amber-400">"Conscientes de nuestro impacto en la Cultura"</span>
       </div>
       {/* Collage fotos */}
-      <div className="relative flex flex-row flex-wrap justify-evenly gap-y-4 row-start-3 col-start-2 col-span-4 border border-amber-300 p-5 rounded-2xl mb-10">
-        <img className="sm:h-96 sm:w-56 h-56 w-20" src={AlwatobaImg} alt="Imagen fondo"/>
-        <img className="sm:h-96 sm:w-56 h-56 w-20" src={AlwatobaImg} alt="Imagen fondo"/>
-        <img className="sm:h-96 sm:w-56 h-56 w-20" src={AlwatobaImg} alt="Imagen fondo"/>
-        <img className="sm:h-96 sm:w-56 h-56 w-20" src={AlwatobaImg} alt="Imagen fondo"/>
-        <img className="sm:h-96 sm:w-56 h-56 w-20" src={AlwatobaImg} alt="Imagen fondo"/>
-        <img className="sm:h-96 sm:w-56 h-56 w-20" src={AlwatobaImg} alt="Imagen fondo"/>
-        <NavLink className="absolute -bottom-20 border border-amber-500 hover:border-amber-300 rounded-2xl p-4 hover:pl-24 hover:pr-24 hover:text-lg font-semibold transition-all duration-500" to="/Catalog"><span className="">CATÁLOGO</span></NavLink>
+      <div className="relative flex flex-row flex-wrap justify-evenly gap-y-10 row-start-3 col-start-2 col-span-4 border border-amber-300 p-8 rounded-2xl mb-10">
+        <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
+        <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
+        <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
+        <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
+        <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
+        <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
+        <NavLink className="absolute -bottom-20 border border-amber-500 hover:border-amber-300 rounded-2xl p-4 hover:pl-16 hover:pr-16 hover:text-lg font-semibold transition-all duration-500" to="/Catalog"><span className="">CATÁLOGO</span></NavLink>
       </div>      
       {/* Frase 2 */}
       <div className="relative row-start-5 col-start-3 col-span-2 h-32 w-1/2">

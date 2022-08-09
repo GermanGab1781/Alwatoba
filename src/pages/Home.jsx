@@ -18,7 +18,7 @@ export default function Home() {
         <span className="absolute bg-black bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-xs font-bold text-amber-400">"Conscientes de nuestro impacto en la Cultura"</span>
       </div>
       {/* Collage fotos */}
-      <div className="relative flex flex-row flex-wrap justify-evenly gap-y-10 row-start-3 col-start-2 col-span-4 border border-amber-300 p-8 rounded-2xl mb-10">
+      <div className="relative flex flex-row flex-wrap justify-evenly sm:gap-y-10 gap-y-5 row-start-3 sm:col-start-2 sm:col-span-4 sm:gap-x-0 gap-x-1 col-start-1 col-span-6 border border-amber-300 sm:p-8 p-3 rounded-2xl mb-10">
         <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
         <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
         <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>

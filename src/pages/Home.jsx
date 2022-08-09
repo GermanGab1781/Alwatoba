@@ -1,92 +1,36 @@
 import { motion } from 'framer-motion'
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import ReactPlayer from 'react-player'
+import { NavLink } from 'react-router-dom'
 import AlwatobaImg from '../media/AlwatobaBrand.png'
 
 export default function Home() {
   return (
-    <motion.div className="sm:bg-amber-200 md:bg-blue-800 lg:bg-amber-700 bg-green-400 grid gap-y-20 grid-cols-6 pt-20 place-items-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+    <motion.div className="sm:bg-amber-200 md:bg-blue-800 lg:bg-amber-700 bg-green-400 grid gap-y-10 grid-cols-6 pt-24 place-items-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+      
       {/* Presentacion */}
       <div className="row-start-1 col-start-3 col-span-2 border border-amber-300 p-5 rounded-2xl">
         <ReactPlayer width={"70vw"} height={"35vw"} url='https://www.youtube.com/watch?v=cFPkypL_ap8' controls="true" />
-      </div>      
+      </div>
       {/* Frase 1 */}
-      <div className="row-start-2 col-start-3 col-span-2 h-32 w-1/2 relative ">
+      <div className="relative row-start-2 col-start-3 col-span-2 h-32 w-1/2">
         <img className="h-full w-full rounded-full" src={AlwatobaImg} alt="Imagen fondo"/>
         <span className="absolute bg-black bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-xs font-bold text-amber-400">"Conscientes de nuestro impacto en la Cultura"</span>
       </div>
-      {/* Categorias Productos */}
-      <div className="flex flex-row flex-wrap gap-y-12 justify-center col-span-7 gap-x-12 row-start-3 text-center">
-
-        <div className="relative bg-slate-500">
-          <img className="sm:h-96 sm:w-52 h-52 w-36" src={AlwatobaImg} alt="Imagen de categoria de producto"/>
-          <NavLink className="absolute bg-slate-500 w-3/4 sm:h-1/6 h-fit pb-5 -bottom-6 left-1/2 -translate-x-1/2" to="/Catalog">
-            <span className="text-amber-400 relative top-2 sm:text-lg  font-semibold">Categoria1</span><br/>
-            <span className="text-amber-400 relative top-1 text-sm">mini descripcion </span>       
-          </NavLink>         
-        </div>
-        <div className="relative bg-slate-500">
-          <img className="sm:h-96 sm:w-52 h-52 w-36" src={AlwatobaImg} alt="Imagen de categoria de producto"/>
-          <NavLink className="absolute bg-slate-500 w-3/4 sm:h-1/6 h-fit pb-5 -bottom-6 left-1/2 -translate-x-1/2" to="/Catalog">
-            <span className="text-amber-400 relative top-2 sm:text-lg  font-semibold">Categoria2</span><br/>
-            <span className="text-amber-400 relative top-1 text-sm">mini descripcion </span>       
-          </NavLink>         
-        </div>
-        <div className="relative bg-slate-500">
-          <img className="sm:h-96 sm:w-52 h-52 w-36" src={AlwatobaImg} alt="Imagen de categoria de producto"/>
-          <NavLink className="absolute bg-slate-500 w-3/4 sm:h-1/6 h-fit pb-5 -bottom-6 left-1/2 -translate-x-1/2" to="/Catalog">
-            <span className="text-amber-400 relative top-2 sm:text-lg  font-semibold">Categoria3</span><br/>
-            <span className="text-amber-400 relative top-1 text-sm">mini descripcion </span>       
-          </NavLink>         
-        </div>
-        <div className="relative bg-slate-500">
-          <img className="sm:h-96 sm:w-52 h-52 w-36" src={AlwatobaImg} alt="Imagen de categoria de producto"/>
-          <NavLink className="absolute bg-slate-500 w-3/4 sm:h-1/6 h-fit pb-5 -bottom-6 left-1/2 -translate-x-1/2" to="/Catalog">
-            <span className="text-amber-400 relative top-2 sm:text-lg  font-semibold">Categoria4</span><br/>
-            <span className="text-amber-400 relative top-1 text-sm">mini descripcion </span>       
-          </NavLink>         
-        </div>
-      </div>
+      {/* Collage fotos */}
+      <div className="relative flex flex-row flex-wrap justify-evenly gap-y-4 row-start-3 col-start-2 col-span-4 border border-amber-300 p-5 rounded-2xl mb-10">
+        <img className="sm:h-96 sm:w-56 h-56 w-20" src={AlwatobaImg} alt="Imagen fondo"/>
+        <img className="sm:h-96 sm:w-56 h-56 w-20" src={AlwatobaImg} alt="Imagen fondo"/>
+        <img className="sm:h-96 sm:w-56 h-56 w-20" src={AlwatobaImg} alt="Imagen fondo"/>
+        <img className="sm:h-96 sm:w-56 h-56 w-20" src={AlwatobaImg} alt="Imagen fondo"/>
+        <img className="sm:h-96 sm:w-56 h-56 w-20" src={AlwatobaImg} alt="Imagen fondo"/>
+        <img className="sm:h-96 sm:w-56 h-56 w-20" src={AlwatobaImg} alt="Imagen fondo"/>
+        <NavLink className="absolute -bottom-20 border border-amber-500 hover:border-amber-300 rounded-2xl p-4 hover:pl-24 hover:pr-24 hover:text-lg font-semibold transition-all duration-500" to="/Catalog"><span className="">CATÁLOGO</span></NavLink>
+      </div>      
       {/* Frase 2 */}
-      <div className="row-start-4 col-start-3 col-span-2 h-32 w-1/2 relative">
+      <div className="relative row-start-5 col-start-3 col-span-2 h-32 w-1/2">
         <img className="h-full w-full rounded-full" src={AlwatobaImg} alt="Imagen fondo"/>
         <span className="absolute bg-black bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-xs font-bold text-amber-400">"Trabajando de la mano de las comunidades locales"</span>
-      </div>
-      {/* Blogs */}
-      <div className="flex flex-wrap justify-evenly md:gap-y-5 lg:gap-y-10 gap-y-3 row-start-5 col-start-2 col-span-4">
-
-        <div className="relative sm:h-52 sm:w-96 h-4/5 w-2/4 border border-black">
-          <img className="h-full w-full" src={AlwatobaImg} alt="Imagen fondo"/>
-          <span className="absolute bottom-6 sm:text-2xl text-xs whitespace font-semibold">BLOG EJEMPLO 1</span>
-          <NavLink to="/"><span className="absolute bottom-1 right-1 sm:text-md text-xs p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
-        </div>
-        <div className="relative sm:h-52 sm:w-96 h-4/5 w-2/4 border border-black">
-          <img className="h-full w-full" src={AlwatobaImg} alt="Imagen fondo"/>
-          <span className="absolute bottom-6 sm:text-2xl text-xs whitespace font-semibold">BLOG EJEMPLO 1</span>
-          <NavLink to="/"><span className="absolute bottom-1 right-1 sm:text-md text-xs p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
-        </div>
-        <div className="relative sm:h-52 sm:w-96 h-4/5 w-2/4 border border-black">
-          <img className="h-full w-full" src={AlwatobaImg} alt="Imagen fondo"/>
-          <span className="absolute bottom-6 sm:text-2xl text-xs whitespace font-semibold">BLOG EJEMPLO 1</span>
-          <NavLink to="/"><span className="absolute bottom-1 right-1 sm:text-md text-xs p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
-        </div>
-        <div className="relative sm:h-52 sm:w-96 h-4/5 w-2/4 border border-black">
-          <img className="h-full w-full" src={AlwatobaImg} alt="Imagen fondo"/>
-          <span className="absolute bottom-6 sm:text-2xl text-xs whitespace font-semibold">BLOG EJEMPLO 1</span>
-          <NavLink to="/"><span className="absolute bottom-1 right-1 sm:text-md text-xs p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
-        </div>
-
-        <div className="relative sm:h-52 sm:w-96 h-4/5 w-2/4 border border-black">
-          <img className="h-full w-full" src={AlwatobaImg} alt="Imagen fondo"/>
-          <span className="absolute bottom-6 sm:text-2xl text-xs whitespace font-semibold">BLOG EJEMPLO 1</span>
-          <NavLink to="/"><span className="absolute bottom-1 right-1 sm:text-md text-xs p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
-        </div>
-        <div className="relative sm:h-52 sm:w-96 h-4/5 w-2/4 border border-black">
-          <img className="h-full w-full" src={AlwatobaImg} alt="Imagen fondo"/>
-          <span className="absolute bottom-6 sm:text-2xl text-xs whitespace font-semibold">BLOG EJEMPLO 1</span>
-          <NavLink to="/"><span className="absolute bottom-1 right-1 sm:text-md text-xs p-1 rounded-lg border  hover:text-lg border-black transition-all">VER</span></NavLink>
-        </div>
       </div>
     </motion.div>
   )

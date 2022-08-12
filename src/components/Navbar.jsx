@@ -24,13 +24,10 @@ export default function Navbar(){
         ?"invisible col-start-4 col-span-3 flex flex-col whitespace-nowrap text-center  opacity-0 lg:text-4xl sm:text-lg text-sm transition-all ease-in-out duration-500"
         :"visible col-start-4 col-span-3 flex flex-col whitespace-nowrap text-center opacity-100 lg:text-4xl sm:text-lg text-sm transition-all ease-in-out duration-500 delay-500"
       }>
-        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Inicio</NavLink>
-        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Catalogo</NavLink>
-        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Collares Mapuches</NavLink>
-        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Llaveros al por mayor</NavLink>
-        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Pedidos Especiales</NavLink>
-        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Mas vendidos</NavLink>
-        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/" onClick={()=>clickEv()}>Volver</NavLink>
+        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/Alwatoba" onClick={()=>clickEv()}>Inicio</NavLink>
+        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/Catalog" onClick={()=>clickEv()}>Catalogo</NavLink>
+        <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/Product" onClick={()=>clickEv()}>Producto Ejemplo Page</NavLink>
+        <span className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium cursor-pointer hover:text-lime-500 transition-colors delay-75" onClick={()=>setNavButton(!navButton)}>Volver</span>
       </div>
       
     </motion.div>

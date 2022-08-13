@@ -1,39 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {motion} from 'framer-motion'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import AlwatobaImg from '../media/AlwatobaBrand.png'
+import { Carousel } from 'react-responsive-carousel';
+import Viewer from 'react-viewer'
 
 export default function ProductEj() {
+  const [showViewer, setShowViewer] = useState(false)
+  const imagesUrls = [{src:require("../media/AlwatobaBrand.png"),alt:"ImagenPrueba1"},
+                      {src:require("../media/AlwatobaBrand.png"),alt:"ImagenPrueba2"},
+                      {src:require("../media/AlwatobaBrand.png"),alt:"ImagenPrueba3"},
+                      {src:require("../media/AlwatobaBrand.png"),alt:"ImagenPrueba4"},
+  ]
+  const [indexId, setIndexId]= useState(0);
+  function openImgViewer(index){
+    setIndexId(index);
+    setShowViewer(true);
+  }
   return (
-    <motion.div className="grid-cols-5 pt-12 gap-y-11 grid h-screen" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+    <motion.div className="grid grid-cols-5 bg-amber-500 pt-20 text-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       {/* Titulo */}
-      <div className="grid justify-evenly text-center col-start-1 col-end-6 row-start-1 ">
-        <h1 className="mt-5 row-start-1">Nombre del Producto</h1>
-        <p className="mt-5 row-start-1">Stock: 5</p>
-      </div>
-      {/* Mini Imagenes */}
-      <div className="grid justify-end col-start-1 col-end-3 row-start-2">
-        <img className="h-32 w-32 cursor-pointer" src={AlwatobaImg} alt="Imagen del Producto"/>
-        <img className="h-32 w-32 cursor-pointer" src={AlwatobaImg} alt="Imagen del Producto"/>
-        <img className="h-32 w-32 cursor-pointer" src={AlwatobaImg} alt="Imagen del Producto"/>
-      </div>
-      {/* Imagen Principal */}
-      <div className="grid col-start-3 col-end-5 row-start-2 ">
-        <img className="h-96 w-96 cursor-pointer" src={AlwatobaImg} alt="Imagen del Producto"/>
+      <span className="row-start-1 col-span-6">NOMBRE DEL PRODUCTO</span>
+      {/* Viewer */}
+      <div className="row-start-2 col-start-2 col-span-4 w-3/5 h-full">
+        <Carousel showThumbs={false} infiniteLoop={true} emulateTouch={true}>
+        {imagesUrls.map((img,index)=>{
+          return(
+            <div className="w-full h-full">
+              <img className="w-full h-full" id={index} key={index} src={img.src} alt={img.alt}/> 
+              <button onClick={()=>openImgViewer(index)} className="absolute z-10 w-full h-full"></button>      
+            </div>  
+          )
+        })}
+        </Carousel>
+        
       </div>
       {/* Botones */}
-      <div className="grid justify-start col-start-5 row-start-2 content-center text-center">
-        <div className="row-start-1 py-2 mb-1 px-6 w-36 h-fit hover:scale-110 transition rounded-lg cursor-pointer border border-amber-900 bg-amber-500">Boton1</div>
-        <div className="row-start-2 py-2 mb-1 px-6 w-36 h-fit hover:scale-110 transition rounded-lg cursor-pointer border border-amber-900 bg-amber-500">Boton2</div>
-        <div className="row-start-3 py-2 mb-1 px-6 w-36 h-fit hover:scale-110 transition rounded-lg cursor-pointer border border-amber-900 bg-amber-500">Boton3</div>
-        <div className="row-start-4 py-2 mb-1 px-6 w-36 h-fit hover:scale-110 transition rounded-lg cursor-pointer border border-amber-900 bg-amber-500">Boton4</div>
-        <div className="row-start-5 py-2 px-6 w-36 h-fit hover:scale-110 transition rounded-lg cursor-pointer border border-amber-900 bg-amber-500">Boton5</div>
+      <div className="flex flex-col row-start-2 col-start-6 place-content-center ml-5">
+        <button className="p-5 border border-neutral-800">Scroll test right</button>
+        <button className="p-5 border border-neutral-800">Scroll test left</button> 
+        <button className="p-5 border border-neutral-800">Boton3</button> 
+        <button className="p-5 border border-neutral-800">Boton4</button> 
       </div>
       {/* Descripcion */}
-      <div className="grid col-start-2 col-end-5 row-start-3 border border-amber-500">
-        <h1 className="mx-auto">Descripcion</h1>
-        <p className="mx-auto ">Lorem ipsumm pariatur maiores consequuntur, tempora illo accusantium quibusdam architecto distinctio dicta consectetur perferendis magnam fuga odio in esse obcaecati? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut libero alias harum! Exercitationem mollitia pariatur tempora vitae quidem, eum quasi similique et. Dolor rem qui sequi fuga dolore similique asperiores?</p>
+      <div className="row-start-3 col-start-2 col-end-6 mb-5 mt-10">
+        <p className="border border-black text-lg font-semibold">DESCRIPCION</p>
+        <p className="border border-black">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
-
+      {/* Viewer */}
+      <Viewer visible={showViewer} activeIndex={indexId} images={imagesUrls} onClose={()=>setShowViewer(false)}/> 
     </motion.div>
+
   )
 }

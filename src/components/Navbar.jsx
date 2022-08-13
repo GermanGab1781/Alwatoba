@@ -29,7 +29,6 @@ export default function Navbar(){
         <NavLink className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium hover:text-lime-500 transition-colors delay-75" to="/Product" onClick={()=>clickEv()}>Producto Ejemplo Page</NavLink>
         <span className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 font-medium cursor-pointer hover:text-lime-500 transition-colors delay-75" onClick={()=>setNavButton(!navButton)}>Volver</span>
       </div>
-      
     </motion.div>
   )
 }

@@ -20,7 +20,7 @@ export default function ProductEj() {
     <motion.div className="grid grid-cols-6 bg-amber-500 pt-20 text-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       {/* Titulo */}
       <span className="row-start-1 col-span-6 text-2xl font-semibold mb-10">NOMBRE DEL PRODUCTO</span>
-      {/* Viewer */}
+      {/* Imagenes del Producto */}
       <div className="row-start-2 w-full col-start-2 sm:col-end-5 col-end-6 h-full border border-black">
         <Carousel showThumbs={false} infiniteLoop={true} emulateTouch={true}>
         {imagesUrls.map((img,index)=>{

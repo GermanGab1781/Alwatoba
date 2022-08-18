@@ -1,10 +1,25 @@
 import { motion } from 'framer-motion'
 import React from 'react'
+import { useState } from 'react'
 import ReactPlayer from 'react-player'
 import { NavLink } from 'react-router-dom'
+import Viewer from 'react-viewer'
 import AlwatobaImg from '../media/AlwatobaBrand.png'
 
 export default function Home() {
+  const [showViewer, setShowViewer] = useState(false);
+  const imagesUrls = [{src:require("../media/AlwatobaBrand.png"),alt:"ImagenPrueba1"},
+                      {src:require("../media/AlwatobaBrand.png"),alt:"ImagenPrueba2"},
+                      {src:require("../media/AlwatobaBrand.png"),alt:"ImagenPrueba3"},
+                      {src:require("../media/AlwatobaBrand.png"),alt:"ImagenPrueba4"},
+                      {src:require("../media/AlwatobaBrand.png"),alt:"ImagenPrueba5"},
+                      {src:require("../media/AlwatobaBrand.png"),alt:"ImagenPrueba6"}]
+
+  const [indexId, setIndexId]= useState(0);
+  function openImgViewer(index){
+    setIndexId(index);
+    setShowViewer(true);
+  }
   function clickEvHome() {
     window.scrollTo(0, 0);
   }
@@ -22,12 +37,11 @@ export default function Home() {
       </div>
       {/* Collage fotos */}
       <div className="relative flex flex-row flex-wrap justify-evenly sm:gap-y-10 gap-y-5 row-start-3 sm:col-start-2 sm:col-span-4 sm:gap-x-0 gap-x-1 col-start-1 col-span-6 border border-amber-300 sm:p-8 p-3 rounded-2xl mb-10">
-        <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
-        <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
-        <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
-        <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
-        <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
-        <img className="overflow-hidden sm:h-96 sm:w-56 h-56 w-20 border border-black hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={AlwatobaImg} alt="Imagen fondo"/>
+        {imagesUrls.map((img,index)=>{
+          return(
+            <img key={index} onClick={()=>openImgViewer(index)} className="overflow-hidden cursor-pointer sm:h-96 sm:w-56 h-56 w-20 hover:scale-110 hover:rounded-2xl hover:z-40 transition-all duration-500" src={img.src} alt={img.alt}/>
+          )
+        })}
         <NavLink className="absolute -bottom-20 border border-amber-500 hover:border-amber-300 rounded-2xl p-4 hover:pl-16 hover:pr-16 hover:text-lg font-semibold transition-all duration-500" onClick={()=>clickEvHome()} to="/Catalog"><span className="">CATÁLOGO</span></NavLink>
       </div>      
       {/* Frase 2 */}
@@ -35,6 +49,9 @@ export default function Home() {
         <img className="h-full w-full rounded-full" src={AlwatobaImg} alt="Imagen fondo"/>
         <span className="absolute bg-black bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-xs font-bold text-amber-400">"Trabajando de la mano de las comunidades locales"</span>
       </div>
+      {/* Viewer */}
+      <Viewer visible={showViewer} activeIndex={indexId} images={imagesUrls} onClose={()=>setShowViewer(false)}/> 
+
     </motion.div>
   )
 }

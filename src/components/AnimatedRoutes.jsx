@@ -5,6 +5,7 @@ import HomePage from '../pages/Home';
 import CatalogPage from '../pages/Catalog';
 import ProductEj from '../pages/ProductEj';
 import CatalogCateg1 from './CatalogCateg1';
+import CatalogCateg2 from './CatalogCateg2';
 
 
 function AnimatedRoutes() {
@@ -15,6 +16,7 @@ function AnimatedRoutes() {
         <Route path='/Alwatoba' element={<HomePage/>}/>
         <Route path='/Catalog/*' element={<CatalogPage/>}>
           <Route path='Categ1' element={<CatalogCateg1/>}/>
+          <Route path='Categ2' element={<CatalogCateg2/>}/>
         </Route>
         <Route path='/Product' element={<ProductEj/>}/>
         <Route path='*' element={<HomePage/>}/>

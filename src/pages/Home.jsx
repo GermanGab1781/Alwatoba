@@ -28,7 +28,7 @@ export default function Home() {
       
       {/* Presentacion */}
       <div className="row-start-1 col-start-3 col-span-2 border border-amber-300 p-5 rounded-2xl">
-        <ReactPlayer width={"70vw"} height={"35vw"} url='https://www.youtube.com/watch?v=cFPkypL_ap8' controls="true" />
+        <ReactPlayer width={"70vw"} height={"35vw"} url='www.youtube.com/watch?v=cFPkypL_ap8'/>
       </div>
       {/* Frase 1 */}
       <div className="relative row-start-2 col-start-3 col-span-2 h-32 w-1/2">
@@ -50,7 +50,7 @@ export default function Home() {
         <span className="absolute bg-black bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-xs font-bold text-amber-400">"Trabajando de la mano de las comunidades locales"</span>
       </div>
       {/* Viewer */}
-      <Viewer visible={showViewer} activeIndex={indexId} images={imagesUrls} onClose={()=>setShowViewer(false)}/> 
+      <Viewer defaultScale={1.2} onMaskClick={()=>setShowViewer(false)} scalable={false} noNavbar={true} rotatable={false} attribute={false} visible={showViewer} activeIndex={indexId} images={imagesUrls} onClose={()=>setShowViewer(false)}/> 
 
     </motion.div>
   )

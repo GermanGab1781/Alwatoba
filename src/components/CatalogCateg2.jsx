@@ -12,7 +12,7 @@ export default function CatalogCateg2() {
       </NavLink> 
       <NavLink className="sm:h-48 sm:w-48 h-32 w-32 transition ease-in-out duration-100 hover:scale-105 " to="/Product">
         <img src={AlwatobaImg} className="w-full h-full" alt="Categ1"/>
-        <span>PRODUCTO 2 </span>     
+        <span>PRODUCTO 3 </span>     
       </NavLink>
       <NavLink className="sm:h-48 sm:w-48 h-32 w-32 transition ease-in-out duration-100 hover:scale-105 " to="/Product">
         <img src={AlwatobaImg} className="w-full h-full" alt="Categ1"/>

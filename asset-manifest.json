@@ -1,18 +1,27 @@
 {
   "files": {
-    "main.css": "/Alwatoba/static/css/main.23e2e1da.css",
-    "main.js": "/Alwatoba/static/js/main.465539c0.js",
+    "main.css": "/Alwatoba/static/css/main.304589b7.css",
+    "main.js": "/Alwatoba/static/js/main.519a8535.js",
+    "static/media/Galeria1.jpg": "/Alwatoba/static/media/Galeria1.8dad924bb503dc851edc.jpg",
+    "static/media/Galeria8.jpg": "/Alwatoba/static/media/Galeria8.54c27105e8b11c920603.jpg",
+    "static/media/Galeria2.jpg": "/Alwatoba/static/media/Galeria2.65d73813f0ff5c028bc6.jpg",
     "static/media/ProdImg3.jpg": "/Alwatoba/static/media/ProdImg3.2f10b53bb65dd25cc3f8.jpg",
+    "static/media/Galeria10.jpg": "/Alwatoba/static/media/Galeria10.bc055be1b90de7e4ffaf.jpg",
     "static/media/ProdImg4.jpg": "/Alwatoba/static/media/ProdImg4.bed8a855dab50f3522da.jpg",
     "static/media/ProdImg1.jpg": "/Alwatoba/static/media/ProdImg1.f23eaf3839bd5ec77011.jpg",
     "static/media/ProdImg2.jpg": "/Alwatoba/static/media/ProdImg2.695cbe22bfe65565f819.jpg",
+    "static/media/Galeria7.jpg": "/Alwatoba/static/media/Galeria7.72cf6fa564414a0ca9b7.jpg",
+    "static/media/Galeria3.jpg": "/Alwatoba/static/media/Galeria3.c1d34124a595479a0b8f.jpg",
+    "static/media/Galeria5.jpg": "/Alwatoba/static/media/Galeria5.919cd7a61da955c9a521.jpg",
+    "static/media/Galeria4.jpg": "/Alwatoba/static/media/Galeria4.165a074f4295f0b78ff6.jpg",
+    "static/media/Galeria6.jpg": "/Alwatoba/static/media/Galeria6.dc2e1b60561272a80beb.jpg",
     "static/media/AlwatobaBrand.png": "/Alwatoba/static/media/AlwatobaBrand.b38c21021c72cc841b8c.png",
     "index.html": "/Alwatoba/index.html",
-    "main.23e2e1da.css.map": "/Alwatoba/static/css/main.23e2e1da.css.map",
-    "main.465539c0.js.map": "/Alwatoba/static/js/main.465539c0.js.map"
+    "main.304589b7.css.map": "/Alwatoba/static/css/main.304589b7.css.map",
+    "main.519a8535.js.map": "/Alwatoba/static/js/main.519a8535.js.map"
   },
   "entrypoints": [
-    "static/css/main.23e2e1da.css",
-    "static/js/main.465539c0.js"
+    "static/css/main.304589b7.css",
+    "static/js/main.519a8535.js"
   ]
 }

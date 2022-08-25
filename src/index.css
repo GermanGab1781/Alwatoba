@@ -3,3 +3,53 @@
 @tailwind components;
 @tailwind utilities;
 @import "~react-image-gallery/styles/css/image-gallery.css";
+
+.custom-ColorMain{
+  color: rgb(223,213,178);
+}
+.custom-BgColorMain{
+  background-color: rgb(223,213,178);
+}
+.custom-BorderColorMain{
+  border-color: rgb(223,213,178);
+}
+
+.custom-Color1{
+  color: rgb(108,26,12);
+}
+.custom-BgColor1{
+  background-color: rgb(108,26,12);
+}
+.custom-BorderColor1{
+  border-color: rgb(108,26,12);
+}
+
+.custom-Color2{
+  color: rgb(139,68,24);
+}
+.custom-BgColor2{
+  background-color: rgb(139,68,24);
+}
+.custom-BorderColor2{
+  border-color: rgb(139,68,24);
+}
+
+.custom-Color3{
+  color: rgb(230,102,37);
+}
+.custom-BgColor3{
+  background-color: rgb(230,102,37);
+}
+.custom-BorderColor3{
+  border-color: rgb(230,102,37);
+}
+
+.custom-Color4{
+  color:rgb(198,53,24);
+}
+.custom-BgColor4{
+  background-color: rgb(198,53,24);
+}
+.custom-BorderColor4{
+  border-color: rgb(198,53,24);
+}

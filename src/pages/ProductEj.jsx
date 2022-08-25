@@ -2,10 +2,10 @@ import {motion} from 'framer-motion'
 import ReactImageGallery from 'react-image-gallery';
 
 export default function ProductEj() {
-  const imagesUrls = [{id:0,original:require("../media/ProductoEj/ProdImg1.jpg"),alt:"ImagenPrueba1"},
-                      {id:1,original:require("../media/ProductoEj/ProdImg2.jpg"),alt:"ImagenPrueba2"},
-                      {id:2,original:require("../media/ProductoEj/ProdImg3.jpg"),alt:"ImagenPrueba3"},
-                      {id:3,original:require("../media/ProductoEj/ProdImg4.jpg"),alt:"ImagenPrueba4"},
+  const imagesUrls = [{original:require("../media/ProductoEj/ProdImg1.jpg"),alt:"ImagenPrueba1"},
+                      {original:require("../media/ProductoEj/ProdImg2.jpg"),alt:"ImagenPrueba2"},
+                      {original:require("../media/ProductoEj/ProdImg3.jpg"),alt:"ImagenPrueba3"},
+                      {original:require("../media/ProductoEj/ProdImg4.jpg"),alt:"ImagenPrueba4"},
   ]
 
   return (

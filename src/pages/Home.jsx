@@ -33,7 +33,7 @@ export default function Home() {
           <img className="xl:col-start-1 xl:col-span-1 xl:row-start-1 col-start-1 col-span-2 row-start-1 w-60 h-60 custom-BgColor2 border custom-BorderColor3 xl:p-3 p-2 rounded-2xl"src={require("../media/GaleriaEj/Galeria7.jpg")} alt={"imagenPrueba"}/>
           <img className="xl:col-start-1 xl:col-span-1 xl:row-start-2 col-start-3 col-span-2 row-start-1 w-60 h-60 custom-BgColor2 border custom-BorderColor3 xl:p-3 p-2 rounded-2xl"src={require("../media/GaleriaEj/Galeria10.jpg")} alt={"imagenPrueba"}/>
 
-          <div className="xl:col-start-2 xl:col-span-1 xl:row-start-1 col-start-1 col-span-4 row-start-2 xl:row-span-2 custom-BgColor2 border custom-BorderColor3 xl:m-0 m-auto xl:p-8 p-3 rounded-2xl w-fit h-fit">
+          <div className="xl:col-start-2 xl:col-span-1 xl:row-start-1 col-start-1 col-span-4 row-start-2 xl:row-span-2 custom-BgColor2 border custom-BorderColor3 xl:m-0 m-auto xl:p-8 p-3 rounded-2xl sm:w-fit sm:h-fit w-96 h-fit">
             <ReactImageGallery items={imagesUrls} showFullscreenButton={false} showNav={false} showPlayButton={false} autoPlay={true}/>
           </div>
 

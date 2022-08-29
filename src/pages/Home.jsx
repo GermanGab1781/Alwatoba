@@ -20,7 +20,7 @@ export default function Home() {
       
       {/* Presentacion */}
       <div className="row-start-1 col-start-3 col-span-2 custom-BgColor2 border custom-BorderColor2 p-5 rounded-2xl">
-        <ReactPlayer width={"70vw"} height={"35vw"} url='www.youtube.com/watch?v=cFPkypL_ap8'/>
+        <ReactPlayer width={"80vw"} height={"35vw"} url='www.youtube.com/watch?v=cFPkypL_ap8'/>
       </div>
       {/* Frase 1 */}
       <div className="relative row-start-2 col-start-3 col-span-2 h-32 w-1/2">
@@ -28,20 +28,20 @@ export default function Home() {
         <span className="absolute custom-BgColor2 bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-xs font-bold custom-ColorMain">"Conscientes de nuestro impacto en la Cultura"</span>
       </div>
       {/* Collage fotos */}
-      <div className="row-start-3 sm:col-start-2 sm:col-span-4 col-start-1 col-span-6 mb-16">
+      <div className="row-start-3 xl:col-start-2 xl:col-span-4 col-start-1 col-span-6 mb-16">
         <div className="grid gap-x-3 gap-y-2">
-          <img className="col-start-1 row-start-1 w-60 h-60 custom-BgColor2 border custom-BorderColor3 p-3 rounded-2xl"src={require("../media/GaleriaEj/Galeria7.jpg")} alt={"imagenPrueba"}/>
-          <img className="col-start-1 row-start-2 w-60 h-60 custom-BgColor2 border custom-BorderColor3 p-3 rounded-2xl"src={require("../media/GaleriaEj/Galeria10.jpg")} alt={"imagenPrueba"}/>
+          <img className="xl:col-start-1 xl:col-span-1 xl:row-start-1 col-start-1 col-span-2 row-start-1 w-60 h-60 custom-BgColor2 border custom-BorderColor3 xl:p-3 p-2 rounded-2xl"src={require("../media/GaleriaEj/Galeria7.jpg")} alt={"imagenPrueba"}/>
+          <img className="xl:col-start-1 xl:col-span-1 xl:row-start-2 col-start-3 col-span-2 row-start-1 w-60 h-60 custom-BgColor2 border custom-BorderColor3 xl:p-3 p-2 rounded-2xl"src={require("../media/GaleriaEj/Galeria10.jpg")} alt={"imagenPrueba"}/>
 
-          <div className="col-start-2 row-start-1 row-span-2 custom-BgColor2 border custom-BorderColor3 sm:p-8 p-3 rounded-2xl w-fit h-fit ">
+          <div className="xl:col-start-2 xl:col-span-1 xl:row-start-1 col-start-1 col-span-4 row-start-2 xl:row-span-2 custom-BgColor2 border custom-BorderColor3 xl:m-0 m-auto xl:p-8 p-3 rounded-2xl w-fit h-fit">
             <ReactImageGallery items={imagesUrls} showFullscreenButton={false} showNav={false} showPlayButton={false} autoPlay={true}/>
           </div>
 
-          <img className="col-start-3 w-60 h-60 custom-BgColor2 border custom-BorderColor3 p-3 rounded-2xl" src={require("../media/GaleriaEj/Galeria8.jpg")} alt={"imagenPrueba"}/>
-          <img className="col-start-3 w-60 h-60 custom-BgColor2 border custom-BorderColor3 p-3 rounded-2xl" src={require("../media/GaleriaEj/Galeria3.jpg")} alt={"imagenPrueba"}/>
-          
+          <img className="xl:col-start-3 xl:col-span-1 xl:row-start-1 col-start-1 col-span-2 row-start-3 w-60 h-60 custom-BgColor2 border custom-BorderColor3 xl:p-3 p-2 rounded-2xl" src={require("../media/GaleriaEj/Galeria8.jpg")} alt={"imagenPrueba"}/>
+          <img className="xl:col-start-3 xl:col-span-1 xl:row-start-2 col-start-3 col-span-2 row-start-3 w-60 h-60 custom-BgColor2 border custom-BorderColor3 xl:p-3 p-2 rounded-2xl" src={require("../media/GaleriaEj/Galeria3.jpg")} alt={"imagenPrueba"}/>
+          <NavLink className="xl:row-start-4 xl:col-start-2 xl:col-span-1 row-start-4 col-start-1 col-span-4 text-center custom-BgColor2 font-semibold hover:scale-110 border custom-BorderColor2 xl:p-3 p-5 rounded-xl transition-all" onClick={()=>clickEvHome()} to="/Catalog"><span className="">VER CATÁLOGO</span></NavLink>
         </div>
-        <NavLink className="absolute text-center custom-BgColor2 inset-x-64 mt-5 p-4 rounded-2xl hover:scale-125 custom-ColorMain hover:text-lg font-semibold border custom-BorderColor1 transition-all duration-500" onClick={()=>clickEvHome()} to="/Catalog"><span className="">VER CATÁLOGO</span></NavLink>
+        
       </div>      
       {/* Frase 2 */}
       <div className="relative row-start-5 col-start-3 col-span-2 h-32 w-1/2">

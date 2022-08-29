@@ -25,6 +25,7 @@ export default function Navbar(){
         :"visible flex flex-col col-start-2 col-end-9 lg:gap-y-5 sm:gap-y-4 sm:mt-0 mt-5 border border-black gap-y-5 sm:whitespace-nowrap  text-center opacity-100 lg:text-4xl sm:text-2xl sm:font-semibold font-bold text-xl transition-all ease-in-out duration-500 delay-500"
       }>
         <NavLink className=" hover:text-lime-500 transition-colors delay-75" to="/Alwatoba" onClick={()=>clickEv()}>Inicio</NavLink>
+        <NavLink className=" hover:text-lime-500 transition-colors delay-75" to="/Blogs" onClick={()=>clickEv()}>Blogs</NavLink>
         <NavLink className=" hover:text-lime-500 transition-colors delay-75" to="/Catalog" onClick={()=>clickEv()}>Catalogo</NavLink>
         <NavLink className=" hover:text-lime-500 transition-colors delay-75" to="/Product" onClick={()=>clickEv()}>Producto Ejemplo Page</NavLink>
         <span className="lg:mt-5 md:mt-3 sm:mt-1 mt-0.5 cursor-pointer hover:text-lime-500 transition-colors delay-75" onClick={()=>setNavButton(!navButton)}>Volver</span>

@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Alwatoba/static/css/main.62653688.css",
-    "main.js": "/Alwatoba/static/js/main.2ef00c4d.js",
+    "main.css": "/Alwatoba/static/css/main.527a1a7e.css",
+    "main.js": "/Alwatoba/static/js/main.fd1a2123.js",
     "static/media/Galeria1.jpg": "/Alwatoba/static/media/Galeria1.8dad924bb503dc851edc.jpg",
     "static/media/Galeria8.jpg": "/Alwatoba/static/media/Galeria8.54c27105e8b11c920603.jpg",
     "static/media/Galeria2.jpg": "/Alwatoba/static/media/Galeria2.65d73813f0ff5c028bc6.jpg",
@@ -10,6 +10,9 @@
     "static/media/ProdImg4.jpg": "/Alwatoba/static/media/ProdImg4.bed8a855dab50f3522da.jpg",
     "static/media/ProdImg1.jpg": "/Alwatoba/static/media/ProdImg1.f23eaf3839bd5ec77011.jpg",
     "static/media/ProdImg2.jpg": "/Alwatoba/static/media/ProdImg2.695cbe22bfe65565f819.jpg",
+    "static/media/Nosotras1.jpg": "/Alwatoba/static/media/Nosotras1.5a1615efb7abffa9cedc.jpg",
+    "static/media/Naturaleza1.JPG": "/Alwatoba/static/media/Naturaleza1.9d1af782bb962f56237b.JPG",
+    "static/media/Naturaleza2.JPG": "/Alwatoba/static/media/Naturaleza2.a33e82426511074d9bf0.JPG",
     "static/media/Galeria7.jpg": "/Alwatoba/static/media/Galeria7.72cf6fa564414a0ca9b7.jpg",
     "static/media/Galeria3.jpg": "/Alwatoba/static/media/Galeria3.c1d34124a595479a0b8f.jpg",
     "static/media/Galeria5.jpg": "/Alwatoba/static/media/Galeria5.919cd7a61da955c9a521.jpg",
@@ -17,13 +20,14 @@
     "static/media/Galeria6.jpg": "/Alwatoba/static/media/Galeria6.dc2e1b60561272a80beb.jpg",
     "static/media/Blog2.jpg": "/Alwatoba/static/media/Blog2.6125de986bd1fa4f76aa.jpg",
     "static/media/Blog1.jpg": "/Alwatoba/static/media/Blog1.dab784dc02f1f6bccdf2.jpg",
+    "static/media/Nosotras2.jpg": "/Alwatoba/static/media/Nosotras2.e37eb6a39ae833f3f26a.jpg",
     "static/media/AlwatobaBrand.png": "/Alwatoba/static/media/AlwatobaBrand.b38c21021c72cc841b8c.png",
     "index.html": "/Alwatoba/index.html",
-    "main.62653688.css.map": "/Alwatoba/static/css/main.62653688.css.map",
-    "main.2ef00c4d.js.map": "/Alwatoba/static/js/main.2ef00c4d.js.map"
+    "main.527a1a7e.css.map": "/Alwatoba/static/css/main.527a1a7e.css.map",
+    "main.fd1a2123.js.map": "/Alwatoba/static/js/main.fd1a2123.js.map"
   },
   "entrypoints": [
-    "static/css/main.62653688.css",
-    "static/js/main.2ef00c4d.js"
+    "static/css/main.527a1a7e.css",
+    "static/js/main.fd1a2123.js"
   ]
 }

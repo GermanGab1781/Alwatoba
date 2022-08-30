@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Alwatoba/static/css/main.9572eedc.css",
-    "main.js": "/Alwatoba/static/js/main.6fa4125f.js",
+    "main.css": "/Alwatoba/static/css/main.62653688.css",
+    "main.js": "/Alwatoba/static/js/main.2ef00c4d.js",
     "static/media/Galeria1.jpg": "/Alwatoba/static/media/Galeria1.8dad924bb503dc851edc.jpg",
     "static/media/Galeria8.jpg": "/Alwatoba/static/media/Galeria8.54c27105e8b11c920603.jpg",
     "static/media/Galeria2.jpg": "/Alwatoba/static/media/Galeria2.65d73813f0ff5c028bc6.jpg",
@@ -19,11 +19,11 @@
     "static/media/Blog1.jpg": "/Alwatoba/static/media/Blog1.dab784dc02f1f6bccdf2.jpg",
     "static/media/AlwatobaBrand.png": "/Alwatoba/static/media/AlwatobaBrand.b38c21021c72cc841b8c.png",
     "index.html": "/Alwatoba/index.html",
-    "main.9572eedc.css.map": "/Alwatoba/static/css/main.9572eedc.css.map",
-    "main.6fa4125f.js.map": "/Alwatoba/static/js/main.6fa4125f.js.map"
+    "main.62653688.css.map": "/Alwatoba/static/css/main.62653688.css.map",
+    "main.2ef00c4d.js.map": "/Alwatoba/static/js/main.2ef00c4d.js.map"
   },
   "entrypoints": [
-    "static/css/main.9572eedc.css",
-    "static/js/main.6fa4125f.js"
+    "static/css/main.62653688.css",
+    "static/js/main.2ef00c4d.js"
   ]
 }

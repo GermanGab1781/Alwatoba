@@ -4,6 +4,23 @@
 @tailwind utilities;
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
+@font-face{
+  font-family: "OREGANO";
+  src:url("../src/fonts/Oregano-Regular.ttf")
+}
+@font-face{
+  font-family:"NOTETHIS";
+  src:url("../src/fonts/Note_this.ttf")
+}
+@font-face{
+  font-family:"WHATEVER";
+  src:url("../src/fonts/whatever it takes.ttf")
+}
+@font-face{
+  font-family:"MATHLETE";
+  src:url("../src/fonts/Mathlete-Skinny.otf")
+}
+
 .custom-ColorMain{
   color: rgb(223,213,178);
 }

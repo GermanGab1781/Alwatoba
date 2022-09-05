@@ -20,8 +20,8 @@ export default function Navbar(){
         <button onClick={()=>setNavButton(!navButton)} className="row-start-0 sm:col-start-9 col-start-8 hover:text-slate-50 sm:ml-10 ml-4 transition-colors delay-75"><FaBars className="sm:w-10 sm:h-12 h-10 w-8"/></button>      
       {/* Nav Items */}
       <div className={navButton 
-        ?"invisible  flex flex-col col-start-2 col-end-9 lg:gap-y-5 sm:gap-y-4 sm:mt-0 mt-5 gap-y-5 sm:whitespace-nowrap  text-center  opacity-0 lg:text-4xl sm:text-2xl sm:font-semibold font-bold text-xl transition-all ease-in-out duration-500"
-        :"visible flex flex-col col-start-2 col-end-9 lg:gap-y-5 sm:gap-y-4 sm:mt-0 mt-5 gap-y-5 sm:whitespace-nowrap  text-center opacity-100 lg:text-4xl sm:text-2xl sm:font-semibold font-bold text-xl transition-all ease-in-out duration-500 delay-500"
+        ?"invisible  flex flex-col col-start-2 col-end-9 lg:gap-y-5 sm:gap-y-4 sm:mt-0 mt-5 gap-y-5 sm:whitespace-nowrap  text-center  opacity-0 lg:text-4xl sm:text-2xl sm:font-semibold font-bold text-xl transition-all ease-in-out duration-500 font-notethis"
+        :"visible flex flex-col col-start-2 col-end-9 lg:gap-y-5 sm:gap-y-4 sm:mt-0 mt-5 gap-y-5 sm:whitespace-nowrap  text-center opacity-100 lg:text-4xl sm:text-2xl sm:font-semibold font-bold text-xl transition-all ease-in-out duration-500 delay-500 font-notethis"
       }>
         <NavLink className="transition-colors hover:text-indigo-100 delay-75" to="/Alwatoba" onClick={()=>clickEv()}>Inicio</NavLink>
         <NavLink className="transition-colors hover:text-slate-50 delay-75" to="/Blogs" onClick={()=>clickEv()}>Blogs</NavLink>

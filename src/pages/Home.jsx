@@ -15,26 +15,26 @@ export default function Home() {
     window.scrollTo(0, 0);
   }
   return (
-    <motion.div className="grid bg-slate-100 gap-y-5 grid-cols-6 pt-20 place-items-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+    <motion.div className="grid bg-slate-100 md:gap-y-4 gap-y-5 grid-cols-6 pt-20 place-items-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
       
       {/* Presentacion */}
-      <div className="grid gap-x-2 md:gap-y-0 gap-y-2 row-start-1 col-start-1 col-span-6 text-center md:bg-slate-100 custom-BgColor4">
-        <div className="grid md:row-end-3 md:col-start-3 md:col-end-4 row-start-1 col-start-1 col-end-3 -mt-3 m-auto justify-center custom-BgColor4 md:rounded-full ">
+      <div className="grid 2xl:gap-x-0 gap-x-2 md:gap-y-0 gap-y-2 2xl:mt-5 md:-mt-3 row-start-1 col-start-1 col-span-6 text-center md:bg-slate-100 custom-BgColor4">
+        <motion.div className="grid md:row-end-3 md:col-start-3 md:col-end-5 row-start-1 col-start-1 col-end-3 md:mt-1 m-auto custom-BgColor4 md:rounded-full " initial={{x:"5%",opacity:0,scale:.7}} animate={{x:0,opacity:1,scale:1,transition:{duration:4}}}exit={{opacity:0}}>
           <span className="font-semibold pb-5 pt-7 xl:text-4xl text-3xl custom-ColorMain">Nosotras</span>
           <span className="font-semibold pt-2 xl:text-xl text-1xl custom-ColorMain">Quienes somos y que nos inspira</span>
           <div className="custom-BgColorMain mt-4 p-5 rounded-2xl">
-            <ReactPlayer width={"50vw"} height={"30vw"} url='www.youtube.com/watch?v=cFPkypL_ap8'/>
+            <ReactPlayer width='50vw' height='27vw' url='www.youtube.com/watch?v=cFPkypL_ap8'/>
           </div>
-        </div>
-        <img className="md:row-start-1 md:col-start-1 md:col-end-3 row-start-2 m-auto rounded-full" src={require("../media/Nosotras/Nosotras1.jpg")} alt="imgPresentacion" />
-        <img className="md:row-start-2 row-start-2 m-auto rounded-full" src={require("../media/Nosotras/Nosotras3.jpg")} alt="imgPresentacion" />
-        <img className="md:row-start-1 md:row-end-4 md:col-start-5 row-start-4 col-span-2 m-auto md:w-auto w-1/2 rounded-full" src={require("../media/Nosotras/Nosotras2.jpg")} alt="imgPresentacion" />       
+        </motion.div>
+        <motion.img className="md:z-10 md:row-start-1 md:col-start-1 md:col-end-3 row-start-2 2xl:w-3/4 md:w-5/6 w-auto m-auto rounded-full" src={require("../media/Nosotras/Nosotras1.jpg")} alt="imgPresentacion" initial={{x:"2%",opacity:0,scale:.4}} animate={{x:0,opacity:1,scale:1,transition:{duration:3}}}/>
+        <motion.img className="md:row-start-2 row-start-2 md:-mt-20 2xl:w-3/4 md:w-5/6 w-auto m-auto md:rounded-3xl rounded-full"  src={require("../media/Nosotras/Nosotras3.jpg")} alt="imgPresentacion" initial={{x:"2%",opacity:0,scale:.4}} animate={{x:0,opacity:1,scale:1,transition:{duration:3}}}/>
+        <motion.img className="md:visible invisible md:row-start-1 md:row-end-4 md:col-start-5 md:col-span-1 md:mt-1 m-auto 2xl:w-3/4 md:w-5/6 w-0 rounded-full" src={require("../media/Nosotras/Nosotras2.jpg")} alt="imgPresentacion" initial={{x:"1%",opacity:0,scale:.4}} animate={{x:0,opacity:1,scale:1,transition:{duration:3}}}/>       
       </div>
 
       {/* Frase 1 */}
-      <div className="relative row-start-2 col-start-3 col-span-2 h-4/6 w-full">
-        <img className="h-full w-full rounded-full" src={require("../media/Naturaleza/Naturaleza1.JPG")} alt="Imagen fondo"/>
-        <span className="absolute custom-BgColorMain bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-xs font-bold custom-Color2">"Conscientes de nuestro impacto en la Cultura"</span>
+      <div className="relative row-start-2 col-start-1 col-span-6 xl:h-4/6 sm:h-4/6 w-1/2">
+        <img className="h-full w-full rounded-full" src={require("../media/Naturaleza/Naturaleza2.JPG")} alt="Imagen fondo"/>
+        <span className="absolute custom-BgColorMain bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap md:text-3xl sm:text-2xl text-xs font-bold custom-Color2">"Trabajando de la mano de las comunidades locales"</span>
       </div>
 
       {/* Collage fotos */}
@@ -53,10 +53,10 @@ export default function Home() {
           <NavLink className="xl:col-start-1 xl:col-span-6 xl:row-start-4 row-start-5 col-start-1 col-span-5 m-auto mt-6 hover:scale-110 transition-all" onClick={()=>clickEvHome()} to="/Catalog"><span className="text-center custom-BgColor1 custom-ColorMain xl:text-2xl font-semibold border custom-BorderColor2 xl:mt-10 mt-5 xl:p-5 p-5 rounded-xl">VER CATÁLOGO</span></NavLink>
         </div>
       </div>      
-      {/* Frase 2 */}
-      <div className="relative row-start-5 col-start-3 col-span-2 h-4/6 w-full">
-        <img className="h-full w-full rounded-full" src={require("../media/Naturaleza/Naturaleza2.JPG")} alt="Imagen fondo"/>
-        <span className="absolute custom-BgColorMain bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap sm:text-2xl text-xs font-bold custom-Color2">"Trabajando de la mano de las comunidades locales"</span>
+      {/* Frase 2 */}     
+      <div className="relative row-start-4 col-start-1 col-span-6 xl:h-4/6 sm:h-4/6 w-1/2">
+        <img className="h-full w-full rounded-full" src={require("../media/Naturaleza/Naturaleza1.JPG")} alt="Imagen fondo"/>
+        <span className="absolute custom-BgColorMain bottom-1/3 left-1/2 -translate-x-1/2 whitespace-nowrap md:text-3xl sm:text-2xl text-xs font-bold custom-Color2">"Conscientes de nuestro impacto en la Cultura"</span>
       </div>
 
     </motion.div>

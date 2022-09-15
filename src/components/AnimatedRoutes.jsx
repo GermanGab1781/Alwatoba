@@ -7,6 +7,11 @@ import ProductEj from '../pages/ProductEj';
 import CatalogCateg1 from './CatalogCateg1';
 import CatalogCateg2 from './CatalogCateg2';
 import Blogs from '../pages/Blogs';
+import CatalogAutoctona from '../pages/CatalogAutoctona';
+import CatalogAutoctonaComplementos from '../pages/CatalogAutoctonaComplementos';
+import CatalogAutoctonaLifestyle from '../pages/CatalogAutoctonaLifestyle';
+import CatalogColecciones from '../pages/CatalogColecciones';
+import CatalogColeccionesEscencia from '../pages/CatalogColeccionesEscencia';
 
 
 function AnimatedRoutes() {
@@ -19,6 +24,27 @@ function AnimatedRoutes() {
           <Route path='Categ1' element={<CatalogCateg1/>}/>
           <Route path='Categ2' element={<CatalogCateg2/>}/>
         </Route>
+
+        {/* Seccion Autoctona */}
+        <Route path='/Catalog/Autoctona/*' element={<CatalogAutoctona/>}>
+          <Route path='Categ1' element={<CatalogCateg1/>}/>
+          <Route path='Categ2' element={<CatalogCateg2/>}/>
+        </Route>
+        <Route path='/Catalog/Autoctona/Lifestyle/*' element={<CatalogAutoctonaLifestyle/>}>
+          <Route path='Categ1' element={<CatalogCateg1/>}/>
+          <Route path='Categ2' element={<CatalogCateg2/>}/>
+        </Route>
+        <Route path='/Catalog/Autoctona/Complementos/*' element={<CatalogAutoctonaComplementos/>}>
+          <Route path='Categ1' element={<CatalogCateg1/>}/>
+          <Route path='Categ2' element={<CatalogCateg2/>}/>
+        </Route>
+
+        {/* Seccion Colecciones */}
+        <Route path='/Catalog/Colecciones' element={<CatalogColecciones/>}/>
+        <Route path='/Catalog/Colecciones/Escencia/*' element={<CatalogColeccionesEscencia/>}>
+          <Route path='Categ1' element={<CatalogCateg1/>}/>
+          <Route path='Categ2' element={<CatalogCateg2/>}/>
+          </Route>
         <Route path="/Blogs" element={<Blogs/>}/>
         <Route path='/Product' element={<ProductEj/>}/>
         <Route path='*' element={<HomePage/>}/>

@@ -20,7 +20,7 @@ export default function Home() {
       {/* Presentacion */}
       <div className="grid 2xl:gap-x-0 gap-x-2 md:gap-y-0 gap-y-2 2xl:mt-5 md:-mt-3 row-start-1 col-start-1 col-span-6 text-center md:bg-slate-100 custom-BgColor4">
         <motion.div className="grid md:row-end-3 md:col-start-3 md:col-end-5 row-start-1 col-start-1 col-end-3 md:mt-1 m-auto custom-BgColor4 md:rounded-full" initial={{x:"5%",opacity:0,scale:.7}} animate={{x:0,opacity:1,scale:1,transition:{duration:4}}}exit={{opacity:0}}>
-          <span className="font-bold pb-4 pt-1 xl:text-8xl sm:text-6xl text-3xl custom-ColorMain font-mathlete">Nosotras</span>
+          <span className="font-bold pb-4 pt-1 xl:text-8xl sm:text-6xl text-3xl text-slate-50 font-mathlete">Alwatoba</span>
           <span className="font-semibold pt-2 xl:text-2xl text-1xl custom-ColorMain font-notethis">Quienes somos y que nos inspira</span>
           <div className="custom-BgColorMain mt-4 p-5 rounded-2xl">
             <ReactPlayer width='50vw' height='27vw' url='www.youtube.com/watch?v=cFPkypL_ap8'/>

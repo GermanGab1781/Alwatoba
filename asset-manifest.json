@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Alwatoba/static/css/main.8581e31c.css",
-    "main.js": "/Alwatoba/static/js/main.614601ca.js",
+    "main.css": "/Alwatoba/static/css/main.646a225f.css",
+    "main.js": "/Alwatoba/static/js/main.449b45b9.js",
     "static/media/Galeria1.jpg": "/Alwatoba/static/media/Galeria1.8dad924bb503dc851edc.jpg",
     "static/media/Galeria8.jpg": "/Alwatoba/static/media/Galeria8.54c27105e8b11c920603.jpg",
     "static/media/Nosotras3.jpg": "/Alwatoba/static/media/Nosotras3.4d93d7e28e1facdfc498.jpg",
@@ -13,24 +13,24 @@
     "static/media/ProdImg2.jpg": "/Alwatoba/static/media/ProdImg2.695cbe22bfe65565f819.jpg",
     "static/media/Nosotras1.jpg": "/Alwatoba/static/media/Nosotras1.5a1615efb7abffa9cedc.jpg",
     "static/media/Naturaleza1.JPG": "/Alwatoba/static/media/Naturaleza1.9d1af782bb962f56237b.JPG",
-    "static/media/Naturaleza2.JPG": "/Alwatoba/static/media/Naturaleza2.a33e82426511074d9bf0.JPG",
     "static/media/Galeria7.jpg": "/Alwatoba/static/media/Galeria7.72cf6fa564414a0ca9b7.jpg",
     "static/media/Galeria3.jpg": "/Alwatoba/static/media/Galeria3.c1d34124a595479a0b8f.jpg",
     "static/media/Galeria5.jpg": "/Alwatoba/static/media/Galeria5.919cd7a61da955c9a521.jpg",
     "static/media/Galeria4.jpg": "/Alwatoba/static/media/Galeria4.165a074f4295f0b78ff6.jpg",
     "static/media/Galeria6.jpg": "/Alwatoba/static/media/Galeria6.dc2e1b60561272a80beb.jpg",
+    "static/media/Blog2.jpg": "/Alwatoba/static/media/Blog2.6125de986bd1fa4f76aa.jpg",
     "static/media/whatever it takes.ttf": "/Alwatoba/static/media/whatever it takes.25942f7ae1cb86fb0d48.ttf",
-    "static/media/Nosotras2.jpg": "/Alwatoba/static/media/Nosotras2.e37eb6a39ae833f3f26a.jpg",
+    "static/media/Blog1.jpg": "/Alwatoba/static/media/Blog1.dab784dc02f1f6bccdf2.jpg",
     "static/media/Oregano-Regular.ttf": "/Alwatoba/static/media/Oregano-Regular.19f68c957af8e5b608f9.ttf",
     "static/media/Note_this.ttf": "/Alwatoba/static/media/Note_this.5083c470c979259f70fb.ttf",
     "static/media/Mathlete-Skinny.otf": "/Alwatoba/static/media/Mathlete-Skinny.cfb9d29bca1772390f1d.otf",
     "static/media/AlwatobaBrand.png": "/Alwatoba/static/media/AlwatobaBrand.b38c21021c72cc841b8c.png",
     "index.html": "/Alwatoba/index.html",
-    "main.8581e31c.css.map": "/Alwatoba/static/css/main.8581e31c.css.map",
-    "main.614601ca.js.map": "/Alwatoba/static/js/main.614601ca.js.map"
+    "main.646a225f.css.map": "/Alwatoba/static/css/main.646a225f.css.map",
+    "main.449b45b9.js.map": "/Alwatoba/static/js/main.449b45b9.js.map"
   },
   "entrypoints": [
-    "static/css/main.8581e31c.css",
-    "static/js/main.614601ca.js"
+    "static/css/main.646a225f.css",
+    "static/js/main.449b45b9.js"
   ]
 }

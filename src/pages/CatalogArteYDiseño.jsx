@@ -7,11 +7,11 @@ export default function CatalogColecciones() {
   const [menuButton, setMenuButton] = useState(true)
   return (
     <motion.div className="md:pt-10 pt-20 grid grid-cols-8 custom-ColorMain text-center" initial={{opacity:1}} animate={{opacity:1}} exit={{opacity:1}}>
-        <span className="row-start-1 sm:col-start-5 sm:col-span-3 col-span-8 font-bold md:text-7xl sm:text-5xl text-4xl sm:mt-5 py-5 rounded-t-3xl font-mathlete">
+        <span className="row-start-1 sm:col-start-5 sm:col-span-3 col-start-4 col-span-3 font-bold md:text-7xl sm:text-5xl text-4xl sm:mt-5 py-5 rounded-t-3xl font-mathlete">
           Arte y Diseño
         </span>
         {/* Link Tree */}
-        <div className="row-start-1 col-start-3 col-end-5 mt-28 ml-5 text-start font-notethis custom-Color4 text-xl">
+        <div className="row-start-1 md:col-start-3 col-start-1 col-end-5 md:col-end-5 md:mt-28 mt-10 md:ml-5 ml-3 text-start font-notethis custom-Color4 md:text-xl ">
           <NavLink className="hover:text-amber-900" to="/Catalog">Inicio</NavLink>
           <span> / </span>
         </div>

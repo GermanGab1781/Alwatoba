@@ -47,10 +47,10 @@ export default function Footer() {
       <div className="md:grid md:grid-rows-2 md:row-start-1 md:col-start-5 md:col-span-2 md:ml-20 ml-5 md:text-3xl text-xl">
         <div className="md:mb-0 mb-2">
           <span className="font-notethis">Redes</span>
-          <div className="flex flex-row pt-5">
-            <a className="ml-6" href="https://www.instagram.com/alwatoba"><BsInstagram className="h-10 w-10 hover:scale-150 transition-all"/></a>
-            <a className="ml-6" href="https://www.instagram.com/alwatoba"><BsWhatsapp className="h-10 w-10 hover:scale-150 transition-all"/></a>            
-            <a className="ml-6" href="https://www.instagram.com/alwatoba"><BsPinterest className="h-10 w-10 hover:scale-150 transition-all"/></a>
+          <div className="flex flex-row pt-5 md:place-content-start place-content-center">
+            <a className="md:ml-6" href="https://www.instagram.com/alwatoba"><BsInstagram className="h-10 w-10 hover:scale-150 transition-all"/></a>
+            <a className="md:ml-6 ml-3" href="https://www.instagram.com/alwatoba"><BsWhatsapp className="h-10 w-10 hover:scale-150 transition-all"/></a>            
+            <a className="md:ml-6 ml-3" href="https://www.instagram.com/alwatoba"><BsPinterest className="h-10 w-10 hover:scale-150 transition-all"/></a>
           </div>
         </div>   
         <div className="">

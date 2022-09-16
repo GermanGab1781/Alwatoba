@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {motion} from 'framer-motion'
-import { Outlet,Link } from 'react-router-dom';
+import { Outlet,Link,NavLink } from 'react-router-dom';
 
 
 export default function CatalogColeccionesEscencia() {
@@ -10,7 +10,13 @@ export default function CatalogColeccionesEscencia() {
         <span className="row-start-1 sm:col-span-7 col-span-8 font-bold md:text-7xl sm:text-5xl text-4xl sm:mt-5 py-5 rounded-t-3xl font-mathlete">
           Escencia Imperfecta
         </span>
-        <div></div>
+        {/* Link Tree */}
+        <div className="row-start-1 col-start-3 col-end-5 mt-28 ml-5 text-start font-notethis custom-Color4 text-xl">
+          <NavLink className="hover:text-amber-900" to="/Catalog">Inicio</NavLink>
+          <span> / </span>
+          <NavLink className="hover:text-amber-900" to="/Catalog/Colecciones">Colecciones Capsula</NavLink>
+          <span> / </span>
+        </div>
         {/* Menu lateral Izq */}
         <div className={menuButton 
           ?"custom-BgColor4 sm:relative fixed flex flex-col pt-32 justify-start z-40 sm:row-start-1 sm:row-end-3 sm:col-start-1 sm:col-span-2 sm:gap-y-6 gap-y-5 sm:mt-0 mt-4 sm:w-full w-44 h-full visible sm:text-2xl text-2xl font-notethis md:border-r-0 transition-all duration-500 sm:overflow-hidden"

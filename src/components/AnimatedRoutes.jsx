@@ -8,6 +8,7 @@ import CatalogCateg1 from './CatalogCateg1';
 import CatalogCateg2 from './CatalogCateg2';
 import Blogs from '../pages/Blogs';
 import CatalogAutoctona from '../pages/CatalogAutoctona';
+import CatalogArteYDiseño from '../pages/CatalogArteYDiseño';
 import CatalogAutoctonaComplementos from '../pages/CatalogAutoctonaComplementos';
 import CatalogAutoctonaLifestyle from '../pages/CatalogAutoctonaLifestyle';
 import CatalogColecciones from '../pages/CatalogColecciones';
@@ -20,12 +21,13 @@ function AnimatedRoutes() {
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
         <Route path='/Alwatoba' element={<HomePage/>}/>
+        
+        {/* Catalogo */}
         <Route path='/Catalog/*' element={<CatalogPage/>}>
           <Route path='Categ1' element={<CatalogCateg1/>}/>
           <Route path='Categ2' element={<CatalogCateg2/>}/>
         </Route>
-
-        {/* Seccion Autoctona */}
+            {/* Seccion Autoctona */}
         <Route path='/Catalog/Autoctona/*' element={<CatalogAutoctona/>}>
           <Route path='Categ1' element={<CatalogCateg1/>}/>
           <Route path='Categ2' element={<CatalogCateg2/>}/>
@@ -38,14 +40,20 @@ function AnimatedRoutes() {
           <Route path='Categ1' element={<CatalogCateg1/>}/>
           <Route path='Categ2' element={<CatalogCateg2/>}/>
         </Route>
-
-        {/* Seccion Colecciones */}
+           {/* Seccion Colecciones */}
         <Route path='/Catalog/Colecciones' element={<CatalogColecciones/>}/>
         <Route path='/Catalog/Colecciones/Escencia/*' element={<CatalogColeccionesEscencia/>}>
           <Route path='Categ1' element={<CatalogCateg1/>}/>
           <Route path='Categ2' element={<CatalogCateg2/>}/>
           </Route>
+            {/* Seccion Arte y Diseño */}
+        <Route path='/Catalog/ArteyDisenio/*'element={<CatalogArteYDiseño/>}>
+          <Route path='Categ1' element={<CatalogCateg1/>}/>
+          <Route path='Categ2' element={<CatalogCateg2/>}/>
+        </Route>
+        {/* Blogs */}
         <Route path="/Blogs" element={<Blogs/>}/>
+        {/* Producto */}
         <Route path='/Product' element={<ProductEj/>}/>
         <Route path='*' element={<HomePage/>}/>
       </Routes>

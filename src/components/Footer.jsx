@@ -1,12 +1,12 @@
-import { motion } from 'framer-motion'
+
 import {BsInstagram , BsWhatsapp, BsPinterest,BsFillChatRightTextFill,BsFillTelephoneFill} from 'react-icons/bs'
 import {HiLocationMarker,HiReceiptRefund} from 'react-icons/hi'
 import React from 'react'
 export default function Footer() {
   return (
-    <motion.div className="md:grid md:grid-cols-6 flex flex-col bg-slate-50 custom-Color1 border-t-2 pt-16 pb-10">
+    <div className="md:grid md:grid-cols-6 flex flex-col bg-slate-50 custom-Color1 border-t-2 pt-16 pb-10 z-30 relative">
       {/* Medios de Pago y Envio */}
-      <div className="md:row-start-1 md:col-start-1 md:col-span-4 md:ml-20 ml-5 md:text-3xl text-xl">
+      <div className="md:row-start-1 md:col-start-1  md:col-span-4 md:ml-20 ml-5 md:text-3xl text-xl">
         <div>
           <span className="font-notethis ">Medios de Pago</span>
           <div className="flex flex-row flex-wrap">
@@ -22,7 +22,7 @@ export default function Footer() {
             <img className="p-1 md:w-fit md:h-fit w-20 h-12 hover:scale-150 transition-all hover:bg-black " src={require("../media/MediosdePago/rapipago.png")} alt="Metodo de pago" />
             <img className="p-1 md:w-fit md:h-fit w-20 h-12 hover:scale-150 transition-all hover:bg-black " src={require("../media/MediosdePago/pagofacil.png")} alt="Metodo de pago" />
             <img className="p-1 md:w-fit md:h-fit w-20 h-12 hover:scale-150 transition-all hover:bg-black " src={require("../media/MediosdePago/visa.png")} alt="Metodo de pago" />
-            <div className="relative group md:mt-6 md:mr-10 mt-2 mr-5">
+            <div className="relative group md:mt-6 md:mr-10 mt-2 mr-5 md:ml-7">
               <span className="absolute group-hover:z-10 cursor-default opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all bottom-1/3 left-1/2 -translate-x-1/2 font-notethis sm:text-3xl text-xl">Deposito</span>
               <img className="p-1 md:w-full md:h-full w-20 h-12 group-hover:scale-150 group-active:scale-150 transition-all group-hover:bg-black " src={require("../media/MediosdePago/deposito.png")} alt="Metodo de pago" />
             </div>
@@ -63,6 +63,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }

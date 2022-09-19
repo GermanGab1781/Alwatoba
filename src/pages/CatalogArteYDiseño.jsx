@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 import {motion} from 'framer-motion'
 import { Outlet,Link, NavLink } from 'react-router-dom';
-
+import { useEffect } from 'react';
 
 export default function CatalogColecciones() {
   const [menuButton, setMenuButton] = useState(true)
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  },[])
   return (
-    <motion.div className="md:pt-10 pt-20 grid grid-cols-8 custom-ColorMain text-center" initial={{opacity:1}} animate={{opacity:1}} exit={{opacity:1}}>
-        <span className="row-start-1 sm:col-start-5 sm:col-span-3 col-start-4 col-span-3 font-bold md:text-7xl sm:text-5xl text-4xl sm:mt-5 py-5 rounded-t-3xl font-mathlete">
+    <motion.div className="md:pt-10 pt-20 grid grid-cols-8 grid-rows-1 custom-ColorMain text-center" initial={{opacity:1}} animate={{opacity:1}} exit={{opacity:1}}>
+        <span className="row-start-1 md:col-start-3 col-start-1 md:col-span-6 col-span-8 font-bold md:text-7xl sm:text-5xl text-4xl sm:mt-5 py-5 rounded-t-3xl font-mathlete text-center">
           Arte y Diseño
         </span>
         {/* Link Tree */}
-        <div className="row-start-1 md:col-start-3 col-start-1 col-end-5 md:col-end-5 md:mt-28 mt-10 md:ml-5 ml-3 text-start font-notethis custom-Color4 md:text-xl ">
+        <div className="row-start-2 md:col-start-3 col-start-1 md:col-span-7 col-span-8 text-start md:ml-0 ml-5 font-notethis custom-Color4 md:text-xl">
           <NavLink className="hover:text-amber-900" to="/Catalog">Inicio</NavLink>
           <span> / </span>
         </div>
-        {/* Menu lateral Izq */}
-        <div className={menuButton 
-          ?"custom-BgColor4 sm:relative fixed flex flex-col pt-32 justify-start z-40 sm:row-start-1 sm:row-end-3 sm:col-start-1 sm:col-span-2 sm:gap-y-6 gap-y-5 sm:mt-0 mt-4 sm:w-full w-44 h-full visible sm:text-2xl text-2xl font-notethis md:border-r-0 transition-all duration-500 sm:overflow-hidden"
-          :"custom-BgColor4 sm:relative fixed flex flex-col pt-32 justify-start z-40 sm:row-start-1 sm:row-end-3 sm:col-start-1 sm:col-span-2 sm:gap-y-6 gap-y-5 sm:mt-0 mt-4 w-0 h-full invisible sm:text-2xl text-2xl font-notethis transition-all duration-500 delay-150"
+       {/* Menu lateral Izq */}
+       <div className={menuButton 
+          ?"custom-BgColor4  fixed flex flex-col pt-32 justify-start z-20 sm:gap-y-6 gap-y-5 sm:w-1/5 w-44 h-full visible sm:text-2xl text-2xl font-notethis md:border-r-0 transition-all duration-500 sm:overflow-hidden"
+          :"custom-BgColor4  fixed flex flex-col pt-32 justify-start z-20 sm:gap-y-6 gap-y-5 w-0 h-full invisible sm:text-2xl text-2xl font-notethis transition-all duration-500 delay-150"
         }>
 
        <Link className={menuButton ?"z-10 opacity-100 visible hover:text-slate-200 hover:scale-105 border-y-2 custom-BorderColor3 transition-all ease-in-out duration-300 sm:delay-75 delay-300":"opacity-0 invisible transition-all ease-in-out duration-300"} to='Categ1'>Complementos</Link>
@@ -33,7 +36,7 @@ export default function CatalogColecciones() {
           </button>
         </div>
         {/* Catalogo */}
-        <div className="row-start-2 sm:col-start-3 sm:col-span-7 col-start-1 col-span-8 min-h-screen max-h-fit border m-2 pl-2">
+        <div className="row-start-3 sm:col-start-3 sm:col-span-7 col-start-1 col-span-8 min-h-screen max-h-fit border m-2 pl-2">
           <Outlet/>
         </div>
     </motion.div>

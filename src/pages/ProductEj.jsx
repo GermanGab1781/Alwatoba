@@ -1,5 +1,7 @@
 import {motion} from 'framer-motion'
+import { useEffect } from 'react';
 import ReactImageGallery from 'react-image-gallery';
+
 
 export default function ProductEj() {
   const imagesUrls = [{original:require("../media/ProductoEj/ProdImg1.jpg"),alt:"ImagenPrueba1"},
@@ -7,6 +9,9 @@ export default function ProductEj() {
                       {original:require("../media/ProductoEj/ProdImg3.jpg"),alt:"ImagenPrueba3"},
                       {original:require("../media/ProductoEj/ProdImg4.jpg"),alt:"ImagenPrueba4"},
   ]
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[])
 
   return (
     <motion.div className="grid pt-20 text-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>

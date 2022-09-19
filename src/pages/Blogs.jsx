@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 
 export default function Blogs() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[])
   return (
     <motion.div className="grid pt-24 custom-Color3">
       {/* Titulo */}

@@ -20,9 +20,10 @@ export default function Navbar(){
         :"visible flex flex-col col-start-2 col-end-9 lg:gap-y-5 sm:gap-y-4 sm:mt-6 mt-5 gap-y-5 sm:whitespace-nowrap text-center opacity-100 lg:text-4xl text-2xl sm:font-semibold font-bold transition-all ease-in-out duration-500 delay-500 font-notethis"
       }>
         <NavLink className="text-center cursor-pointer md:text-5xl text-3xl custom-Color4 hover:scale-110 hover:font-bold transition-all delay-75 mb-5" to="/Alwatoba" onClick={()=>setNavButton(!navButton)}>Inicio</NavLink>
-        <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Catalog" onClick={()=>setNavButton(!navButton)}>Catalogo</NavLink>
+        <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Catalog/categ1" onClick={()=>setNavButton(!navButton)}>Catalogo</NavLink>
         <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Blogs" onClick={()=>setNavButton(!navButton)}>Nosotras</NavLink>
         <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Product" onClick={()=>setNavButton(!navButton)}>Producto Ejemplo</NavLink>
+        <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Firebase" onClick={()=>setNavButton(!navButton)}>Firebase Test</NavLink>
         <span className="text-center cursor-pointer md:text-5xl text-4xl custom-Color4 hover:scale-125 hover:font-bold transition-all delay-75 mt-10" onClick={()=>setNavButton(!navButton)}>Volver</span>
       </div>
     </motion.div>

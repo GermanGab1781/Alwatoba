@@ -13,6 +13,7 @@ import CatalogAutoctonaComplementos from '../pages/CatalogAutoctonaComplementos'
 import CatalogAutoctonaLifestyle from '../pages/CatalogAutoctonaLifestyle';
 import CatalogColecciones from '../pages/CatalogColecciones';
 import CatalogColeccionesEscencia from '../pages/CatalogColeccionesEscencia';
+import FirebaseTestPage from '../pages/FirebaseTestPage';
 
 
 function AnimatedRoutes() {
@@ -56,6 +57,8 @@ function AnimatedRoutes() {
         {/* Producto */}
         <Route path='/Product' element={<ProductEj/>}/>
         <Route path='*' element={<HomePage/>}/>
+        {/* Firebase Test */}
+        <Route path="/Firebase" element={<FirebaseTestPage/>}/>
       </Routes>
     </AnimatePresence>
   )

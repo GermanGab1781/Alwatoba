@@ -2,56 +2,39 @@ import React, { useState } from 'react'
 import { storage } from '../firebase';
 import { ref, uploadBytes , listAll ,getDownloadURL } from 'firebase/storage';
 import { db } from '../firebase';
-import { collection , getDocs, doc , addDoc, getDoc, setDoc} from 'firebase/firestore'
+import { collection , doc , getDoc, setDoc} from 'firebase/firestore'
 import { v4 } from 'uuid';
 import { useEffect } from 'react';
+import ReactImageGallery from 'react-image-gallery';
 
 
 export default function FirebaseTestPage() {
-  /*const imagesUrls = [{original:require("../media/ProductoEj/ProdImg1.jpg"),alt:"ImagenPrueba1"},
-                      {original:require("../media/ProductoEj/ProdImg2.jpg"),alt:"ImagenPrueba2"},
-                      {original:require("../media/ProductoEj/ProdImg3.jpg"),alt:"ImagenPrueba3"},
-                      {original:require("../media/ProductoEj/ProdImg4.jpg"),alt:"ImagenPrueba4"},
-  ]*/
 
   const imagesUrls=[];
-
-  const productsRef = collection(db, "Productos")
+  const newProductRef = doc(collection(db, "Productos"))
   const [imgPrev1, setimgPrev1] = useState(null);
   const [imgPrev2, setimgPrev2] = useState(null);
   const [imgPrev3, setimgPrev3] = useState(null);
   const [imgPrev4, setimgPrev4] = useState(null);
-  const [docTest,setDocTest] = useState(null)
+  const docRef= doc(db,"Productos","b13B868VcMLa90Sggwg0")
 
-  /* Fetch Data 
-  useEffect(()=>{
-    const getImgsDocs = async () =>{
-      const data = await getDocs(imgsProdRef)
-      setImagesList(data.docs.map((doc)=>({...doc.data()})))
-    }
-    getImgsDocs()
-    imagesList.forEach((item)=>{
-      (getDownloadURL(ref(storage,item.url)))
-        .then((url)=>{
-          setImagesUrlList((prev)=>[...prev,url])
-        })
-    })
-  },[]) */
   useEffect(()=>{
     const getImgsDocs = async ()=>{
-      const docRef= doc(db,"Productos","b13B868VcMLa90Sggwg0")
-      const data = await getDoc(docRef)
-      setDocTest(data.data())
-      console.log(docTest.Imagenes)
-      docTest.Imagenes.forEach((url,index)=>{
-        imagesUrls.push({original:url, alt:'imagen Numero'+ index})
-      })
-      console.log(imagesUrls)
+      try{
+        const data = await getDoc(docRef)
+        data.data().Imagenes.forEach((path)=>{
+          (getDownloadURL(ref(storage,path)))
+            .then((url)=>{
+              imagesUrls.push({original:url,alt:"Img del producto"})
+            })
+        })
+      }catch(err){
+        console.log(err)
+      }
     }
     getImgsDocs()
+    alert('SE SUBIO')
   },[])
-
-
   
   const uploadProduct= e =>{
     e.preventDefault()
@@ -61,8 +44,6 @@ export default function FirebaseTestPage() {
     const Img2 =  e.target.img2.files[0]
     const Img3 =  e.target.img3.files[0]
     const Img4 =  e.target.img4.files[0]
-    console.log(Img1+Img2+Img3+Img4)
-    console.log(Nombre +'/////////////'+ Descripcion)
     const Urls = []
     const ImgsUploaded =[]
     if(Img1){
@@ -77,15 +58,13 @@ export default function FirebaseTestPage() {
     if(Img4){
       ImgsUploaded.push(Img4)
     }
-    console.log(ImgsUploaded)
     ImgsUploaded.forEach((img)=>{
       let nameDir = `images/${img.name +v4()}`
       let imgRef = ref(storage,nameDir)
       uploadBytes(imgRef,img)
       Urls.push(nameDir)
     })
-    console.log(Urls)
-    addDoc(productsRef,{Nombre:Nombre,Descripcion:Descripcion,Imagenes:Urls})
+    setDoc(newProductRef,{Id:newProductRef.id,Nombre:Nombre,Descripcion:Descripcion,Imagenes:Urls})
   }
 
   const showPreview1 = e => {
@@ -111,7 +90,7 @@ export default function FirebaseTestPage() {
 
   return (
     <div className="pt-20 mb-96">
-      <form className="ml-6" onSubmit={uploadProduct}>
+      <form className="ml-6 mb-60" onSubmit={uploadProduct}>
         <label>Nombre</label><br/>
         <input className="mb-6 mt-6 border border-black" name="nombre" type="text" placeholder="Nombre"/><br/>
         <label>Descripcion</label><br/>
@@ -140,6 +119,7 @@ export default function FirebaseTestPage() {
         </div>
         <button className="bg-slate-500 mt-6" type="submit">Subir Producto</button>
       </form>
+      <ReactImageGallery items={imagesUrls}/>
     </div>
   )
 }

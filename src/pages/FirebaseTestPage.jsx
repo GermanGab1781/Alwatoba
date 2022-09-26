@@ -1,42 +1,77 @@
 import React, { useState } from 'react'
 import { storage } from '../firebase';
-import { ref, uploadBytes , listAll ,getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytes ,getDownloadURL, listAll } from 'firebase/storage';
 import { db } from '../firebase';
-import { collection , doc , getDoc, setDoc} from 'firebase/firestore'
+import { collection , doc , getDoc,getDocs, setDoc} from 'firebase/firestore'
 import { v4 } from 'uuid';
 import { useEffect } from 'react';
 import ReactImageGallery from 'react-image-gallery';
+import { auth } from '../firebase';
+import { onAuthStateChanged, signInWithEmailAndPassword,signOut } from 'firebase/auth';
+import ProductMini from '../components/ProductMini';
 
 
 export default function FirebaseTestPage() {
 
-  const imagesUrls=[];
+  const [productMiniImgs,setProductMiniImgs] = useState([])
   const newProductRef = doc(collection(db, "Productos"))
-  const [imgPrev1, setimgPrev1] = useState(null);
-  const [imgPrev2, setimgPrev2] = useState(null);
-  const [imgPrev3, setimgPrev3] = useState(null);
-  const [imgPrev4, setimgPrev4] = useState(null);
+  const productsRef = collection(db,"Productos")
+  const [userLoged, setUserLoged] = useState("")
+  const [imgPrev1, setimgPrev1] = useState(null)
+  const [imgPrev2, setimgPrev2] = useState(null)
+  const [imgPrev3, setimgPrev3] = useState(null)
+  const [imgPrev4, setimgPrev4] = useState(null)
   const docRef= doc(db,"Productos","b13B868VcMLa90Sggwg0")
+  const [allDocs, setAllDocs] = useState([])
 
   useEffect(()=>{
     const getImgsDocs = async ()=>{
-      try{
+    try{
         const data = await getDoc(docRef)
         data.data().Imagenes.forEach((path)=>{
           (getDownloadURL(ref(storage,path)))
             .then((url)=>{
-              imagesUrls.push({original:url,alt:"Img del producto"})
+              setProductMiniImgs({...url, original:url,alt:"Img del producto"})
             })
         })
       }catch(err){
         console.log(err)
       }
     }
-    getImgsDocs()
-    alert('SE SUBIO')
+    const getDocsProd = async () =>{
+      try{
+        const data = await getDocs(productsRef)
+        setAllDocs(data.docs.map((doc)=>({ ...doc.data()})))
+        allDocs.forEach((arr)=>{
+          getDownloadURL(ref(storage,arr.imgPath[0]))
+            .then((url)=>{
+              setProductMiniImgs((prev) => [...prev,url]) 
+            })
+        })
+      }catch(err){
+        alert(err)
+      }
+    }
+    getDocsProd()
   },[])
-  
-  const uploadProduct= e =>{
+
+
+  //onAuthStateChanged(auth, (currentUser)=>{
+  // setUserLoged(currentUser);
+  //})
+  const login = async e => {
+    e.preventDefault()
+    try{
+      const user = await signInWithEmailAndPassword(auth, e.target.userLogin.value, e.target.userPass.value )
+      alert('login exitoso!!!')
+    }catch(err){
+      alert(err)
+    }
+  }
+  const logout = async() =>{
+    await signOut(auth)
+  }
+  const uploadProduct = async e =>{
     e.preventDefault()
     const Nombre = e.target.nombre.value
     const Descripcion = e.target.desc.value
@@ -44,7 +79,7 @@ export default function FirebaseTestPage() {
     const Img2 =  e.target.img2.files[0]
     const Img3 =  e.target.img3.files[0]
     const Img4 =  e.target.img4.files[0]
-    const Urls = []
+    let Paths = []
     const ImgsUploaded =[]
     if(Img1){
       ImgsUploaded.push(Img1)
@@ -58,15 +93,16 @@ export default function FirebaseTestPage() {
     if(Img4){
       ImgsUploaded.push(Img4)
     }
+    
     ImgsUploaded.forEach((img)=>{
       let nameDir = `images/${img.name +v4()}`
       let imgRef = ref(storage,nameDir)
       uploadBytes(imgRef,img)
-      Urls.push(nameDir)
+      Paths.push(nameDir)
     })
-    setDoc(newProductRef,{Id:newProductRef.id,Nombre:Nombre,Descripcion:Descripcion,Imagenes:Urls})
+    await setDoc(newProductRef,{Id:newProductRef.id,Nombre:Nombre,Descripcion:Descripcion,imgPath:Paths})
+    alert('SE SUBIO')
   }
-
   const showPreview1 = e => {
       if (e.target.files && e.target.files.length > 0) {
         setimgPrev1(e.target.files[0]);
@@ -90,6 +126,15 @@ export default function FirebaseTestPage() {
 
   return (
     <div className="pt-20 mb-96">
+      {console.log(productMiniImgs,"owo")}
+      {/* Login */}
+      <form onSubmit={login}>
+        <input className="mb-6 mt-6 border border-black" type="text" name="userLogin"/>
+        <input className="mb-6 mt-6 border border-black" type="password" name="userPass"/>
+        <button type="submit">Login</button><br/>
+      </form>
+      {userLoged?.email}<button onClick={logout}>SIGN OUT</button>
+      {/* Producto Upload */}
       <form className="ml-6 mb-60" onSubmit={uploadProduct}>
         <label>Nombre</label><br/>
         <input className="mb-6 mt-6 border border-black" name="nombre" type="text" placeholder="Nombre"/><br/>
@@ -119,7 +164,12 @@ export default function FirebaseTestPage() {
         </div>
         <button className="bg-slate-500 mt-6" type="submit">Subir Producto</button>
       </form>
-      <ReactImageGallery items={imagesUrls}/>
+      {/* Producto component */}
+      {allDocs && allDocs.map((doc,index)=>{
+        return(
+          <ProductMini key={index} nombre={doc.Nombre} id={doc.Id} imgPath={productMiniImgs[index]} />
+        )
+      })}
     </div>
   )
 }

@@ -4,13 +4,13 @@ import { getStorage } from "firebase/storage";
 import { getAuth , } from "firebase/auth"
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_APP_API_KEY,
-  authDomain: process.env.FIREBASE_APP_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_APP_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_APP_MESSAGING_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID,
-  measurementId: process.env.FIREBASE_APP_MEASUREMENT_ID
+  apiKey: process.env.REACT_APP_FIREBASE_DATABASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_DATABASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_DATABASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_DATABASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_DATABASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_DATABASE_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_DATABASE_MEASUREMENT_ID
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

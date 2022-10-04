@@ -13,7 +13,7 @@ export default function Catalog() {
   return (
     <motion.div className="md:pt-10 pt-20 grid grid-cols-8 custom-ColorMain text-center" initial={{opacity:1}} animate={{opacity:1}} exit={{opacity:1}}>
         {/* Titulo */}
-        <span className="row-start-1 md:col-start-3 col-start-1 md:col-span-6 col-span-8 font-bold md:text-7xl sm:text-5xl text-4xl sm:mt-5 py-5 rounded-t-3xl font-mathlete text-center">
+        <span className="row-start-1 md:col-start-3 col-start-1 md:col-span-6 col-span-8 font-bold md:text-5xl sm:text-3xl text-2xl sm:mt-5 py-5 rounded-t-3xl font-comfortaa text-center">
           Nuestros Productos
         </span>
         <div></div>

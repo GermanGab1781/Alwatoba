@@ -7,7 +7,8 @@ module.exports = {
         oregano:["OREGANO"],
         notethis:["NOTETHIS"],
         whatever:["WHATEVER"],
-        mathlete:["MATHLETE"]
+        mathlete:["MATHLETE"],
+        comfortaa:["COMFORTAA"]
       }
     },
   },

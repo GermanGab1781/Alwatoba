@@ -3,11 +3,11 @@ import { doc, setDoc, collection } from 'firebase/firestore';
 import { storage,db } from '../firebase';
 import { useState } from 'react';
 import { v4 } from 'uuid';
+import Swal from 'sweetalert2'
 
 
 const FirebaseTestPage = () => {
 
-  const [imageFirst, setImageFirst] = useState(null)
   const [images, setImages] = useState([])
   const [product,setProduct] = useState({})
   const [productCateg, setProductCateg] =useState(null)
@@ -19,10 +19,10 @@ const FirebaseTestPage = () => {
   const uploadImages = () => {
     return new Promise((resolve,reject)=>{
       if(images.length === 0){
-        alert('No hay imagenes')
+        Swal.fire({icon:'error',title:'Subir minimo una imagen'})
         reject(new Error('Imagenes Vacias'))
       }else{
-        alert('subiendo')
+        Swal.fire({icon:'info',title:'Archivo subiendo',showConfirmButton:false})
         let index = 0
         let Urls= []
         images.forEach((image)=>{
@@ -32,13 +32,10 @@ const FirebaseTestPage = () => {
             .then(()=>{
               getDownloadURL(storageRef)
                 .then((res)=>{
-                  console.log(res)
                   Urls.push(res)
-                  console.log(Urls)
                   index++
-                  console.log(index)
                   if(index === images.length){
-                    alert('Producto subido exitosamente')
+                    Swal.fire({icon:'success',title:'Subido',text:'Ir a catalogo para ver'})
                     resolve(Urls)
                   }     
                 })
@@ -50,8 +47,24 @@ const FirebaseTestPage = () => {
 
   const handleAdd = e =>{
     e.preventDefault()
+    if((product.nombre === '')||(product.nombre === undefined)){
+      Swal.fire({icon:'error',title:'Falta el nombre'})
+      return
+    }else if((product.descripcion === '')||(product.descripcion === undefined)){
+      Swal.fire({icon:'error',title:'Falta la Descripcion'})
+      return
+    }else if((product.stock === '')||(product.stock === undefined)){
+      Swal.fire({icon:'error',title:'Falta la stock'})
+      return
+    }else if(productCateg === null){
+      Swal.fire({icon:'error',title:'Elegir categoria'})
+      return
+    }else if(images.length === 0){
+      Swal.fire({icon:'error',title:'Minimo una imagen'})
+      return
+    }
     uploadImages().then((res)=>{
-      setDoc((newDocProducto),{info:product, imgsSrc:res, categoria:productCateg})
+      setDoc((newDocProducto),{id:newDocProducto.id, info:product, imgsSrc:res, categoria:productCateg})
     })
 
   }
@@ -61,9 +74,16 @@ const FirebaseTestPage = () => {
     setProduct({...product, [id]:value})
   }
 
-  function handleCategorySelect (categ){
+  function handleCategorySelect (categ,toggleIndex){
     setProductCateg(categ)
-    alert('Seleccionaste la categoria '+categ )
+    if(toggleIndex===1){
+      setToggleAutoctona(!toggleAutoctona)
+    }else if(toggleIndex===2){
+      setToggleColec(!toggleColec)
+    }else{
+      setToggleArte(!toggleArte)
+    }
+    Swal.fire('Elegiste la direccion',categ)
   }
 
   function readmultifiles(e,indexInicial){
@@ -111,13 +131,25 @@ const FirebaseTestPage = () => {
     <div className='flex flex-col text-center pt-20 mb-60'>
       <span className='text-4xl'>Crear Nuevo Producto</span>
       {/* Form */}
-      <form className='flex flex-col pl-5 pr-5 gap-y-2' onSubmit={handleAdd}>
+      <form className='flex flex-col px-44 gap-y-2' onSubmit={handleAdd}>
         {/* Nombre */}
         <label>Nombre</label><br/>
         <input className='border border-black' type="text" id="nombre" onChange={handleInput}/><br/>
+        {/* Precio */}
+        <label>Precio</label><br/>
+        <input className='border border-black' type="number" id="precio" onChange={handleInput}/><br/>
+        {/* stock */}
+        <label>Stock</label><br/>
+        <input className='border border-black' type="number" id="stock" onChange={handleInput}/><br/>
         {/* Descripcion */}
-        <label>Descripcion / Caracteristicas</label> <br/>
+        <label>Descripcion</label><br/>
         <textarea className='border border-black' type="text" id="descripcion" onChange={handleInput} rows="7"/><br/>
+        {/* Caracteristicas */}
+        <label>Caracteristicas [no es obligatorio] (cuanto mide , de que esta hecho, etc)</label><br/>
+        <textarea className='border border-black' type="text" id="caracteristicas" onChange={handleInput} rows="3"/><br/>
+        {/* Anotacion Especial */}
+        <label>Anotacion Especial [no es obligatorio] <br/> (Ejemplo "En exposición Museo de Arte Popular José Hernández")</label><br/>
+        <textarea className='border border-black' type="text" id="anotacionEsp" onChange={handleInput} rows="3"/><br/>
         {/* Categorias */}
         <label className='pt-10'>Categoria del producto (hacer click en nombre para abrir categorias)</label>
         <div className='flex flex-col gap-y-10 place-content-center border border-teal-300'>
@@ -128,11 +160,9 @@ const FirebaseTestPage = () => {
               <div className='grid border-l-2 border-black'>
                 <span className='col-start-1 row-start-2 border-b-2 border-black px-2'>COMPLEMENTOS</span>
                 <div className='col-start-2 row-start-1 border-l-2 border-y-2 border-black row-span-3 flex flex-col'>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/Chaguar")}>Chaguar</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/Carandillo")}>Carandillo</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/PalmaYTotora")}>Palma y Totora</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/PaloSanto")}>Palo Santo</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/Diseño")}>Diseño</span>
+                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/LineaMate",1)}>Linea Mate</span>
+                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/Accesorios",1)}>Accesorios</span>
+                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/Bags",1)}>Bags</span>
                 </div>
               </div>
               <span onClick={()=>handleCategorySelect("Autoctona/JoyeriaTemporanea")} className='pt-5 mr-auto hover:underline cursor-pointer border-b-2 border-l-2 border-black'>Joyeria Temporanea</span>
@@ -140,11 +170,11 @@ const FirebaseTestPage = () => {
               <div className=' pt-5 grid border-l-2 border-black'>
                 <span className='col-start-1 row-start-2 border-b-2 border-black px-2'>LIFESTYLE</span>
                 <div className='col-start-2 row-start-1 border-l-2 border-y-2 border-black row-span-3 flex flex-col'>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/Chaguar")}>Chaguar</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/Carandillo")}>Carandillo</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/PalmaYTotora")}>Palma y Totora</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/PaloSanto")}>Palo Santo</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/Diseño")}>Diseño</span>
+                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/Chaguar",1)}>Chaguar</span>
+                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/Carandillo",1)}>Carandillo</span>
+                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/PalmaYTotora",1)}>Palma y Totora</span>
+                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/PaloSanto",1)}>Palo Santo</span>
+                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/Diseño",1)}>Diseño</span>
                 </div>
               </div>
             </div>
@@ -156,9 +186,9 @@ const FirebaseTestPage = () => {
               <div className='grid border-l-2 border-black'>
                 <span className='col-start-1 row-start-2 border-b-2 border-black px-2'>ESCENCIA IMPERFECTA</span>
                 <div className='col-start-2 row-start-1 border-l-2 border-y-2 border-black row-span-3 flex flex-col'>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("ColeccionesCapsula/EscenciaImperfecta/Indumentaria")}>Indumentaria</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("ColeccionesCapsula/EscenciaImperfecta/JoyeriaContemporanea")}>Joyeria Contemporanea</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("ColeccionesCapsula/EscenciaImperfecta/Complementos")}>Complementos</span>
+                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("ColeccionesCapsula/EscenciaImperfecta/Indumentaria",2)}>Indumentaria</span>
+                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("ColeccionesCapsula/EscenciaImperfecta/JoyeriaContemporanea",2)}>Joyeria Contemporanea</span>
+                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("ColeccionesCapsula/EscenciaImperfecta/Complementos",2)}>Complementos</span>
                 </div>
               </div>
             </div>
@@ -176,13 +206,7 @@ const FirebaseTestPage = () => {
                 </div>
               </div>
           </div>
-          {productCateg && <span className='font-bold '>El producto tendra la direccion: {productCateg}</span>}
-        </div>
-        {/* Imagen Principal */}
-        <label>Imagen Principal (se usa como miniatura en el catalogo)</label>
-        <div className='border border-teal-500 p-20'>
-          <input type="file" onChange={(e)=>setImageFirst(e.target.files[0])}/>
-          {imageFirst && <img className='m-auto w-72 h-56 mt-10' src={URL.createObjectURL(imageFirst)}/>}
+          {productCateg && <span className='font-bold text-2xl border border-red-500'>El producto tendra la direccion: {productCateg}</span>}
         </div>
         {/* Imagenes */}
         <label>Imagenes (minimo 1 maximo 5)</label>

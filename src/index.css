@@ -20,6 +20,10 @@
   font-family:"MATHLETE";
   src:url("../src/fonts/Mathlete-Skinny.otf")
 }
+@font-face{
+  font-family:"COMFORTAA";
+  src:url("../src/fonts/static/Comfortaa-Regular.ttf")
+}
 
 .custom-ColorMain{
   color: rgb(223,213,178);

@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import HomePage from '../pages/Home';
 import CatalogPage from '../pages/Catalog';
 import ProductEj from '../pages/ProductEj';
+import CatalogAll from './CatalogAll'
 import CatalogCateg1 from './CatalogCateg1';
 import CatalogCateg2 from './CatalogCateg2';
 import Blogs from '../pages/Blogs';
@@ -25,8 +26,7 @@ function AnimatedRoutes() {
         
         {/* Catalogo */}
         <Route path='/Catalog/*' element={<CatalogPage/>}>
-          <Route path='Categ1' element={<CatalogCateg1/>}/>
-          <Route path='Categ2' element={<CatalogCateg2/>}/>
+          <Route path='All' element={<CatalogAll/>}/>
         </Route>
             {/* Seccion Autoctona */}
         <Route path='/Catalog/Autoctona/*' element={<CatalogAutoctona/>}>
@@ -55,7 +55,7 @@ function AnimatedRoutes() {
         {/* Blogs */}
         <Route path="/Blogs" element={<Blogs/>}/>
         {/* Producto */}
-        <Route path='/Product' element={<ProductEj/>}/>
+        <Route path='/Product/:id' element={<ProductEj/>}/>
         <Route path='*' element={<HomePage/>}/>
         {/* Firebase Test */}
         <Route path="/Firebase" element={<FirebaseTestPage/>}/>

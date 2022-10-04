@@ -12,36 +12,38 @@ const FirebaseTestPage = () => {
   const [product,setProduct] =useState({})
   const [test, settest] = useState([])
   const [imgsPaths, setImgsPaths]=useState({})
-  const [imgsUrls,setImgsUrls]=useState([])
   const productosCollectionRef = collection(db,"Productos")
   const newDocProducto = doc(collection(db,"Productos"))
 
   const uploadImages = () => {
     return new Promise((resolve,reject)=>{
       if(images.length === 0){
+        alert('No hay imagenes')
         reject(new Error('Imagenes Vacias'))
+      }else{
+        alert('subiendo')
+        let index = 0
+        let Urls= []
+        images.forEach((image)=>{
+          let pathName = `images/${image.name +v4()}`
+          let storageRef= ref(storage,pathName)
+          uploadBytes(storageRef,image.file)
+            .then(()=>{
+              getDownloadURL(storageRef)
+                .then((res)=>{
+                  console.log(res)
+                  Urls.push(res)
+                  console.log(Urls)
+                  index++
+                  console.log(index)
+                  if(index === images.length){
+                    alert('Producto subido exitosamente')
+                    resolve(Urls)
+                  }     
+                })
+            })
+        })
       }
-      let index = 0
-      let Urls= []
-      images.forEach((image)=>{
-        let pathName = `images/${image.name +v4()}`
-        let storageRef= ref(storage,pathName)
-        uploadBytes(storageRef,image.file)
-          .then(()=>{
-            getDownloadURL(storageRef)
-              .then((res)=>{
-                console.log(res)
-                Urls.push(res)
-                console.log(Urls)
-                index++
-                console.log(index)
-                if(index === images.length){
-                  console.log('done for good')
-                  resolve(Urls)
-                }     
-              })
-          })
-      })
     })
   }
 

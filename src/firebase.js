@@ -4,13 +4,13 @@ import { getStorage } from "firebase/storage";
 import { getAuth , } from "firebase/auth"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCQIK0qBhNGQlzBPvgRUIOwyXNKEtS9kOM",
-  authDomain: "alwatoba-store.firebaseapp.com",
-  projectId: "alwatoba-store",
-  storageBucket: "alwatoba-store.appspot.com",
-  messagingSenderId: "686641479835",
-  appId: "1:686641479835:web:ec55536d572effc5d1063e",
-  measurementId: "G-VKL1KQRVXM"
+  apiKey: process.env.FIREBASE_APP_API_KEY,
+  authDomain: process.env.FIREBASE_APP_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_APP_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_APP_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
+  measurementId: process.env.FIREBASE_APP_MEASUREMENT_ID
 };
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

@@ -131,7 +131,7 @@ const FirebaseTestPage = () => {
     <div className='flex flex-col text-center pt-20 mb-60'>
       <span className='text-4xl'>Crear Nuevo Producto</span>
       {/* Form */}
-      <form className='flex flex-col px-44 gap-y-2' onSubmit={handleAdd}>
+      <form className='flex flex-col md:px-44 sm:px-12 px-3 gap-y-2' onSubmit={handleAdd}>
         {/* Nombre */}
         <label>Nombre</label><br/>
         <input className='border border-black' type="text" id="nombre" onChange={handleInput}/><br/>

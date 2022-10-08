@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 
 export default function Catalog() {
-  const [menuButton, setMenuButton] = useState(true)
+  const [menuButton, setMenuButton] = useState(false)
   useEffect(() => {
     window.scrollTo(0, 0);
   },[])

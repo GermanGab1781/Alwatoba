@@ -10,6 +10,7 @@ const FirebaseTestPage = () => {
 
   const [images, setImages] = useState([])
   const [product,setProduct] = useState({})
+  const [productMainCateg, setProductMainCateg] = useState(null)
   const [productCateg, setProductCateg] =useState(null)
   const [toggleAutoctona, setToggleAutoctona]= useState(true)
   const [toggleColec, setToggleColec]= useState(true)
@@ -64,7 +65,7 @@ const FirebaseTestPage = () => {
       return
     }
     uploadImages().then((res)=>{
-      setDoc((newDocProducto),{id:newDocProducto.id, info:product, imgsSrc:res, categoria:productCateg})
+      setDoc((newDocProducto),{id:newDocProducto.id, info:product, imgsSrc:res, categoria:productMainCateg ,direccion:productCateg})
     })
 
   }
@@ -75,13 +76,18 @@ const FirebaseTestPage = () => {
   }
 
   function handleCategorySelect (categ,toggleIndex){
-    setProductCateg(categ)
     if(toggleIndex===1){
       setToggleAutoctona(!toggleAutoctona)
+      setProductCateg(categ)
+      setProductMainCateg('Autoctona')
     }else if(toggleIndex===2){
       setToggleColec(!toggleColec)
+      setProductCateg(categ)
+      setProductMainCateg('ColeccionesCapsula')
     }else{
       setToggleArte(!toggleArte)
+      setProductCateg(categ)
+      setProductMainCateg('ArteYDiseño')
     }
     Swal.fire('Elegiste la direccion',categ)
   }

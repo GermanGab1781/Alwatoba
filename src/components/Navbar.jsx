@@ -11,7 +11,7 @@ export default function Navbar(){
     animate={{opacity:1}} exit={{opacity:0}}>
       
       {/* img Brand */}
-      <NavLink onClick={()=>setNavButton(true)} className="sm:col-start-1 sm:col-end-2 sm:ml-2 ml-5 row-start-0 row-end-1 col-start-1 col-span-3 text-center transition-all delay-75" to="/Alwatoba"><span className="sm:h-full sm:w-full w-1/2 h-full font-bold text-6xl m-auto font-comfortaa" >Alwatoba</span></NavLink>
+      <NavLink onClick={()=>setNavButton(true)} className="sm:col-start-1 sm:col-end-2 sm:ml-2 ml-5 row-start-0 row-end-1 col-start-1 col-span-3 text-center transition-all delay-75" to="/Alwatoba"><span className="sm:h-full sm:w-full w-1/2 h-full font-bold sm:text-6xl text-3xl m-auto font-comfortaa" >Alwatoba</span></NavLink>
       {/* Nav Opener */}      
         <button onClick={()=>setNavButton(!navButton)} className="row-start-0 sm:col-start-9 col-start-8 hover:text-slate-600 sm:ml-10 ml-4  transition-all delay-75 px-10 "><FaBars className="sm:w-10 sm:h-12 h-10 w-8" /></button>      
       {/* Nav Items */}

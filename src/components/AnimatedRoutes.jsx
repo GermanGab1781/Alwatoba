@@ -13,6 +13,7 @@ import CatalogArteYDiseño from '../pages/CatalogArteYDiseño';
 import CatalogAutoctonaComplementos from '../pages/CatalogAutoctonaComplementos';
 import CatalogAutoctonaLifestyle from '../pages/CatalogAutoctonaLifestyle';
 import CatalogColecciones from '../pages/CatalogColecciones';
+import TestPage from '../pages/TestPage';
 import CatalogColeccionesEscencia from '../pages/CatalogColeccionesEscencia';
 import FirebaseTestPage from '../pages/FirebaseTestPage';
 
@@ -23,34 +24,50 @@ function AnimatedRoutes() {
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
         <Route path='/Alwatoba' element={<HomePage/>}/>
-        
+        {/* test */}
+        <Route path='/test' element={<TestPage/>}>
+          <Route path='All' element={<CatalogAll/>}/>
+        </Route>
         {/* Catalogo */}
         <Route path='/Catalog/*' element={<CatalogPage/>}>
           <Route path='All' element={<CatalogAll/>}/>
         </Route>
             {/* Seccion Autoctona */}
         <Route path='/Catalog/Autoctona/*' element={<CatalogAutoctona/>}>
-          <Route path='Categ1' element={<CatalogCateg1/>}/>
-          <Route path='Categ2' element={<CatalogCateg2/>}/>
+          <Route path='JoyeriaTemporanea' element={<CatalogAll/>}/>
+          <Route path='Indumentaria' element={<CatalogAll/>}/>
+          <Route path='All' element={<CatalogAll/>}/>
         </Route>
         <Route path='/Catalog/Autoctona/Lifestyle/*' element={<CatalogAutoctonaLifestyle/>}>
-          <Route path='Categ1' element={<CatalogCateg1/>}/>
-          <Route path='Categ2' element={<CatalogCateg2/>}/>
+          <Route path='Chaguar' element={<CatalogAll/>}/>
+          <Route path='Carandillo' element={<CatalogAll/>}/>
+          <Route path='PalmaYTotora' element={<CatalogAll/>}/>
+          <Route path='PaloSanto' element={<CatalogAll/>}/>
+          <Route path='Disenio' element={<CatalogAll/>}/>
+          <Route path='All' element={<CatalogAll/>}/>
         </Route>
         <Route path='/Catalog/Autoctona/Complementos/*' element={<CatalogAutoctonaComplementos/>}>
-          <Route path='Categ1' element={<CatalogCateg1/>}/>
-          <Route path='Categ2' element={<CatalogCateg2/>}/>
+          <Route path='LineaMate' element={<CatalogAll/>}/>
+          <Route path='Accesorios' element={<CatalogAll/>}/>
+          <Route path='Bags' element={<CatalogAll/>}/>
+          <Route path='All' element={<CatalogAll/>}/>
         </Route>
            {/* Seccion Colecciones */}
-        <Route path='/Catalog/Colecciones' element={<CatalogColecciones/>}/>
+        <Route path='/Catalog/Colecciones/*' element={<CatalogColecciones/>}>
+          <Route path='All' element={<CatalogAll/>}/>
+        </Route>
         <Route path='/Catalog/Colecciones/Escencia/*' element={<CatalogColeccionesEscencia/>}>
-          <Route path='Categ1' element={<CatalogCateg1/>}/>
-          <Route path='Categ2' element={<CatalogCateg2/>}/>
-          </Route>
+          <Route path='Indumentaria' element={<CatalogAll/>}/>
+          <Route path='JoyeriaContemporanea' element={<CatalogAll/>}/>
+          <Route path='Complementos' element={<CatalogAll/>}/>
+          <Route path='All' element={<CatalogAll/>}/>
+        </Route>
             {/* Seccion Arte y Diseño */}
         <Route path='/Catalog/ArteyDisenio/*'element={<CatalogArteYDiseño/>}>
-          <Route path='Categ1' element={<CatalogCateg1/>}/>
-          <Route path='Categ2' element={<CatalogCateg2/>}/>
+          <Route path='Indumentaria' element={<CatalogAll/>}/>
+          <Route path='JoyeriaContemporanea' element={<CatalogAll/>}/>
+          <Route path='Complementos' element={<CatalogAll/>}/>
+          <Route path='All' element={<CatalogAll/>}/>
         </Route>
         {/* Blogs */}
         <Route path="/Blogs" element={<Blogs/>}/>

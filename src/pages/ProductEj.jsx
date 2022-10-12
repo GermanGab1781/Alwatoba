@@ -51,7 +51,7 @@ export default function ProductEj() {
   function setImagesForCarousel(list){
     let result= []
     list.forEach((img)=>{
-      result.push({original: img,alt: "cargando Imagen"})
+      result.push({original: img.Url,alt: "cargando Imagen"})
     })
     return result
   }

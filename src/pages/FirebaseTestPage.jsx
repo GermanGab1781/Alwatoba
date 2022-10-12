@@ -33,7 +33,7 @@ const FirebaseTestPage = () => {
             .then(()=>{
               getDownloadURL(storageRef)
                 .then((res)=>{
-                  Urls.push(res)
+                  Urls.push({Url: res, path: pathName})
                   index++
                   if(index === images.length){
                     Swal.fire({icon:'success',title:'Subido',text:'Ir a catalogo para ver'})

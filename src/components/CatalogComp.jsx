@@ -14,10 +14,10 @@ export default function CatalogComp({titulo,categorias,goBack,close,buttonState,
           <div className="row-start-2 md:col-start-3 col-start-1 md:col-span-7 col-span-8 text-start md:ml-0 ml-5 font-notethis custom-Color4 md:text-xl ">
             {tree.map((branch,index)=>{
               return(
-                <>
+                <span key={index}>
                   <NavLink key={index} className="hover:text-amber-900" to={branch.pathTo}>{branch.nombre}</NavLink>
                   <span> / </span>
-                </>
+                </span>
               )
             })}
           </div>

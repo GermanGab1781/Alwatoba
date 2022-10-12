@@ -1,22 +1,24 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import { useEffect } from 'react'
-import { collection, getDocs } from "firebase/firestore";
-import { db } from '../firebase';
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from '../../firebase';
 import { useState } from 'react'
-import ProductMini from './ProductMini'
+import ProductMini from '../ProductMini'
 
 
 
-export default function CatalogAll() {
+export default function ComplementosAll() {
   const [docs, setDocs] = useState([])
 
   useEffect(()=>{
    
     const getAllDocs = async () =>{
-      const q = collection(db,"Productos")
+      const q = query(collection(db,"Productos"), 
+                      where("direccion","in",["Autoctona/Lifestyle/Chaguar","Autoctona/Lifestyle/Carandillo","Autoctona/Lifestyle/PalmaYTotora","Autoctona/Lifestyle/PaloSanto","Autoctona/Lifestyle/Diseño"]))
       const data = await getDocs(q)
       setDocs(data.docs.map((doc)=>({...doc.data()})))
+      console.log(docs)
     }
     getAllDocs()
   },[])

@@ -1,20 +1,19 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import { useEffect } from 'react'
-import { collection, getDocs } from "firebase/firestore";
-import { db } from '../firebase';
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from '../../firebase';
 import { useState } from 'react'
-import ProductMini from './ProductMini'
+import ProductMini from '../ProductMini'
 
 
-
-export default function CatalogAll() {
+export default function AutoctonaIndumentaria() {
   const [docs, setDocs] = useState([])
 
   useEffect(()=>{
    
     const getAllDocs = async () =>{
-      const q = collection(db,"Productos")
+      const q = query(collection(db,"Productos"), where("direccion","==","Autoctona/Indumentaria"))
       const data = await getDocs(q)
       setDocs(data.docs.map((doc)=>({...doc.data()})))
     }

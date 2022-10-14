@@ -8,7 +8,6 @@ export default function ProductMini({nombre,id,imgPath}) {
       <img src={imgPath} className="sm:h-48 sm:w-48 h-32 w-32" alt="Cargando Imagen"/>
       <h1>{nombre}</h1>   
     </NavLink> 
- 
   )
 }
  

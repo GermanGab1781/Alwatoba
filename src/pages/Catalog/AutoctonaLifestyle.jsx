@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import CatalogComp from '../components/CatalogComp';
+import CatalogComp from '../../components/CatalogComp';
 
-export default function CatalogAutoctonaLifestyle() {
+export default function AutoctonaLifestyle() {
   const categorias = [
     {nombre: 'Chaguar',pathTo: 'Chaguar'},
     {nombre: 'Carandillo',pathTo: 'Carandillo'},

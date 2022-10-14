@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import CatalogComp from '../components/CatalogComp';
+import CatalogComp from '../../components/CatalogComp';
 
-export default function CatalogColecciones() {
+export default function Colecciones() {
   const categorias = [
     {nombre: 'Escencia Imperfecta',pathTo: 'Escencia/all'},
   ]

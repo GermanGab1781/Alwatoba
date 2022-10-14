@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import CatalogComp from '../components/CatalogComp';
+import CatalogComp from '../../components/CatalogComp';
 
 export default function Catalog() {
   const categorias = [

@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import CatalogComp from '../components/CatalogComp';
+import CatalogComp from '../../components/CatalogComp';
 
-export default function CatalogArteYDiseño() {
+export default function ColeccionesEscencia() {
   const categorias = [
-    {nombre: 'Complementos',pathTo: 'Complementos'},
     {nombre: 'Indumentaria',pathTo: 'Indumentaria'},
-    {nombre: 'Joyeria Contemporanea',pathTo: 'JoyeriaContemporanea'}
+    {nombre: 'Joyeria Contemporanea',pathTo: 'JoyeriaContemporanea'},
+    {nombre: 'Complementos',pathTo: 'Complementos'}
   ]
   const tree =[
-    {nombre: 'Inicio', pathTo: '/Catalog/all'}
+    {nombre: 'Inicio',pathTo: '/Catalog/all'},
+    {nombre: 'Colecciones', pathTo: '/Catalog/Colecciones/all'}
   ]
-  const goBack ={nombre: 'Volver',pathTo: '/Catalog/All'}
-  const titulo = 'Arte Y Diseño'
+  const goBack ={nombre: 'Volver',pathTo: '/Catalog/Colecciones/all'}
+  const titulo = 'Escencia'
   const [menuButton, setMenuButton] = useState(false)
   useEffect(() => {
     window.scrollTo(0, 0);

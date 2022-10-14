@@ -1,4 +1,4 @@
-import {motion, SwitchLayoutGroupContext} from 'framer-motion'
+import {motion} from 'framer-motion'
 import { useEffect } from 'react';
 import ReactImageGallery from 'react-image-gallery';
 import { useParams } from 'react-router-dom';
@@ -7,15 +7,14 @@ import {doc ,getDoc} from 'firebase/firestore'
 import { useState } from 'react'
 import Swal from 'sweetalert2'
 
-export default function ProductEj() {
-  const params = useParams()
+export default function Product() {
   const [product, setProduct] = useState(null)
   const [imagesCarousel, setImagesCarousel] = useState({})
-  const keyword = params.id
+  const params = useParams()
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(keyword)
+    const keyword = params.id
     const getProductDoc = async ()=>{
       const id = doc(db,"Productos",keyword)
       const data = await getDoc(id)
@@ -23,7 +22,7 @@ export default function ProductEj() {
       setProduct(data.data())
     }
     getProductDoc()
-  },[])
+  },[params])
 
   function paymentMethods (){
     Swal.fire({

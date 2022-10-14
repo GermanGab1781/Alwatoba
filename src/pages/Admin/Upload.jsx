@@ -1,12 +1,12 @@
 import {ref, uploadBytes, getDownloadURL} from 'firebase/storage'
 import { doc, setDoc, collection } from 'firebase/firestore';
-import { storage,db } from '../firebase';
+import { storage,db } from "../../firebase";
 import { useState } from 'react';
 import { v4 } from 'uuid';
 import Swal from 'sweetalert2'
 
 
-const FirebaseTestPage = () => {
+const Upload = () => {
 
   const [images, setImages] = useState([])
   const [product,setProduct] = useState({})
@@ -137,7 +137,7 @@ const FirebaseTestPage = () => {
     <div className='flex flex-col text-center pt-20 mb-60'>
       <span className='text-4xl'>Crear Nuevo Producto</span>
       {/* Form */}
-      <form className='flex flex-col md:px-44 sm:px-12 px-3 gap-y-2' onSubmit={handleAdd}>
+      <form className='flex flex-col md:px-44 sm:px-12 px-3 gap-y-2 text-center' onSubmit={handleAdd}>
         {/* Nombre */}
         <label>Nombre</label><br/>
         <input className='border border-black' type="text" id="nombre" onChange={handleInput}/><br/>
@@ -230,16 +230,10 @@ const FirebaseTestPage = () => {
           })}
           </div>
         </div>
-        
-
         <button className='border border-black scale-90 hover:scale-100 hover:bg-black hover:text-slate-200 transition-all p-5' type='submit'>SUBIR</button>
       </form>
-      
-        
-      
-      
     </div>
   );
 }
 
-export default FirebaseTestPage;
+export default Upload;

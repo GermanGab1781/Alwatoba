@@ -22,8 +22,7 @@ export default function Navbar(){
         <NavLink className="text-center cursor-pointer md:text-5xl text-3xl custom-Color4 hover:scale-110 hover:font-bold transition-all delay-75 mb-5" to="/Alwatoba" onClick={()=>setNavButton(!navButton)}>Inicio</NavLink>
         <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Catalog/All" onClick={()=>setNavButton(!navButton)}>Catalogo</NavLink>
         <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Blogs" onClick={()=>setNavButton(!navButton)}>Nosotras</NavLink>
-        <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Product" onClick={()=>setNavButton(!navButton)}>Producto Ejemplo</NavLink>
-        <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Firebase" onClick={()=>setNavButton(!navButton)}>ADMIN</NavLink>
+        <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Admin" onClick={()=>setNavButton(!navButton)}>ADMIN</NavLink>
         <span className="text-center cursor-pointer md:text-5xl text-4xl custom-Color4 hover:scale-125 hover:font-bold transition-all delay-75 mt-10" onClick={()=>setNavButton(!navButton)}>Volver</span>
       </div>
     </motion.div>

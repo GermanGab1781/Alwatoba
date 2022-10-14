@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import CatalogComp from '../components/CatalogComp';
+import CatalogComp from '../../components/CatalogComp';
 
-export default function CatalogAutoctonaComplementos() {
+export default function AutoctonaComplementos() {
   const categorias = [
     {nombre: 'Linea Mate',pathTo: 'LineaMate'},
     {nombre: 'Accesorios',pathTo: 'Accesorios'},

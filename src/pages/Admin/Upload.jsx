@@ -1,9 +1,10 @@
 import {ref, uploadBytes, getDownloadURL} from 'firebase/storage'
 import { doc, setDoc, collection } from 'firebase/firestore';
 import { storage,db } from "../../firebase";
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { v4 } from 'uuid';
 import Swal from 'sweetalert2'
+import { NavLink } from 'react-router-dom';
 
 
 const Upload = () => {
@@ -15,6 +16,10 @@ const Upload = () => {
   const [toggleColec, setToggleColec]= useState(true)
   const [toggleArte, setToggleArte]= useState(true)
   const newDocProducto = doc(collection(db,"Productos"))
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[])
 
   const uploadImages = () => {
     return new Promise((resolve,reject)=>{
@@ -134,29 +139,32 @@ const Upload = () => {
 
   return (
     <div className='flex flex-col text-center pt-20 mb-60'>
-      <span className='text-4xl'>Crear Nuevo Producto</span>
+      <span className='text-5xl font-notethis mb-5'>Crear Nuevo Producto</span>
       {/* Form */}
-      <form className='flex flex-col md:px-44 sm:px-12 px-3 gap-y-2 text-center' onSubmit={handleAdd}>
+      <form className='flex flex-col md:px-44 sm:px-12 px-3 gap-y-5 text-center' onSubmit={handleAdd}>
         {/* Nombre */}
-        <label>Nombre</label><br/>
-        <input className='border border-black' type="text" id="nombre" onChange={handleInput}/><br/>
+        <label className='text-2xl font-comfortaa font-bold'>Nombre</label><br/>
+        <input className='border border-black w-1/2 m-auto' type="text" id="nombre" onChange={handleInput}/><br/>
         {/* Precio */}
-        <label>Precio</label><br/>
-        <input className='border border-black' type="number" id="precio" onChange={handleInput}/><br/>
+        <label className='text-2xl font-comfortaa font-bold'>Precio</label><br/>
+        <input className='border border-black w-1/4 m-auto' type="number" id="precio" onChange={handleInput}/><br/>
         {/* stock */}
-        <label>Stock</label><br/>
-        <input className='border border-black' type="number" id="stock" onChange={handleInput}/><br/>
+        <label className='text-2xl font-comfortaa font-bold'>Stock</label><br/>
+        <input className='border border-black w-1/4 m-auto' type="number" id="stock" onChange={handleInput}/><br/>
         {/* Descripcion */}
-        <label>Descripcion</label><br/>
-        <textarea className='border border-black' type="text" id="descripcion" onChange={handleInput} rows="7"/><br/>
+        <label className='text-2xl font-comfortaa font-bold'>Descripcion</label><br/>
+        <textarea className='border border-black w-2/3 m-auto' type="text" id="descripcion" onChange={handleInput} rows="7"/><br/>
         {/* Caracteristicas */}
-        <label>Caracteristicas [no es obligatorio] (cuanto mide , de que esta hecho, etc)</label><br/>
-        <textarea className='border border-black' type="text" id="caracteristicas" onChange={handleInput} rows="3"/><br/>
+        <label className='text-2xl font-comfortaa font-bold'>Caracteristicas [no es obligatorio]</label>
+        <label className='text-md'>(cuanto mide , de que esta hecho, etc)</label>
+        <textarea className='border border-black w-2/3 m-auto' type="text" id="caracteristicas" onChange={handleInput} rows="3"/><br/>
         {/* Anotacion Especial */}
-        <label>Anotacion Especial [no es obligatorio] <br/> (Ejemplo "En exposición Museo de Arte Popular José Hernández")</label><br/>
-        <textarea className='border border-black' type="text" id="anotacionEsp" onChange={handleInput} rows="3"/><br/>
+        <label className='text-2xl font-comfortaa font-bold'>Anotacion Especial [no es obligatorio]</label>
+        <label className='text-md'>(Ejemplo "En exposición Museo de Arte Popular José Hernández")</label>
+        <textarea className='border border-black w-2/3  m-auto' type="text" id="anotacionEsp" onChange={handleInput} rows="3"/><br/>
         {/* Categorias */}
-        <label className='pt-10'>Categoria del producto (hacer click en nombre para abrir categorias)</label>
+        <label className='text-2xl font-comfortaa font-bold pt-10'>Categoria del producto</label>
+        <label className='text-md'>(hacer click en nombre para abrir arbol de categorias)</label>
         <div className='flex flex-col gap-y-10 place-content-center border border-teal-300'>
           {/* Autoctona */}
           <div className='grid grid-cols-5 place-content-start mx-8'>
@@ -214,7 +222,7 @@ const Upload = () => {
           {productCateg && <span className='font-bold text-2xl border border-red-500'>El producto tendra la direccion: {productCateg}</span>}
         </div>
         {/* Imagenes */}
-        <label>Imagenes (minimo 1 maximo 5)</label>
+        <label className='text-2xl font-comfortaa font-bold'>Imagenes (minimo 1 maximo 5)</label>
         <div className='border border-teal-500 p-20'>
           <input type="file" onChange={changeInput}/>
           <div className='flex flex-row flex-wrap gap-x-5 gap-y-7 p-5'>
@@ -229,7 +237,10 @@ const Upload = () => {
           })}
           </div>
         </div>
-        <button className='border border-black scale-90 hover:scale-100 hover:bg-black hover:text-slate-200 transition-all p-5' type='submit'>SUBIR</button>
+        <button className='border border-black scale-90 hover:scale-100 hover:bg-black hover:text-slate-200 transition-all p-5 text-2xl font-comfortaa' type='submit'>SUBIR</button>
+        <NavLink className='border border-stone-500 w-1/2 m-auto text-xl hover:bg-black hover:text-slate-200 font-comfortaa' to='/Admin'>Volver</NavLink>
+        <NavLink className='border border-stone-500 w-1/2 m-auto text-xl hover:bg-black hover:text-slate-200 font-comfortaa' to='/Catalog/all'>Ir a Catalogo</NavLink>
+
       </form>
     </div>
   );

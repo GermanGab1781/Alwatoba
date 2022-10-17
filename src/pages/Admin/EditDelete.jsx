@@ -19,6 +19,9 @@ export default function AdminEditDelete() {
     {value:"Arte", label:"Arte y Diseño"}
   ]
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[])
   useEffect(()=>{
     const getAllDocs = async () =>{
       if(category === "Todos"){
@@ -26,15 +29,15 @@ export default function AdminEditDelete() {
         const data = await getDocs(q)
         setDocs(data.docs.map((doc)=>({...doc.data()})))
       }else if (category === "Autoctona"){
-        const q = query(collection(db,"Productos"), where("categoria","==","Autoctona"))
+        const q = query(collection(db,"Productos"), where("info.categoria","==","Autoctona"))
         const data = await getDocs(q)
         setDocs(data.docs.map((doc)=>({...doc.data()})))
       }else if (category === "Arte"){
-        const q = query(collection(db,"Productos"), where("categoria","==","ArteYDiseño"))
+        const q = query(collection(db,"Productos"), where("info.categoria","==","ArteYDiseño"))
         const data = await getDocs(q)
         setDocs(data.docs.map((doc)=>({...doc.data()})))
       }else if (category === "Colecciones"){
-        const q = query(collection(db,"Productos"), where("categoria","==","ColeccionesCapsula"))
+        const q = query(collection(db,"Productos"), where("info.categoria","==","ColeccionesCapsula"))
         const data = await getDocs(q)
         setDocs(data.docs.map((doc)=>({...doc.data()})))
       }
@@ -51,7 +54,11 @@ export default function AdminEditDelete() {
   function deleteDocument (idDoc,imgs){
     imgs.forEach((img)=>{
       const imgRef = ref(storage, img.path)
-      deleteObject(imgRef)
+      deleteObject(imgRef).then(()=>{
+        let newArray = docs.filter(doc => doc.id !== idDoc)
+        setDocs(newArray)
+      })
+      
     })
     deleteDoc(doc(db,'Productos', idDoc)).then(()=>{
       Swal.fire({icon:'success',title:'Producto borrado exitosamente'})
@@ -83,7 +90,7 @@ export default function AdminEditDelete() {
       }
       {!docs &&
       <div className="m-auto py-56 text-center text-6xl">Cargando Productos</div>}
-      {(docs && docs.length === 0) && <div className="m-auto py-56 text-center text-6xl">No hay Productos subidos :P<br/> <br/>
+      {(docs && docs.length === 0) && <div className="m-auto text-center text-6xl">No hay Productos subidos :P<br/> <br/>
       <NavLink className='border border-black rounded-lg' to='/Admin/Upload'>SUBIR PRODUCTO</NavLink>
         
       </div>}

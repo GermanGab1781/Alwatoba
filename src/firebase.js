@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
-import { getAuth , } from "firebase/auth"
+import { getAuth, onAuthStateChanged } from "firebase/auth"
+import { createContext, useState, useEffect,useContext } from "react";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_DATABASE_API_KEY,
@@ -17,3 +18,21 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app)
 export const storage = getStorage(app)
 export const auth = getAuth(app)
+
+export const AuthContext = createContext()
+
+export const AuthContextProvider = props => {
+  const [user,setUser] = useState()
+  const [error,setError] = useState()
+  useEffect(()=>{
+    const unsubscribe = onAuthStateChanged(getAuth(),setUser,setError)
+    return ()=> unsubscribe
+  },[])
+
+  return <AuthContext.Provider value={{ user,error }} {...props} />
+}
+
+export const useAuthState = () =>{
+  const auth = useContext(AuthContext)
+  return {...auth, isAuthenticated: auth.user != null }
+}

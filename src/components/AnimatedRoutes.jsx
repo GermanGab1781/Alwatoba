@@ -13,6 +13,9 @@ import Admin from '../pages/Admin/Admin';
 import AdminUploadProduct from '../pages/Admin/Upload';
 import EditDelete from '../pages/Admin/EditDelete';
 import AdminUploadChanges from '../pages/Admin/UploadChanges';
+import Login from '../pages/Admin/Login';
+import PrivateRoute from './PrivateRoute';
+import AlreadyLogin from './AlreadyLogin';
 
 //Imports Catalogo
 import CatalogPage from '../pages/Catalog/Catalog';
@@ -51,6 +54,7 @@ import ArteAll from './ArteYDiseñoOutlets/ArteAll';
 import ArteComplementos from './ArteYDiseñoOutlets/ArteComplementos';
 import ArteJoyeria from './ArteYDiseñoOutlets/ArteJoyeria';
 import ArteIndumentaria from './ArteYDiseñoOutlets/ArteIndumentaria';
+
 
 function AnimatedRoutes() {
   const location= useLocation();
@@ -124,10 +128,11 @@ function AnimatedRoutes() {
         </>
         {/* Admin */}
         <>
-        <Route path='/Admin' element={<Admin/>}/>
-        <Route path='/Admin/Upload' element={<AdminUploadProduct/>}/>
-        <Route path='/Admin/EditOrDelete' element={<EditDelete/>}/>
-        <Route path='/Admin/EditOrDelete/:id' element={<AdminUploadChanges/>}/>
+        <Route path='/Login' element={<AlreadyLogin><Login/></AlreadyLogin>}/>
+        <Route path='/Admin' element={<PrivateRoute><Admin/></PrivateRoute>}/>
+        <Route path='/Admin/Upload' element={<PrivateRoute><AdminUploadProduct/></PrivateRoute>}/>
+        <Route path='/Admin/EditOrDelete' element={<PrivateRoute><EditDelete/></PrivateRoute>}/>
+        <Route path='/Admin/EditOrDelete/:id' element={<PrivateRoute><AdminUploadChanges/></PrivateRoute>}/>
         </>
       </Routes>
     </AnimatePresence>

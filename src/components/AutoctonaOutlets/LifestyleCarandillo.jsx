@@ -9,12 +9,12 @@ import ProductMini from '../ProductMini'
 
 
 export default function LifestyleCarandillo() {
-  const [docs, setDocs] = useState([])
+  const [docs, setDocs] = useState(undefined)
 
   useEffect(()=>{
    
     const getAllDocs = async () =>{
-      const q = query(collection(db,"Productos"), where("direccion","==","Autoctona/Lifestyle/Carandillo"))
+      const q = query(collection(db,"Productos"), where("info.direccion","==","Autoctona/Lifestyle/Carandillo"))
       const data = await getDocs(q)
       setDocs(data.docs.map((doc)=>({...doc.data()})))
     }
@@ -22,10 +22,10 @@ export default function LifestyleCarandillo() {
   },[])
   return (
     <>
-    {docs.length === 0 &&
+    {docs === undefined &&
       <div className='font-comfortaa pt-10 m-auto text-4xl'>CARGANDO</div>
     }
-    {docs.length >= 1 && 
+    {docs && 
     <motion.div className="flex flex-wrap gap-y-10 gap-x-5 mt-5 max-h-full max-w-full sm:place-content-start place-content-center sm:text-xl custom-Color4 font-semibold px-10 py-5 " initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>   
       {docs.map((doc,index)=>{
         return(
@@ -33,6 +33,7 @@ export default function LifestyleCarandillo() {
         )
       })}
     </motion.div>}
+    {(docs && docs.length === 0) && <div className='font-comfortaa pt-10 m-auto text-4xl'>No hay productos subidos a esta categoria</div>}
     </>
    
   )

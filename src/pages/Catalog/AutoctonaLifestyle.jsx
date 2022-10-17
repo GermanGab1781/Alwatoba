@@ -15,7 +15,7 @@ export default function AutoctonaLifestyle() {
     {nombre: 'Autoctona', pathTo:'/Catalog/Autoctona/all'}
   ] 
   const goBack ={nombre: 'Volver',pathTo: '/Catalog/Autoctona/all'}
-  const titulo = 'Complementos'
+  const titulo = 'Lifestyle'
   const [menuButton, setMenuButton] = useState(false)
   useEffect(() => {
     window.scrollTo(0, 0);

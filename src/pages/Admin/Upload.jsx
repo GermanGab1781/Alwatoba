@@ -10,7 +10,6 @@ const Upload = () => {
 
   const [images, setImages] = useState([])
   const [product,setProduct] = useState({})
-  const [productMainCateg, setProductMainCateg] = useState(null)
   const [productCateg, setProductCateg] =useState(null)
   const [toggleAutoctona, setToggleAutoctona]= useState(true)
   const [toggleColec, setToggleColec]= useState(true)
@@ -65,7 +64,7 @@ const Upload = () => {
       return
     }
     uploadImages().then((res)=>{
-      setDoc((newDocProducto),{id:newDocProducto.id, info:product, imgsSrc:res, categoria:productMainCateg ,direccion:productCateg})
+      setDoc((newDocProducto),{id:newDocProducto.id, info:product, imgsSrc:res})
     })
 
   }
@@ -79,15 +78,15 @@ const Upload = () => {
     if(toggleIndex===1){
       setToggleAutoctona(!toggleAutoctona)
       setProductCateg(categ)
-      setProductMainCateg('Autoctona')
+      setProduct({...product, categoria:'Autoctona', direccion:categ})
     }else if(toggleIndex===2){
       setToggleColec(!toggleColec)
       setProductCateg(categ)
-      setProductMainCateg('ColeccionesCapsula')
+      setProduct({...product, categoria:'ColeccionesCapsula', direccion:categ})
     }else{
       setToggleArte(!toggleArte)
       setProductCateg(categ)
-      setProductMainCateg('ArteYDiseño')
+      setProduct({...product, categoria:'ArteYDiseño', direccion:categ})
     }
     Swal.fire('Elegiste la direccion',categ)
   }

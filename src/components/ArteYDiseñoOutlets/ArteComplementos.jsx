@@ -8,12 +8,12 @@ import ProductMini from '../ProductMini'
 
 
 export default function ArteComplementos() {
-  const [docs, setDocs] = useState([])
+  const [docs, setDocs] = useState(undefined)
 
   useEffect(()=>{
    
     const getAllDocs = async () =>{
-      const q = query(collection(db,"Productos"), where("direccion","==","ArteYDiseño/Complementos"))
+      const q = query(collection(db,"Productos"), where("info.direccion","==","ArteYDiseño/Complementos"))
       const data = await getDocs(q)
       setDocs(data.docs.map((doc)=>({...doc.data()})))
     }
@@ -21,10 +21,10 @@ export default function ArteComplementos() {
   },[])
   return (
     <>
-    {docs.length === 0 &&
+    {docs === undefined &&
       <div className='font-comfortaa pt-10 m-auto text-4xl'>CARGANDO</div>
     }
-    {docs.length >= 1 && 
+    {docs && 
     <motion.div className="flex flex-wrap gap-y-10 gap-x-5 mt-5 max-h-full max-w-full sm:place-content-start place-content-center sm:text-xl custom-Color4 font-semibold px-10 py-5 " initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>   
       {docs.map((doc,index)=>{
         return(
@@ -32,6 +32,7 @@ export default function ArteComplementos() {
         )
       })}
     </motion.div>}
+    {(docs && docs.length === 0) && <div className='font-comfortaa pt-10 m-auto text-4xl'>No hay productos subidos a esta categoria</div>}
     </>
    
   )

@@ -6,25 +6,32 @@ export default function Navbar(){
   const [navButton, setNavButton] = useState(true);
   return (
     <motion.div className={navButton 
-      ?"bg-slate-50 grid grid-rows-1 grid-cols-9 content-center fixed z-50 w-screen h-10 sm:p-8 sm:pt-8 p-10 transition-all ease-in-out duration-1000 delay-75" 
-      :"custom-BgColorMain custom-Color4 grid grid-rows-1 grid-cols-9 content-center fixed z-50 w-screen h-screen sm:p-8 sm:pt-8 p-10 transition-all ease-in-out duration-1000"}
+      ?"flex flex-col bg-slate-50 fixed z-50 w-screen md:h-10 h-10 md:py-10 py-6 place-content-center transition-all ease-in-out duration-1000 delay-75" 
+      :"flex flex-col custom-BgColorMain custom-Color4 fixed z-50 w-screen h-screen md:py-2 place-content-center  transition-all ease-in-out duration-1000"}
     animate={{opacity:1}} exit={{opacity:0}}>
-      
-      {/* img Brand */}
-      <NavLink onClick={()=>setNavButton(true)} className="sm:col-start-1 sm:col-end-2 sm:ml-2 ml-5 row-start-0 row-end-1 col-start-1 col-span-3 text-center transition-all delay-75" to="/Alwatoba"><span className="sm:h-full sm:w-full w-1/2 h-full font-bold sm:text-6xl text-3xl m-auto font-comfortaa" >Alwatoba</span></NavLink>
-      {/* Nav Opener */}      
-        <button onClick={()=>setNavButton(!navButton)} className="row-start-0 sm:col-start-9 col-start-8 hover:text-slate-600 sm:ml-10 ml-4  transition-all delay-75 px-10 "><FaBars className="sm:w-10 sm:h-12 h-10 w-8" /></button>      
+      <div className='flex flex-row place-content-between md:px-10 px-5 absolute top-2 w-screen'>        
+        {/* img Brand */}
+        <NavLink onClick={()=>setNavButton(true)} className=" text-center transition-all delay-75" to="/Alwatoba"><span className="sm:h-full sm:w-full w-1/2 h-full font-bold sm:text-6xl text-3xl m-auto font-comfortaa" >Alwatoba</span></NavLink>
+        {/* Nav Opener */}      
+        <button onClick={()=>setNavButton(!navButton)} className=" hover:text-slate-600 transition-all delay-75 "><FaBars className="sm:w-10 sm:h-12 h-10 w-8"/></button>      
+      </div>
       {/* Nav Items */}
       <div className={navButton 
-        ?"invisible flex flex-col col-start-2 col-end-9 lg:gap-y-5 sm:gap-y-4 sm:mt-6 mt-5 gap-y-5 sm:whitespace-nowrap text-center  opacity-0 lg:text-4xl text-2xl sm:font-semibold font-bold transition-all ease-in-out duration-500 font-notethis"
-        :"visible flex flex-col col-start-2 col-end-9 lg:gap-y-5 sm:gap-y-4 sm:mt-6 mt-5 gap-y-5 sm:whitespace-nowrap text-center opacity-100 lg:text-4xl text-2xl sm:font-semibold font-bold transition-all ease-in-out duration-500 delay-500 font-notethis"
+        ?"invisible flex flex-col mt-5 h-screen place-content-evenly sm:whitespace-nowrap text-center opacity-0 lg:text-4xl text-3xl sm:font-semibold font-bold transition-all ease-in-out duration-500 font-notethis"
+        :"visible flex flex-col mt-5 h-screen place-content-evenly sm:whitespace-nowrap text-center opacity-100 lg:text-4xl text-3xl sm:font-semibold font-bold transition-all ease-in-out duration-500 delay-500 font-notethis"
       }>
-        <NavLink className="text-center cursor-pointer md:text-5xl text-3xl custom-Color4 hover:scale-110 hover:font-bold transition-all delay-75 mb-5" to="/Alwatoba" onClick={()=>setNavButton(!navButton)}>Inicio</NavLink>
-        <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Catalog/All" onClick={()=>setNavButton(!navButton)}>Catalogo</NavLink>
+        <>
+        <NavLink className="text-center cursor-pointer md:text-5xl text-4xl custom-Color4 hover:font-bold transition-all delay-75 font-comfortaa" to="/Alwatoba" onClick={()=>setNavButton(!navButton)}>Inicio</NavLink>
         <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Blogs" onClick={()=>setNavButton(!navButton)}>Nosotras</NavLink>
-        <NavLink className="hover:text-slate-50 transition-all delay-75" to="/login" onClick={()=>setNavButton(!navButton)}>ADMIN</NavLink>
-        <span className="text-center cursor-pointer md:text-5xl text-4xl custom-Color4 hover:scale-125 hover:font-bold transition-all delay-75 mt-10" onClick={()=>setNavButton(!navButton)}>Volver</span>
+        <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Catalog/All" onClick={()=>setNavButton(!navButton)}>Catalogo</NavLink>
+        <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Catalog/Autoctona/all" onClick={()=>setNavButton(!navButton)}>Indumentaria Autoctona</NavLink>
+        <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Catalog/Colecciones/all" onClick={()=>setNavButton(!navButton)}>Colecciones</NavLink>
+        <NavLink className="hover:text-slate-50 transition-all delay-75" to="/Catalog/ArteYDisenio/all" onClick={()=>setNavButton(!navButton)}>Arte y Diseño</NavLink>
+        <span className="text-center cursor-pointer md:text-5xl text-4xl custom-Color4 hover:font-bold transition-all delay-75 mt-10 font-comfortaa" onClick={()=>setNavButton(!navButton)}>Volver</span>
+        </>
+        <NavLink className="hover:text-slate-50 text-xl absolute right-10 bottom-5 transition-all delay-75 font-comfortaa" to="/login" onClick={()=>setNavButton(!navButton)}>Admin</NavLink>
       </div>
+      
     </motion.div>
   )
 }

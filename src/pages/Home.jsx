@@ -5,14 +5,14 @@ import ReactPlayer from 'react-player'
 import { NavLink } from 'react-router-dom'
 import { useEffect } from 'react';
 export default function Home() {
-  const imagesUrls = [{original:require("../media/GaleriaEj/Galeria1.jpg"),alt:"ImagenPrueba1",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"},
-                      {original:require("../media/GaleriaEj/Galeria2.jpg"),alt:"ImagenPrueba2",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"},
-                      {original:require("../media/GaleriaEj/Galeria4.jpg"),alt:"ImagenPrueba4",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"},
-                      {original:require("../media/GaleriaEj/Galeria5.jpg"),alt:"ImagenPrueba5",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"},
-                      {original:require("../media/GaleriaEj/Galeria6.jpg"),alt:"ImagenPrueba6",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"}
+  const imagesUrls = [{original:require("../media/GaleriaEj/Galeria1.jpg"),alt:"ImagenCollage1",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"},
+                      {original:require("../media/GaleriaEj/Galeria2.jpg"),alt:"ImagenCollage2",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"},
+                      {original:require("../media/GaleriaEj/Galeria4.jpg"),alt:"ImagenCollage4",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"},
+                      {original:require("../media/GaleriaEj/Galeria5.jpg"),alt:"ImagenCollage5",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"},
+                      {original:require("../media/GaleriaEj/Galeria6.jpg"),alt:"ImagenCollage6",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"}
   ]
   useEffect(() => {
-    //window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   },[])
   return (
     <motion.div className="grid bg-slate-100 md:gap-y-4 gap-y-5 md:pt-15 pt-20 place-items-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
@@ -22,10 +22,10 @@ export default function Home() {
           <span className="font-bold pb-4 pt-1 xl:text-8xl text-6xl font-comfortaa">Alwatoba</span>
           <span className="font-semibold pt-2 xl:text-2xl text-1xl custom-ColorMain font-notethis">Quienes somos y que nos inspira</span>
             <ReactPlayer width='60vw' height='27vw' url='www.youtube.com/watch?v=cFPkypL_ap8'/>
-          <NavLink className="mt-2 text-center md:text-3xl text-2xl custom-Color4 hover:font-bold font-notethis transition-all delay-75 " to="/Blogs">Leer más</NavLink>
+          <NavLink className="mt-2 text-center md:text-3xl text-2xl custom-Color4 hover:font-bold font-comfortaa transition-all delay-75 " to="/Blogs">Leer más</NavLink>
         </div>
       {/* Collage fotos */}
-      <div className='row-start-2 custom-BgColor4 w-full text-center py-10 my-10'>
+      <div className='row-start-2 custom-BgColor4 w-full text-center py-16 my-10'>
         <span className="xl:text-8xl md:text-7xl sm:text-6xl text-5xl custom-ColorMain text-center font-comfortaa">Indumentaria</span>
         <div className='flex flex-row place-content-center mt-5 lg:gap-x-7 xl:gap-x-10 2xl:gap-x-32 gap-x-2'>
 
@@ -40,7 +40,7 @@ export default function Home() {
           </div>
 
           <div className='my-auto shadow-lg shadow-black border custom-BorderColorMain border-x-0'>
-            <ReactImageGallery className='' items={imagesUrls} showFullscreenButton={false} showNav={false} showPlayButton={false} autoPlay={true}/>
+            <ReactImageGallery items={imagesUrls} showFullscreenButton={false} showNav={false} showPlayButton={false} autoPlay={true}/>
           </div>
 
           <div className=''>

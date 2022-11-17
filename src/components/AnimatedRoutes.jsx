@@ -54,6 +54,7 @@ import ArteAll from './ArteYDiseñoOutlets/ArteAll';
 import ArteComplementos from './ArteYDiseñoOutlets/ArteComplementos';
 import ArteJoyeria from './ArteYDiseñoOutlets/ArteJoyeria';
 import ArteIndumentaria from './ArteYDiseñoOutlets/ArteIndumentaria';
+import Construction from '../pages/Construction';
 
 
 function AnimatedRoutes() {
@@ -62,6 +63,7 @@ function AnimatedRoutes() {
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
         <Route path='/Alwatoba' element={<HomePage/>}/>
+        <Route path='/' element={<Construction/>}/>
         {/* Tests */}
         <>
         <Route path='/test' element={<TestPage/>}>

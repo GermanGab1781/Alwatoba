@@ -4,14 +4,14 @@ import { Outlet,Link,NavLink } from 'react-router-dom';
 
 export default function CatalogComp({titulo,categorias,goBack,close,buttonState,tree}) {
   return (
-    <motion.div className="md:pt-10 pt-20 grid grid-cols-8 custom-ColorMain text-center" initial={{opacity:1}} animate={{opacity:1}} exit={{opacity:1}}>
+    <motion.div className="md:pt-10 pt-20 grid grid-cols-8 custom-ColorMain text-center  font-comfortaa" initial={{opacity:1}} animate={{opacity:1}} exit={{opacity:1}}>
         {/* Titulo */}
-        <span className="row-start-1 md:col-start-3 col-start-1 md:col-span-6 col-span-8 font-bold md:text-5xl sm:text-3xl text-2xl sm:mt-5 py-5 rounded-t-3xl font-comfortaa text-center">
+        <span className="row-start-1 md:col-start-3 col-start-1 md:col-span-6 col-span-8 font-bold md:text-5xl sm:text-3xl text-2xl sm:mt-5 py-5 rounded-t-3xltext-center">
           {titulo}
         </span>
         {/* Link Tree */}
           {tree &&           
-          <div className="row-start-2 md:col-start-3 col-start-1 md:col-span-7 col-span-8 text-start md:ml-0 ml-5 font-notethis custom-Color4 md:text-xl ">
+          <div className="row-start-2 md:col-start-3 col-start-1 md:col-span-7 col-span-8 text-start md:ml-0 ml-5 custom-Color4 md:text-xl ">
             {tree.map((branch,index)=>{
               return(
                 <span key={index}>
@@ -24,8 +24,8 @@ export default function CatalogComp({titulo,categorias,goBack,close,buttonState,
           }
         {/* Menu lateral Izq */}
         <div className={buttonState 
-          ?"custom-BgColor4 fixed flex flex-col pt-32 justify-start z-20 sm:gap-y-6 gap-y-5 sm:w-1/5 w-44 h-full visible sm:text-2xl text-2xl font-notethis md:border-r-0 transition-all duration-500 sm:overflow-hidden"
-          :"custom-BgColor4 fixed flex flex-col pt-32 justify-start z-20 sm:gap-y-6 gap-y-5 sm:w-1/5 w-0 h-full sm:visible invisible sm:text-2xl text-2xl font-notethis transition-all duration-500 delay-150 sm:overflow-hidden"
+          ?"custom-BgColor4 fixed flex flex-col pt-32 justify-start z-20 sm:gap-y-6 gap-y-5 sm:w-1/5 w-44 h-full visible sm:text-2xl text-2xl md:border-r-0 transition-all duration-500 sm:overflow-hidden"
+          :"custom-BgColor4 fixed flex flex-col pt-32 justify-start z-20 sm:gap-y-6 gap-y-5 sm:w-1/5 w-0 h-full sm:visible invisible sm:text-2xl text-2xl transition-all duration-500 delay-150 sm:overflow-hidden"
         }>
           {/* Map de Categorias */}
           {categorias.map((categoria,index)=>{

@@ -7,10 +7,10 @@ export default function Blogs() {
     window.scrollTo(0, 0);
   },[])
   return (
-    <motion.div className="grid py-24 custom-Color3 custom-BgColor4">
+    <motion.div className="grid py-24 custom-Color3 custom-BgColor4 font-comfortaa">
       {/* Titulo */}
-      <span className="row-start-1 text-center text-6xl font-bold pb-4 font-notethis custom-ColorMain">HISTORIA</span>
-      <div className="flex flex-col  gap-y-3 relative row-start-2 md:mx-20 mx-10 h-fit p-4 my-1 font-notethis md:text-3xl text-xl"> 
+      <span className="row-start-1 text-center text-6xl font-bold pb-4 custom-ColorMain">HISTORIA</span>
+      <div className="flex flex-col  gap-y-3 relative row-start-2 md:mx-20 mx-10 h-fit p-4 my-1 md:text-3xl text-xl"> 
         <span>
           <span className="ml-3 font-bold custom-ColorMain">Somos Mariana y Yandyra Chagra</span>
           , crecimos en Formosa, con el sol como regente y la naturaleza a cada paso en siestas eternas de juegos sin tiempo, en una familia de artistas donde floreció nuestro gusto por el arte y el diseño. Entre pinceles, telas y máquinas de coser el arte de “hacer a mano” se desarrollaba diariamente entre juegos y creación de atuendos para usar en fiestas o eventos.
@@ -56,8 +56,8 @@ export default function Blogs() {
         <span>
           <span className="ml-3 font-bold custom-ColorMain">Nuestro propósito</span> es transmitir los valores en los que crecimos, la naturaleza y la cultura de nuestra provincia. Las ricas vivencias de nuestra crianza, que determinaron las mujeres en que nos transformamos.
         </span>
-        <NavLink className="mt-16 text-center text-5xl custom-ColorMain hover:font-bold transition-all font-comfortaa" to="/Alwatoba">Volver a inicio</NavLink>
-        <NavLink className="mt-10 text-center text-5xl custom-ColorMain hover:font-bold transition-all font-comfortaa" to="/Catalog/all">Ver Catálogo</NavLink>
+        <NavLink className="mt-16 text-center text-5xl custom-ColorMain hover:font-bold transition-all" to="/Alwatoba">Volver a inicio</NavLink>
+        <NavLink className="mt-10 text-center text-5xl custom-ColorMain hover:font-bold transition-all" to="/Catalog/all">Ver Catálogo</NavLink>
       </div>
     </motion.div>
   )

@@ -1,13 +1,20 @@
 import React from 'react'
+import {ImWhatsapp} from 'react-icons/im'
+import {BsInstagram} from 'react-icons/bs'
 
 export default function Construction() {
   return (
-    <div className='fixed z-50 w-screen h-screen custom-BgColorMain font-comfortaa font-bold text-5xl text-center whitespace-nowrap'>
-      <div className='absolute left-1/2 top-1/4 transform -translate-x-1/2 -translate-y-1/2'>
-        PAGINA EN CONSTRUCCION<br/>
-        <span> Disponible a fines de Noviembre</span>          
+    <div className='fixed flex flex-col place-items-center z-50 w-screen h-screen bg-white text-center font-comfortaa'>
+      <img className='w-1/2 h-1/2' alt="alwatoba imagen" src={require("../media/AlwatobaBrand.png")}/>
+      <div className='font-bold text-3xl z-10 w-3/4'>
+        ESTAMOS ACTUALIZANDO NUESTRAS LINEAS DE PRODUCTOS, POR CUALQUIER CONSULTA COMUNICATE A TRAVÉS DE NUESTROS MEDIOS<br/>   
       </div>
-      <img className='absolute left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-3/4' src={require("../media/Nosotras/Nosotras3.jpg")}/>
+      <div className="flex flex-row gap-x-5 mt-4">
+        <a className="relative" href="https://www.instagram.com/alwatoba"><BsInstagram className="h-10 w-10"/></a>
+        <a className="relative" href="https://www.instagram.com/alwatoba"><ImWhatsapp className="h-10 w-10"/></a>
+      </div>
+      <a href="mailto:alwatoba@gmail.com" className='text-2xl mt-3'>Mandanos un mail</a>
+      
     </div>
   )
 }

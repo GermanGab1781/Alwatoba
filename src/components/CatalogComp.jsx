@@ -25,7 +25,7 @@ export default function CatalogComp({titulo,categorias,goBack,close,buttonState,
         {/* Menu lateral Izq */}
         <div className={buttonState 
           ?"custom-BgColor4 fixed flex flex-col pt-32 justify-start z-20 sm:gap-y-6 gap-y-5 sm:w-1/5 w-44 h-full visible sm:text-2xl text-2xl md:border-r-0 transition-all duration-500 sm:overflow-hidden"
-          :"custom-BgColor4 fixed flex flex-col pt-32 justify-start z-20 sm:gap-y-6 gap-y-5 sm:w-1/5 w-0 h-full sm:visible invisible sm:text-2xl text-2xl transition-all duration-500 delay-150 sm:overflow-hidden"
+          :"custom-BgColor4 fixed flex flex-col pt-32 justify-start z-20 sm:gap-y-6 gap-y-5 sm:w-1/5 w-0 h-full sm:visible invisible sm:text-xl text-xl transition-all duration-500 delay-150 sm:overflow-hidden"
         }>
           {/* Map de Categorias */}
           {categorias.map((categoria,index)=>{

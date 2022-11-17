@@ -19,14 +19,14 @@ export default function Home() {
  
       {/* Presentacion */}
       <div className="flex flex-col text-center">
-          <span className="font-bold pb-4 pt-1 xl:text-8xl text-6xl">Alwatoba</span>
-          <span className="font-semibold pt-2 xl:text-2xl text-1xl custom-ColorMain ">Quienes somos y que nos inspira</span>
+          <span className="pb-4 pt-1 xl:text-8xl text-6xl">Alwatoba</span>
+          <span className="pt-2 xl:text-2xl text-1xl custom-ColorMain ">Quienes somos y que nos inspira</span>
             <ReactPlayer width='60vw' height='27vw' url='www.youtube.com/watch?v=cFPkypL_ap8'/>
-          <NavLink className="mt-2 text-center md:text-3xl text-2xl custom-Color4 hover:font-bold transition-all delay-75 " to="/Blogs">Leer más</NavLink>
+          <NavLink className="mt-2 text-center md:text-3xl text-2xl custom-Color4 transition-all delay-75 " to="/Blogs">Leer más</NavLink>
         </div>
       {/* Collage fotos */}
       <div className='row-start-2 custom-BgColor4 w-full text-center py-16 my-10'>
-        <span className="xl:text-8xl md:text-7xl sm:text-6xl text-5xl custom-ColorMain text-center">Indumentaria</span>
+        <span className="xl:text-7xl md:text-6xl sm:text-5xl text-4xl custom-ColorMain text-center">Indumentaria</span>
         <div className='flex flex-row place-content-center mt-5 lg:gap-x-7 xl:gap-x-10 2xl:gap-x-32 gap-x-2'>
 
           <div className=''>

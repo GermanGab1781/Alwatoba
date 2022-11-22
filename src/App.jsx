@@ -6,7 +6,7 @@ import { AuthContextProvider} from "./firebase";
 
 function App() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden font-comfortaa">
       <AuthContextProvider>
         <BrowserRouter>
           <Navbar/>

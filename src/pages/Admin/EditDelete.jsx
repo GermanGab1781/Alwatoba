@@ -68,18 +68,18 @@ export default function AdminEditDelete() {
 
   return (
     <div className='py-20'>
-      <div className="flex gap-x-9 flex-row">
-        <NavLink className='text-3xl pl-8 hover:text-amber-900' to='/Admin'>Volver</NavLink>
-        <label className='text-3xl'>Categoria:</label>
-        <ReactSelect onChange={setQuery} className=" w-1/4" options={options}/>
+      <div className="flex xl:gap-x-9 xl:flex-row flex-col">
+        <NavLink className='text-3xl xl:pl-8 text-amber-900 xl:m-0 m-auto' to='/Admin'>Volver</NavLink>
+        <label className='text-3xl xl:m-0 m-auto'>Categoria:</label>
+        <ReactSelect onChange={setQuery} className="xl:w-1/4 mx-2 xl:mx-0" options={options}/>
       </div>
       {docs &&
         <div className="flex flex-row flex-wrap gap-16 place-content-center mt-6">
           {docs.map((doc,index)=>{
             return(
-              <div  key={index} className="flex flex-col text-center"> 
+              <div  key={index} className="flex flex-col text-center place-items-center"> 
                 <ProductMini nombre={doc.info.nombre} id={doc.id} imgPath={doc.imgsSrc[0].Url} />
-                <div className="mt-9 flex flex-wrap place-content-center gap-x-5">
+                <div className="mt-9 flex flex-wrap gap-x-5">
                   <NavLink to={doc.id} className="bg-green-500 text-white p-4">EDITAR</NavLink> 
                   <span onClick={()=>deleteDocument(doc.id,doc.imgsSrc)} className="bg-red-800 text-white p-4 cursor-pointer">ELIMINAR</span>
                 </div>

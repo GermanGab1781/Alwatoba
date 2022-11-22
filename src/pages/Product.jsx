@@ -50,7 +50,7 @@ export default function Product() {
   function setImagesForCarousel(list){
     let result= []
     list.forEach((img)=>{
-      result.push({original: img.Url,alt: "cargando Imagen"})
+      result.push({original: img.Url,alt: "cargando Imagen",originalClass:"xl:w-fit xl:h-fit sm:w-64 w-48 h-48 m-auto cursor-default"})
     })
     return result
   }

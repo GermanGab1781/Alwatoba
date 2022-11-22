@@ -139,69 +139,77 @@ const Upload = () => {
 
   return (
     <div className='flex flex-col text-center pt-20 mb-60'>
-      <span className='text-5xl font-notethis mb-5'>Crear Nuevo Producto</span>
+      <span className='text-5xl mb-5'>Crear Nuevo Producto</span>
       {/* Form */}
-      <form className='flex flex-col md:px-44 sm:px-12 px-3 gap-y-5 text-center' onSubmit={handleAdd}>
-        {/* Nombre */}
-        <label className='text-2xl font-comfortaa font-bold'>Nombre</label><br/>
-        <input className='border border-black w-1/2 m-auto' type="text" id="nombre" onChange={handleInput}/><br/>
-        {/* Precio */}
-        <label className='text-2xl font-comfortaa font-bold'>Precio</label><br/>
-        <input className='border border-black w-1/4 m-auto' type="number" id="precio" onChange={handleInput}/><br/>
-        {/* stock */}
-        <label className='text-2xl font-comfortaa font-bold'>Stock</label><br/>
-        <input className='border border-black w-1/4 m-auto' type="number" id="stock" onChange={handleInput}/><br/>
+      <form className='flex flex-col md:px-44 sm:px-12 px-3 gap-y-3 text-center' onSubmit={handleAdd}>
+        <div className='flex xl:flex-row place-content-center gap-x-1'>
+          {/* Nombre */}
+          <span>
+            <label className='text-2xl font-bold'>Nombre</label><br/>
+            <input className='border border-black' type="text" id="nombre" onChange={handleInput}/>
+          </span>
+          {/* Precio */}
+          <span>
+          <label className='text-2xl font-bold'>Precio</label><br/>
+          <input className='border border-black' type="number" id="precio" onChange={handleInput}/>
+          </span>
+          {/* Stock */}
+          <span>
+          <label className='text-2xl font-bold'>Stock</label><br/>
+          <input className='border border-black' type="number" id="stock" onChange={handleInput}/>
+          </span>
+        </div>
         {/* Descripcion */}
-        <label className='text-2xl font-comfortaa font-bold'>Descripcion</label><br/>
+        <label className='text-2xl font-bold'>Descripcion</label><br/>
         <textarea className='border border-black w-2/3 m-auto' type="text" id="descripcion" onChange={handleInput} rows="7"/><br/>
         {/* Caracteristicas */}
-        <label className='text-2xl font-comfortaa font-bold'>Caracteristicas [no es obligatorio]</label>
+        <label className='text-2xl font-bold'>Caracteristicas [no es obligatorio]</label>
         <label className='text-md'>(cuanto mide , de que esta hecho, etc)</label>
         <textarea className='border border-black w-2/3 m-auto' type="text" id="caracteristicas" onChange={handleInput} rows="3"/><br/>
         {/* Anotacion Especial */}
-        <label className='text-2xl font-comfortaa font-bold'>Anotacion Especial [no es obligatorio]</label>
+        <label className='text-2xl font-bold'>Anotacion Especial [no es obligatorio]</label>
         <label className='text-md'>(Ejemplo "En exposición Museo de Arte Popular José Hernández")</label>
         <textarea className='border border-black w-2/3  m-auto' type="text" id="anotacionEsp" onChange={handleInput} rows="3"/><br/>
         {/* Categorias */}
-        <label className='text-2xl font-comfortaa font-bold pt-10'>Categoria del producto</label>
+        <label className='text-2xl font-bold pt-10'>Categoria del producto</label>
         <label className='text-md'>(hacer click en nombre para abrir arbol de categorias)</label>
         <div className='flex flex-col gap-y-10 place-content-center border border-teal-300'>
           {/* Autoctona */}
-          <div className='grid grid-cols-5 place-content-start mx-8'>
+          <div className='grid grid-cols-5 place-items-center mx-8'>
             <span onClick={()=>setToggleAutoctona(!toggleAutoctona)} className='col-span-5 text-2xl m-auto pr-3 w-96 cursor-pointer'>AUTOCTONA</span>
             <div className={toggleAutoctona ?'opacity-0 invisible h-2 col-start-3 flex flex-col transition-all' :'h-full visible opacity-1 col-start-3 flex flex-col transition-all'}>
               <div className='grid border-l-2 border-black'>
                 <span className='col-start-1 row-start-2 border-b-2 border-black px-2'>COMPLEMENTOS</span>
                 <div className='col-start-2 row-start-1 border-l-2 border-y-2 border-black row-span-3 flex flex-col'>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/LineaMate",1)}>Linea Mate</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/Accesorios",1)}>Accesorios</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/Bags",1)}>Bags</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/LineaMate",1)}>Linea Mate</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/Accesorios",1)}>Accesorios</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Complementos/Bags",1)}>Bags</span>
                 </div>
               </div>
-              <span onClick={()=>handleCategorySelect("Autoctona/JoyeriaTemporanea")} className='pt-5 mr-auto hover:underline cursor-pointer border-b-2 border-l-2 border-black'>Joyeria Temporanea</span>
-              <span onClick={()=>handleCategorySelect("Autoctona/Indumentaria")} className='pt-5 mr-auto hover:underline cursor-pointer border-b-2 border-l-2 border-black'>Indumentaria</span>
+              <span onClick={()=>handleCategorySelect("Autoctona/JoyeriaTemporanea")} className='pt-5 mr-auto hover:underline xl:no-underline underline cursor-pointer border-b-2 border-l-2 border-black'>Joyeria Temporanea</span>
+              <span onClick={()=>handleCategorySelect("Autoctona/Indumentaria")} className='pt-5 mr-auto hover:underline xl:no-underline underline cursor-pointer border-b-2 border-l-2 border-black'>Indumentaria</span>
               <div className=' pt-5 grid border-l-2 border-black'>
                 <span className='col-start-1 row-start-2 border-b-2 border-black px-2'>LIFESTYLE</span>
                 <div className='col-start-2 row-start-1 border-l-2 border-y-2 border-black row-span-3 flex flex-col'>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/Chaguar",1)}>Chaguar</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/Carandillo",1)}>Carandillo</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/PalmaYTotora",1)}>Palma y Totora</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/PaloSanto",1)}>Palo Santo</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/Diseño",1)}>Diseño</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/Chaguar",1)}>Chaguar</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/Carandillo",1)}>Carandillo</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/PalmaYTotora",1)}>Palma y Totora</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/PaloSanto",1)}>Palo Santo</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("Autoctona/Lifestyle/Diseño",1)}>Diseño</span>
                 </div>
               </div>
             </div>
           </div>
           {/* Colecciones Capsula */}
-          <div className='grid grid-cols-5 place-content-start mx-8'>
+          <div className='grid grid-cols-5 place-items-center mx-8'>
             <span onClick={()=>setToggleColec(!toggleColec)} className='col-span-5 text-2xl m-auto pr-3 w-96 cursor-pointer'>COLECCIONES CAPSULA</span>
             <div className={toggleColec ?'opacity-0 invisible h-2 col-start-3 flex flex-col transition-all' :'h-full visible opacity-1 col-start-3 flex flex-col transition-all'}>
               <div className='grid border-l-2 border-black'>
                 <span className='col-start-1 row-start-2 border-b-2 border-black px-2'>ESCENCIA IMPERFECTA</span>
                 <div className='col-start-2 row-start-1 border-l-2 border-y-2 border-black row-span-3 flex flex-col'>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("ColeccionesCapsula/EscenciaImperfecta/Indumentaria",2)}>Indumentaria</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("ColeccionesCapsula/EscenciaImperfecta/JoyeriaContemporanea",2)}>Joyeria Contemporanea</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("ColeccionesCapsula/EscenciaImperfecta/Complementos",2)}>Complementos</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("ColeccionesCapsula/EscenciaImperfecta/Indumentaria",2)}>Indumentaria</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("ColeccionesCapsula/EscenciaImperfecta/JoyeriaContemporanea",2)}>Joyeria Contemporanea</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("ColeccionesCapsula/EscenciaImperfecta/Complementos",2)}>Complementos</span>
                 </div>
               </div>
             </div>
@@ -209,20 +217,20 @@ const Upload = () => {
           </div>
 
           {/* Arte y Diseño */}
-          <div className='grid grid-cols-5 place-content-start mx-8'>
+          <div className='grid grid-cols-5 place-items-center mx-8'>
               <span onClick={()=>setToggleArte(!toggleArte)} className='col-span-5 text-2xl m-auto pr-3 w-96 cursor-pointer'>ARTE Y DISEÑO</span>
               <div className={toggleArte ?'opacity-0 invisible h-2 col-start-3 flex flex-col transition-all' :'h-full visible opacity-1 col-start-3 flex flex-col transition-all'}>
                 <div className='border-l-2  border-black row-span-3 flex flex-col'>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("ArteYDiseño/Indumentaria")}>Indumentaria</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("ArteYDiseño/JoyeriaContemporanea")}>Joyeria Contemporanea</span>
-                  <span className='hover:underline cursor-pointer' onClick={()=>handleCategorySelect("ArteYDiseño/Complementos")}>Complementos</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("ArteYDiseño/Indumentaria")}>Indumentaria</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("ArteYDiseño/JoyeriaContemporanea")}>Joyeria Contemporanea</span>
+                  <span className='hover:underline xl:no-underline underline cursor-pointer' onClick={()=>handleCategorySelect("ArteYDiseño/Complementos")}>Complementos</span>
                 </div>
               </div>
           </div>
           {productCateg && <span className='font-bold text-2xl border border-red-500'>El producto tendra la direccion: {productCateg}</span>}
         </div>
         {/* Imagenes */}
-        <label className='text-2xl font-comfortaa font-bold'>Imagenes (minimo 1 maximo 5)</label>
+        <label className='text-2xl font-bold'>Imagenes (minimo 1 maximo 5)</label>
         <div className='border border-teal-500 p-20'>
           <input type="file" onChange={changeInput}/>
           <div className='flex flex-row flex-wrap gap-x-5 gap-y-7 p-5'>
@@ -237,9 +245,9 @@ const Upload = () => {
           })}
           </div>
         </div>
-        <button className='border border-black scale-90 hover:scale-100 hover:bg-black hover:text-slate-200 transition-all p-5 text-2xl font-comfortaa' type='submit'>SUBIR</button>
-        <NavLink className='border border-stone-500 w-1/2 m-auto text-xl hover:bg-black hover:text-slate-200 font-comfortaa' to='/Admin'>Volver</NavLink>
-        <NavLink className='border border-stone-500 w-1/2 m-auto text-xl hover:bg-black hover:text-slate-200 font-comfortaa' to='/Catalog/all'>Ir a Catalogo</NavLink>
+        <button className='border border-black scale-90 hover:scale-100 hover:bg-black hover:text-slate-200 transition-all p-5 text-2xl' type='submit'>SUBIR</button>
+        <NavLink className='border border-stone-500 w-1/2 m-auto text-xl hover:bg-black hover:text-slate-200' to='/Admin'>Volver</NavLink>
+        <NavLink className='border border-stone-500 w-1/2 m-auto text-xl hover:bg-black hover:text-slate-200' to='/Catalog/all'>Ir a Catalogo</NavLink>
 
       </form>
     </div>

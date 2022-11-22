@@ -181,15 +181,23 @@ const UploadChanges = () => {
         <span className='text-5xl font-notethis mb-5'>Editar Producto</span>
         {/* Form */}
         <form className='flex flex-col md:px-44 sm:px-12 px-3 gap-y-5 text-center' onSubmit={handleUpdate}>
-          {/* Nombre */}
-          <label className='text-2xl font-comfortaa font-bold'>Nombre</label><br/>
-          <input className='border border-black w-1/2 m-auto' type="text" id="nombre" defaultValue={product.info.nombre} onChange={handleInput}/><br/>
-          {/* Precio */}
-          <label className='text-2xl font-comfortaa font-bold'>Precio</label><br/>
-          <input className='border border-black w-1/4 m-auto' type="number" id="precio" defaultValue={product.info.precio} onChange={handleInput}/><br/>
-          {/* stock */}
-          <label className='text-2xl font-comfortaa font-bold'>Stock</label><br/>
-          <input className='border border-black w-1/4 m-auto' type="number" id="stock" defaultValue={product.info.stock} onChange={handleInput}/><br/>
+          <div className='flex flex-row place-content-center gap-x-1'>
+            {/* Nombre */}
+            <span>
+              <label className='text-2xl font-comfortaa font-bold'>Nombre</label><br/>
+              <input className='border border-black' type="text" id="nombre" defaultValue={product.info.nombre} onChange={handleInput}/>
+            </span>
+            {/* Precio */}
+            <span>
+              <label className='text-2xl font-comfortaa font-bold'>Precio</label><br/>
+              <input className='border border-black' type="number" id="precio" defaultValue={product.info.precio} onChange={handleInput}/>
+            </span>
+            {/* stock */}
+            <span>
+              <label className='text-2xl font-comfortaa font-bold'>Stock</label><br/>
+              <input className='border border-black' type="number" id="stock" defaultValue={product.info.stock} onChange={handleInput}/>
+            </span>
+          </div>
           {/* Descripcion */}
           <label className='text-2xl font-comfortaa font-bold'>Descripcion</label><br/>
           <textarea className='border border-black w-2/3 m-auto' type="text" id="descripcion" defaultValue={product.info.descripcion} onChange={handleInput} rows="7"/><br/>

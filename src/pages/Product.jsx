@@ -50,7 +50,7 @@ export default function Product() {
   function setImagesForCarousel(list){
     let result= []
     list.forEach((img)=>{
-      result.push({original: img.Url,alt: "cargando Imagen",originalClass:"xl:w-fit xl:h-fit sm:w-64 w-48 h-48 m-auto cursor-default"})
+      result.push({original: img.Url,thumbnail:img.Url,loading:"lazy",alt: "cargando Imagen",originalClass:"xl:w-full xl:h-full md:w-64 w-48 h-full cursor-default"})
     })
     return result
   }
@@ -63,23 +63,24 @@ export default function Product() {
       {product && <motion.div  initial={{opacity:0}} animate={{opacity:1}}>
       <div className="grid grid-cols-7 row-start-2 font-comfortaa">
         {/* ImageViewer */}
-        <div className="sm:col-start-2 col-start-1 sm:col-end-4 col-end-4 row-start-3 row-span-1 sm:ml-6 ml-4 w-full h-full ">
-          <ReactImageGallery items={imagesCarousel} showPlayButton={false} showIndex={true}/>
+        <div className="md:col-start-2 md:col-end-4 md:row-start-3 col-span-7 row-start-1 m-auto col-start-2 row-span-1 md:ml-6 ml-4">
+          <ReactImageGallery thumbnailPosition='left' items={imagesCarousel} showPlayButton={false} showIndex={true}/>
         </div>
         {/* Informacion */}
-        <div className="flex flex-col sm:col-start-4 sm:col-span-3 row-start-2 row-end-5 col-start-4 col-span-3 sm:gap-y-4 gap-y-3 sm:ml-20 ml-8 place-content-start">
+        <div className="flex flex-col md:col-start-4 md:col-span-3 row-start-2 md:row-end-5 col-span-7 md:gap-y-4 gap-y-3 md:ml-20 md:mx-0 mx-3 place-items-center">
+
           {/* Nombre */}
-          <span className="custom-Color3 md:text-4xl sm:text-3xl text-xl font-semibold pt-5 border-b-2 custom-BorderColor3 whitespace-nowrap">{product.info.nombre}</span>
+          <span className="w-full custom-Color3 md:text-4xl sm:text-3xl text-xl font-semibold pt-5 border-b-2 custom-BorderColor3 whitespace-nowrap">{product.info.nombre}</span>
           {/* Precio */}
-          <span className="sm:text-4xl text-xl text-start font-bold custom-Color3">${product.info.precio}</span>
+          <span className="md:text-4xl text-xl text-start font-bold custom-Color3">${product.info.precio}</span>
           {/* stock */}
-          <span className="sm:text-2xl text-md text-start font-bold custom-Color4">Stock:{product.info.stock}</span>
+          <span className="md:text-2xl text-md text-start font-bold custom-Color4">Stock:{product.info.stock}</span>
           {/* Oferta */}
-          <span className="custom-Color3 sm:text-xl text-xs text-start"><span className="font-bold">5%</span> de descuento pagando por transferencia bancaria</span>
-          {/* Modal */}
-          <button onClick={paymentMethods} className="custom-Color4 sm:text-xl text-base hover:scale-110 font-bold transition-all delay-75">Ver formas de pago</button>
+          <span className="custom-Color3 md:text-xl text-xs text-start"><span className="font-bold">5%</span> de descuento pagando por transferencia bancaria</span>
+          {/* Metodos de Pago */}
+          <button onClick={paymentMethods} className="custom-Color4 md:text-xl text-base hover:scale-110 font-bold transition-all delay-75">Ver formas de pago</button>
           {/* Input cantidad */}
-          <form className="text-start">
+          <form className="w-full text-start ">
             <label>Cantidad</label><br/>
             <input className='w-full p-2 rounded-xl custom-BgColorMain border border-black mb-3' defaultValue="1" type="number"/>
             <button className="custom-BgColor4 custom-Color3 scale-90 hover:text-white border py-2 w-full text-2xl rounded-full transition-all delay-75" type="submit">Consultar</button>
@@ -90,7 +91,7 @@ export default function Product() {
       <div className="col-start-1 w-full row-start-3 border-y-2 mt-10 mb-16 custom-BorderColor4 custom-Color4">
         <p className="md:text-4xl sm:text-3xl text-2xl font-semibold">{product.info.descripcion}</p>
         {/* Caracteristicas */}
-        <p className="sm:text-2xl text-base text-center custom-Color3">{product.info.caracteristicas && product.info.caracteristicas}</p>
+        <p className="md:text-2xl text-base text-center custom-Color3">{product.info.caracteristicas && product.info.caracteristicas}</p>
         {/* Anotacion especial */}
         <p className="md:text-2xl text-xl mt-10 custom-Color4">{product.info.anotacionEsp && product.info.anotacionEsp}</p>
       </div>

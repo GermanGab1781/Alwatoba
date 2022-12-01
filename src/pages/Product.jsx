@@ -67,20 +67,20 @@ export default function Product() {
           <ReactImageGallery thumbnailPosition='left' items={imagesCarousel} showPlayButton={false} showIndex={true}/>
         </div>
         {/* Informacion */}
-        <div className="flex flex-col md:col-start-4 md:col-span-3 row-start-2 md:row-end-5 col-span-7 md:gap-y-4 gap-y-3 md:ml-20 md:mx-0 mx-3 place-items-center">
+        <div className="flex flex-col md:col-start-4 md:col-span-3 row-start-2 md:row-end-5 col-span-7 md:gap-y-4 gap-y-3 md:ml-20 md:mx-0 mx-3">
 
           {/* Nombre */}
-          <span className="w-full custom-Color3 md:text-4xl sm:text-3xl text-xl font-semibold pt-5 border-b-2 custom-BorderColor3 whitespace-nowrap">{product.info.nombre}</span>
+          <span className="w-full text-black md:text-6xl text-4xl font-semibold pt-5 border-b-2 custom-BorderColor3">{product.info.nombre}</span>
           {/* Precio */}
-          <span className="md:text-4xl text-xl text-start font-bold custom-Color3">${product.info.precio}</span>
+          <span className="md:text-5xl text-3xl custom-Color3"><span className='text-slate-300'>$</span>{product.info.precio}</span>
           {/* stock */}
-          <span className="md:text-2xl text-md text-start font-bold custom-Color4">Stock:{product.info.stock}</span>
+          <span className="md:text-3xl text-xl font-bold custom-Color4">Stock:{product.info.stock}</span>
           {/* Oferta */}
-          <span className="custom-Color3 md:text-xl text-xs text-start"><span className="font-bold">5%</span> de descuento pagando por transferencia bancaria</span>
+          <span className="custom-Color3 md:text-xl text-sm"><span className="font-bold">5%</span> de descuento pagando por transferencia bancaria</span>
           {/* Metodos de Pago */}
-          <button onClick={paymentMethods} className="custom-Color4 md:text-xl text-base hover:scale-110 font-bold transition-all delay-75">Ver formas de pago</button>
+          <button onClick={paymentMethods} className="custom-Color4 md:text-2xl text-xl hover:text-slate-300 hover:rounded-full p-3 font-bold transition-all delay-75">Ver formas de pago</button>
           {/* Input cantidad */}
-          <form className="w-full text-start ">
+          <form className="w-full text-start">
             <label>Cantidad</label><br/>
             <input className='w-full p-2 rounded-xl custom-BgColorMain border border-black mb-3' defaultValue="1" type="number"/>
             <button className="custom-BgColor4 custom-Color3 scale-90 hover:text-white border py-2 w-full text-2xl rounded-full transition-all delay-75" type="submit">Consultar</button>
@@ -89,11 +89,11 @@ export default function Product() {
       </div>
       {/* Descripcion */}
       <div className="col-start-1 w-full row-start-3 border-y-2 mt-10 mb-16 custom-BorderColor4 custom-Color4">
-        <p className="md:text-4xl sm:text-3xl text-2xl font-semibold">{product.info.descripcion}</p>
+        <p className="md:text-5xl sm:text-3xl text-2xl font-semibold">{product.info.descripcion}</p>
         {/* Caracteristicas */}
-        <p className="md:text-2xl text-base text-center custom-Color3">{product.info.caracteristicas && product.info.caracteristicas}</p>
+        <p className="md:text-3xl text-base text-center custom-Color3">{product.info.caracteristicas && product.info.caracteristicas}</p>
         {/* Anotacion especial */}
-        <p className="md:text-2xl text-xl mt-10 custom-Color4">{product.info.anotacionEsp && product.info.anotacionEsp}</p>
+        <p className="md:text-3xl text-xl mt-10 custom-Color4">{product.info.anotacionEsp && product.info.anotacionEsp}</p>
       </div>
       </motion.div>
       }

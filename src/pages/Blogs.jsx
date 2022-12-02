@@ -56,8 +56,8 @@ export default function Blogs() {
         <span>
           <span className="xl:ml-3 ml-1 font-bold custom-ColorMain">Nuestro propósito</span> es transmitir los valores en los que crecimos, la naturaleza y la cultura de nuestra provincia. Las ricas vivencias de nuestra crianza, que determinaron las mujeres en que nos transformamos.
         </span>
-        <NavLink className="xl:mt-16 mt-5 text-center xl:text-5xl text-3xl custom-ColorMain hover:font-bold transition-all" to="/Alwatoba">Volver a inicio</NavLink>
-        <NavLink className="xl:mt-10 mt-5 text-center xl:text-5xl text-3xl custom-ColorMain hover:font-bold transition-all" to="/Catalog/all">Ver Catálogo</NavLink>
+        <NavLink className="xl:mt-16 mt-5 text-center xl:text-5xl text-3xl custom-ColorMain hover:text-slate-50 transition-all" to="/Alwatoba">Volver a inicio</NavLink>
+        <NavLink className="xl:mt-10 mt-5 text-center xl:text-5xl text-3xl custom-ColorMain hover:text-slate-50 transition-all" to="/Catalog/all">Ver Catálogo</NavLink>
       </div>
     </motion.div>
   )

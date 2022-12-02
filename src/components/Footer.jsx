@@ -49,17 +49,17 @@ export default function Footer() {
           <span className="font-comfortaa">Redes</span>
           <div className="flex flex-row pt-5 gap-x-3 md:place-content-start place-content-center">
             <a className="" href="https://www.instagram.com/alwatoba"><BsInstagram className="h-10 w-10 scale-110 transition-all"/></a>
-            <a className="md:ml-6 ml-3" href="https://www.instagram.com/alwatoba"><BsWhatsapp className="h-10 w-10 scale-110 transition-all"/></a>            
-            <a className="md:ml-6 ml-3" href="https://www.instagram.com/alwatoba"><BsPinterest className="h-10 w-10 scale-110 transition-all"/></a>
+            <a className="md:ml-6 ml-3" href="https://wa.me/5493704413281"><BsWhatsapp className="h-10 w-10 scale-110 transition-all"/></a>            
+            <a className="md:ml-6 ml-3" href="https://ar.pinterest.com/alwatoba/"><BsPinterest className="h-10 w-10 scale-110 transition-all"/></a>
           </div>
         </div>   
         <div className="">
           <span className="font-comfortaa">Contactos</span>
           <div className="flex flex-col pl-2 ml-7 md:text-start text-center text-xl">
-            <a className="relative" href="https://www.instagram.com/alwatoba"><BsFillChatRightTextFill className="absolute -left-8 bottom-0 h-5 w-10"/>alwatoba@gmail.com</a>
-            <a className="relative" href="https://www.instagram.com/alwatoba"><BsFillTelephoneFill className="absolute -left-8 bottom-0 h-5 w-10"/>+5493704413281</a>
+            <a href="mailto:alwatoba@gmail.com" target="_blank" rel='noreferrer'><BsFillChatRightTextFill className="absolute -left-8 bottom-0 h-5 w-10"/>alwatoba@gmail.com</a>
+            <a className="relative" href="https://wa.me/5493704413281"><BsFillTelephoneFill className="absolute -left-8 bottom-0 h-5 w-10"/>+5493704413281</a>
             <a className="relative" href="https://www.instagram.com/alwatoba"><HiLocationMarker className="absolute -left-8 bottom-0 h-5 w-10"/>560 Av. Maradona</a>
-            <a className="relative" href="https://www.instagram.com/alwatoba"><HiReceiptRefund className="absolute -left-8 bottom-0 h-5 w-10"/>Boton de arrepentimiento</a>
+            <a className="relative" href="https://wa.me/5493704413281"><HiReceiptRefund className="absolute -left-8 bottom-0 h-5 w-10"/>Boton de arrepentimiento</a>
           </div>
         </div>
       </div>

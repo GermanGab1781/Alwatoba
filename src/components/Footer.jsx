@@ -48,9 +48,9 @@ export default function Footer() {
         <div className="md:mb-0 mb-2">
           <span className="font-comfortaa">Redes</span>
           <div className="flex flex-row pt-5 gap-x-3 md:place-content-start place-content-center">
-            <a className="" href="https://www.instagram.com/alwatoba"><BsInstagram className="h-10 w-10 scale-110 transition-all"/></a>
-            <a className="md:ml-6 ml-3" href="https://wa.me/5493704413281"><BsWhatsapp className="h-10 w-10 scale-110 transition-all"/></a>            
-            <a className="md:ml-6 ml-3" href="https://ar.pinterest.com/alwatoba/"><BsPinterest className="h-10 w-10 scale-110 transition-all"/></a>
+            <a className="" href="https://www.instagram.com/alwatoba" target="_blank" rel='noreferrer'><BsInstagram className="h-10 w-10 scale-110 transition-all"/></a>
+            <a className="md:ml-6 ml-3" href="https://wa.me/5493704413281" target="_blank" rel='noreferrer'><BsWhatsapp className="h-10 w-10 scale-110 transition-all"/></a>            
+            <a className="md:ml-6 ml-3" href="https://ar.pinterest.com/alwatoba/" target="_blank" rel='noreferrer'><BsPinterest className="h-10 w-10 scale-110 transition-all"/></a>
           </div>
         </div>   
         <div className="">

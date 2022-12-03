@@ -77,7 +77,7 @@ export default function AdminEditDelete() {
         <div className="flex flex-row flex-wrap gap-16 place-content-center mt-6">
           {docs.map((doc,index)=>{
             return(
-              <div  key={index} className="flex flex-col text-center place-items-center"> 
+              <div  key={index} className="flex flex-col text-center my-auto place-items-center">
                 <ProductMini nombre={doc.info.nombre} id={doc.id} imgPath={doc.imgsSrc[0].Url} />
                 <div className="mt-9 flex flex-wrap gap-x-5">
                   <NavLink to={doc.id} className="bg-green-500 text-white p-4">EDITAR</NavLink> 

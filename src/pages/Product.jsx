@@ -90,11 +90,11 @@ export default function Product() {
           {/* Precio */}
           <span className="md:text-5xl text-3xl custom-Color3"><span className='text-slate-300'>$</span>{product.info.precio}</span>
           {/* Stock */}
-          {product.info.stock > 0 &&
+          {(product.info.stock > "0") &&
             <span className="md:text-3xl text-xl font-bold custom-Color4">Stock:{product.info.stock}</span>}
-          {product.info.stock === 0 &&
+          {(product.info.stock === "0") &&
             <span className="md:text-3xl text-xl font-bold custom-Color4">Stock:Solo por pedido</span>}
-          
+          {console.log(product.info.stock)}
           {/* Oferta */}
           <span className="custom-Color3 md:text-xl text-sm"><span className="font-bold">5%</span> de descuento pagando por transferencia bancaria</span>
           {/* Metodos de Pago */}

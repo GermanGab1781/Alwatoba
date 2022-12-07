@@ -11,6 +11,7 @@ export default function Product() {
   const [product, setProduct] = useState(null)
   const [imagesCarousel, setImagesCarousel] = useState({})
   const params = useParams()
+  const [productContact, setProductContact] =useState(undefined)
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -20,9 +21,24 @@ export default function Product() {
       const data = await getDoc(id)
       setImagesCarousel(setImagesForCarousel(data.data().imgsSrc))
       setProduct(data.data())
+      setProductContact({link:`https://alwatoba.com/Product/${params.id}`,name:data.data().info.nombre})
     }
     getProductDoc()
   },[params])
+
+  function contactMethods(){
+    Swal.fire({
+      html:`
+        <span style="font-family:'COMFORTAA';font-size:30px;">Contactanos</span>
+        <div style="display:flex;flex-wrap:wrap; gap:5px; justify-content:center; margin-top:20px;"> 
+          
+          <a class="customButtonSwal" href="https://wa.me/5493704413281?text=Hola, queria consultar sobre el producto ${productContact.link}" target="_blank" rel='noreferrer'>Mensaje por Whatsapp</a>
+          <a class="customButtonSwal" href="https://www.instagram.com/alwatoba" target="_blank" rel='noreferrer'>Nuestro Instagram</a>
+          <a class="customButtonSwal" href="mailto:alwatoba@gmail.com?subject=Consulta sobre ${productContact.name}&body=Hola, queria consultar sobre el producto ${productContact.link}" target="_blank" rel='noreferrer'>Envianos un Mail</a>
+        </div>
+      `
+    })
+  }
 
   function paymentMethods (){
     Swal.fire({
@@ -73,18 +89,18 @@ export default function Product() {
           <span className="w-full text-black md:text-6xl text-4xl font-semibold pt-5 border-b-2 custom-BorderColor3">{product.info.nombre}</span>
           {/* Precio */}
           <span className="md:text-5xl text-3xl custom-Color3"><span className='text-slate-300'>$</span>{product.info.precio}</span>
-          {/* stock */}
-          <span className="md:text-3xl text-xl font-bold custom-Color4">Stock:{product.info.stock}</span>
+          {/* Stock */}
+          {product.info.stock > 0 &&
+            <span className="md:text-3xl text-xl font-bold custom-Color4">Stock:{product.info.stock}</span>}
+          {product.info.stock === 0 &&
+            <span className="md:text-3xl text-xl font-bold custom-Color4">Stock:Solo por pedido</span>}
+          
           {/* Oferta */}
           <span className="custom-Color3 md:text-xl text-sm"><span className="font-bold">5%</span> de descuento pagando por transferencia bancaria</span>
           {/* Metodos de Pago */}
           <button onClick={paymentMethods} className="custom-Color4 md:text-2xl text-xl hover:text-slate-300 hover:rounded-full p-3 font-bold transition-all delay-75">Ver formas de pago</button>
-          {/* Input cantidad */}
-          <form className="w-full text-start">
-            <label>Cantidad</label><br/>
-            <input className='w-full p-2 rounded-xl custom-BgColorMain border border-black mb-3' defaultValue="1" type="number"/>
-            <button className="custom-BgColor4 custom-Color3 scale-90 hover:text-white border py-2 w-full text-2xl rounded-full transition-all delay-75" type="submit">Consultar</button>
-          </form>
+          {/* Metodos de Contacto */}
+          <button to="/" onClick={contactMethods} className="custom-BgColor4 custom-Color3 scale-90 hover:text-white border w-96 py-2 text-2xl place-self-center rounded-full transition-all delay-75">Consultar</button>
         </div>
       </div>
       {/* Descripcion */}

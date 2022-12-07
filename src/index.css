@@ -77,3 +77,18 @@
   border-color: rgb(46,41,29);
 }
 
+.customButtonSwal{
+  border:solid;
+  border-color:rgb(176,136,104);
+  border-radius:50px;
+  padding:10px;
+  font-family:"COMFORTAA";
+}
+
+.customButtonSwal:hover{
+  background-color: rgb(46,41,29);
+
+  trnasition:0.50s;
+  transition-delay:0.09s;
+  color:white
+}

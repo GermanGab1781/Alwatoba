@@ -57,9 +57,9 @@ export default function Footer() {
           <span className="font-comfortaa">Contactos</span>
           <div className="flex flex-col pl-2 ml-7 md:text-start text-center text-xl">
             <a href="mailto:alwatoba@gmail.com" target="_blank" rel='noreferrer'><BsFillChatRightTextFill className="absolute -left-8 bottom-0 h-5 w-10"/>alwatoba@gmail.com</a>
-            <a className="relative" href="https://wa.me/5493704413281"><BsFillTelephoneFill className="absolute -left-8 bottom-0 h-5 w-10"/>+5493704413281</a>
-            <a className="relative" href="https://www.instagram.com/alwatoba"><HiLocationMarker className="absolute -left-8 bottom-0 h-5 w-10"/>560 Av. Maradona</a>
-            <a className="relative" href="https://wa.me/5493704413281"><HiReceiptRefund className="absolute -left-8 bottom-0 h-5 w-10"/>Boton de arrepentimiento</a>
+            <a className="relative" href="https://wa.me/5493704413281" target="_blank" rel='noreferrer'><BsFillTelephoneFill className="absolute -left-8 bottom-0 h-5 w-10"/>+5493704413281</a>
+            <a className="relative" href="https://www.instagram.com/alwatoba" target="_blank" rel='noreferrer'><HiLocationMarker className="absolute -left-8 bottom-0 h-5 w-10"/>560 Av. Maradona</a>
+            <a className="relative" href="https://wa.me/5493704413281?text=Hola,quiero devolver mi producto" target="_blank" rel='noreferrer'><HiReceiptRefund className="absolute -left-8 bottom-0 h-5 w-10"/>Boton de arrepentimiento</a>
           </div>
         </div>
       </div>

@@ -23,7 +23,7 @@ export default function ColeccionesAll() {
   return (
     <>
     {docs === undefined &&
-      <div className='font-comfortaa pt-10 m-auto text-4xl'>CARGANDO</div>
+      <div className='pt-10 m-auto text-4xl'>CARGANDO</div>
     }
     {docs && 
     <motion.div className="flex flex-wrap gap-y-10 gap-x-5 mt-5 max-h-full max-w-full sm:place-content-start place-content-center sm:text-xl custom-Color4 font-semibold px-10 py-5 " initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>   
@@ -33,7 +33,7 @@ export default function ColeccionesAll() {
         )
       })}
     </motion.div>}
-    {(docs && docs.length === 0) && <div className='font-comfortaa pt-10 m-auto text-4xl'>No hay productos subidos a esta categoria</div>}
+    {(docs && docs.length === 0) && <div className='pt-10 m-auto text-4xl'>No hay productos subidos a esta categoria</div>}
     </>
    
   )

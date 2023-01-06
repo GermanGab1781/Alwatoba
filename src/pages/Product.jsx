@@ -72,12 +72,12 @@ export default function Product() {
   }
   return (
     <motion.div className="grid pt-20 text-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
-      {!product && <motion.div className='w-screen h-screen relative font-comfortaa'  initial={{opacity:0}} animate={{opacity:1}}>
+      {!product && <motion.div className='w-screen h-screen relative'  initial={{opacity:0}} animate={{opacity:1}}>
         <span className='absolute top-2/4 bottom-2/4'>Cargando</span>
       </motion.div>}
 
       {product && <motion.div  initial={{opacity:0}} animate={{opacity:1}}>
-      <div className="grid grid-cols-7 row-start-2 font-comfortaa">
+      <div className="grid grid-cols-7 row-start-2">
         {/* ImageViewer */}
         <div className="md:col-start-2 md:col-end-4 md:row-start-3 col-span-7 row-start-1 m-auto col-start-2 row-span-1 md:ml-6 ml-4">
           <ReactImageGallery thumbnailPosition='left' items={imagesCarousel} showPlayButton={false} showIndex={true}/>

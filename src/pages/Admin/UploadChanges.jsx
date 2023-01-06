@@ -184,33 +184,33 @@ const UploadChanges = () => {
           <div className='flex flex-row place-content-center gap-x-1'>
             {/* Nombre */}
             <span>
-              <label className='text-2xl font-comfortaa font-bold'>Nombre</label><br/>
+              <label className='text-2xl font-bold'>Nombre</label><br/>
               <input className='border border-black' type="text" id="nombre" defaultValue={product.info.nombre} onChange={handleInput}/>
             </span>
             {/* Precio */}
             <span>
-              <label className='text-2xl font-comfortaa font-bold'>Precio</label><br/>
+              <label className='text-2xl font-bold'>Precio</label><br/>
               <input className='border border-black' type="number" id="precio" defaultValue={product.info.precio} onChange={handleInput}/>
             </span>
             {/* stock */}
             <span>
-              <label className='text-2xl font-comfortaa font-bold'>Stock</label><br/>
+              <label className='text-2xl font-bold'>Stock</label><br/>
               <input className='border border-black' type="number" id="stock" defaultValue={product.info.stock} onChange={handleInput}/>
             </span>
           </div>
           {/* Descripcion */}
-          <label className='text-2xl font-comfortaa font-bold'>Descripcion</label><br/>
+          <label className='text-2xl font-bold'>Descripcion</label><br/>
           <textarea className='border border-black w-2/3 m-auto' type="text" id="descripcion" defaultValue={product.info.descripcion} onChange={handleInput} rows="7"/><br/>
           {/* Caracteristicas */}
-          <label className='text-2xl font-comfortaa font-bold'>Caracteristicas [no es obligatorio]</label>
+          <label className='text-2xl font-bold'>Caracteristicas [no es obligatorio]</label>
           <label className='text-md'>(cuanto mide , de que esta hecho, etc)</label>
           <textarea className='border border-black w-2/3 m-auto' type="text" id="caracteristicas" defaultValue={product.info.caracteristicas && product.info.caracteristicas} onChange={handleInput} rows="3"/><br/>
           {/* Anotacion Especial */}
-          <label className='text-2xl font-comfortaa font-bold'>Anotacion Especial [no es obligatorio]</label>
+          <label className='text-2xl font-bold'>Anotacion Especial [no es obligatorio]</label>
           <label className='text-md'>(Ejemplo "En exposición Museo de Arte Popular José Hernández")</label>
           <textarea className='border border-black w-2/3  m-auto' type="text" id="anotacionEsp" defaultValue={product.info.anotacionEsp && product.info.anotacionEsp} onChange={handleInput} rows="3"/><br/>
           {/* Categorias */}
-          <label className='text-2xl font-comfortaa font-bold pt-10'>Categoria del producto</label>
+          <label className='text-2xl font-bold pt-10'>Categoria del producto</label>
           <label className='text-md'>(hacer click en nombre para abrir arbol de categorias)</label>
           <div className='flex flex-col gap-y-10 place-content-center border border-teal-300'>
             {/* Autoctona */}
@@ -270,20 +270,20 @@ const UploadChanges = () => {
           </div>
           {/* Imagenes actuales */}
           <div className='my-12'>
-            <label className='text-2xl font-comfortaa font-bold '>Imagenes actuales</label>
+            <label className='text-2xl font-bold '>Imagenes actuales</label>
             <div className='flex gap-x-5 place-content-center'>
               {product.imgsSrc.map((img,index)=>{
                 return(
                   <div key={index}>
                     <img className='w-40 h-40' src={img.Url} alt='Cargando'/>
-                    <span className='cursor-pointer bg-red-600 p-5 font-comfortaa font-bold' onClick={()=>deleteImage(img.path)}>BORRAR</span>
+                    <span className='cursor-pointer bg-red-600 p-5 font-bold' onClick={()=>deleteImage(img.path)}>BORRAR</span>
                   </div>
                 )
               })}
             </div>
           </div>
           {/* Imagenes */}
-          <label className='text-2xl font-comfortaa font-bold'>Añadir Imagenes</label>
+          <label className='text-2xl font-bold'>Añadir Imagenes</label>
           <div className='border border-teal-500 p-20'>
             <input type="file" onChange={changeInput}/>
             <div className='flex flex-row flex-wrap gap-x-5 gap-y-7 p-5'>

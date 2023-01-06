@@ -4,7 +4,7 @@ import {BsInstagram} from 'react-icons/bs'
 
 export default function Construction() {
   return (
-    <div className='fixed flex flex-col place-items-center z-50 w-screen h-screen bg-white text-center font-comfortaa'>
+    <div className='fixed flex flex-col place-items-center z-50 w-screen h-screen bg-white text-center '>
       <img className='h-1/2' alt="alwatoba imagen" src={require("../media/AlwatobaBrandCircle.png")}/>
       <div className='font-bold text-3xl z-10 w-3/4'>
         ESTAMOS ACTUALIZANDO NUESTRAS LINEAS DE PRODUCTOS, POR CUALQUIER CONSULTA COMUNICATE A TRAVÉS DE NUESTROS MEDIOS<br/>   

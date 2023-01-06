@@ -6,8 +6,8 @@ export default function Navbar(){
   const [navButton, setNavButton] = useState(true);
   return (
     <motion.div className={navButton 
-      ?"flex font-comfortaa flex-col bg-slate-50 fixed z-40 w-screen md:h-10 h-10 md:py-8 py-7 place-content-center transition-all ease-in-out duration-1000 delay-75" 
-      :"flex font-comfortaa flex-col custom-BgColorMain custom-Color4 fixed z-50 w-screen h-screen md:py-2 place-content-center  transition-all ease-in-out duration-1000"}
+      ?"flex flex-col bg-slate-50 fixed z-40 w-screen md:h-10 h-10 md:py-8 py-7 place-content-center transition-all ease-in-out duration-1000 delay-75" 
+      :"flex flex-col custom-BgColorMain custom-Color4 fixed z-50 w-screen h-screen md:py-2 place-content-center  transition-all ease-in-out duration-1000"}
     animate={{opacity:1}} exit={{opacity:0}}>
       <div className='flex flex-row place-content-between md:px-10 px-5 absolute top-2 w-screen'>        
         {/* img Brand */}

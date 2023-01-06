@@ -7,7 +7,7 @@ export default function Blogs() {
     window.scrollTo(0, 0);
   },[])
   return (
-    <motion.div className="grid py-24 custom-Color3 custom-BgColor4 font-comfortaa">
+    <motion.div className="grid py-24 custom-Color3 custom-BgColor4">
       {/* Titulo */}
       <span className="row-start-1 text-center text-6xl font-bold pb-4 custom-ColorMain">Historia</span>
       <div className="flex flex-col gap-y-3 relative row-start-2 md:mx-20 mx-3 h-fit p-4 my-1 md:text-2xl text-lg"> 

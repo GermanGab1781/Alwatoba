@@ -9,7 +9,7 @@ export default function Admin() {
     window.scrollTo(0, 0);
   },[])
   return (
-    <div className='py-40 gap-y-10 flex flex-col text-center px-16 font-comfortaa'>
+    <div className='py-40 gap-y-10 flex flex-col text-center px-16'>
       <span className='text-4xl'>Admin</span>
       <NavLink className='border border-black p-5 hover:bg-black hover:text-white' to="/Admin/Upload">Subir Producto</NavLink>
       <NavLink className='border border-black p-5 hover:bg-black hover:text-white' to="/Admin/EditOrDelete">Editar/Borrar Productos</NavLink>

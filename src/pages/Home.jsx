@@ -12,10 +12,10 @@ export default function Home() {
                       {original:require("../media/GaleriaEj/Galeria6.jpg"),alt:"ImagenCollage6",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"}
   ]
   useEffect(() => {
-    window.scrollTo(0, 0);
+    //window.scrollTo(0, 0);
   },[])
   return (
-    <motion.div className="grid bg-slate-100 md:gap-y-4 gap-y-5 md:pt-15 pt-20 place-items-center font-comfortaa" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
+    <motion.div className="grid bg-slate-100 md:gap-y-4 gap-y-5 md:pt-15 pt-20 place-items-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
  
       {/* Presentacion */}
       <div className="flex flex-col text-center">
@@ -55,7 +55,7 @@ export default function Home() {
 
         </div>
         <div className='mt-10'>
-          <NavLink className="hover:shadow-xl hover:shadow-black text-center custom-BgColor1 custom-ColorMain xl:text-2xl font-semibold  xl:mt-10 mt-5 xl:p-5 p-5 rounded-xl" to="/Catalog/All">Ver Catálogo</NavLink>
+          <NavLink className="hover:shadow-xl hover:shadow-black text-center custom-BgColor3 custom-ColorMain xl:text-2xl font-semibold  xl:mt-10 mt-5 xl:p-5 p-5 rounded-xl" to="/Catalog/All">Ver Catálogo</NavLink>
         </div>
       </div>
 

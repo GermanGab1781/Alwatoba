@@ -41,7 +41,7 @@ export default function Login() {
   
   return (
     
-    <div className='p-32 mb-20 text-center font-comfortaa'>
+    <div className='p-32 mb-20 text-center'>
       <form onSubmit={handleSignIn}>
         <label className=''>Email</label><br/>
         <input className='border border-black' type="email" id="email" onChange={handleInput}/><br/>

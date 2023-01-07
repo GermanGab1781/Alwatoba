@@ -37,6 +37,7 @@
   border-color: rgb(223,213,178);
 }
 
+
 .custom-Color1{
   color: rgb(108,26,12);
 }
@@ -46,6 +47,7 @@
 .custom-BorderColor1{
   border-color: rgb(108,26,12);
 }
+
 
 .custom-Color2{
   color: rgb(139,68,24);
@@ -57,6 +59,7 @@
   border-color: rgb(139,68,24);
 }
 
+
 .custom-Color3{
   color: rgb(176,136,104);
 }
@@ -67,6 +70,7 @@
   border-color: rgb(176,136,104);
 }
 
+
 .custom-Color4{
   color:rgb(46,41,29);
 }
@@ -76,6 +80,7 @@
 .custom-BorderColor4{
   border-color: rgb(46,41,29);
 }
+
 
 .customButtonSwal{
   border:solid;

@@ -52,18 +52,26 @@ export default function AdminEditDelete() {
   }
 
   function deleteDocument (idDoc,imgs){
-    imgs.forEach((img)=>{
-      const imgRef = ref(storage, img.path)
-      deleteObject(imgRef).then(()=>{
-        let newArray = docs.filter(doc => doc.id !== idDoc)
-        setDocs(newArray)
+    Swal.fire({
+      title:'Borrar producto???',
+      icon:'question',
+      showDenyButton:true,
+      denyButtonText:'NO',
+      showConfirmButton:true,
+      confirmButtonText:'SI'
+    }).then((result)=>{if(result.isConfirmed===true){
+      imgs.forEach((img)=>{
+        const imgRef = ref(storage, img.path)
+        deleteObject(imgRef).then(()=>{
+          let newArray = docs.filter(doc => doc.id !== idDoc)
+          setDocs(newArray)
+        })
+        
       })
-      
-    })
-    deleteDoc(doc(db,'Productos', idDoc)).then(()=>{
-      Swal.fire({icon:'success',title:'Producto borrado exitosamente'})
-    })
-    
+      deleteDoc(doc(db,'Productos', idDoc)).then(()=>{
+        Swal.fire({icon:'success',title:'Producto borrado exitosamente'})
+      })
+    }}) 
   }
 
   return (

@@ -14,7 +14,6 @@ export default function Login() {
     const id = e.target.id
     const value = e.target.value
     setUserLogin({...userLogin ,[id]:value})
-    console.log(userLogin)
   }
 
   const handleSignIn = e =>{
@@ -41,8 +40,8 @@ export default function Login() {
   
   return (
     
-    <div className='p-32 mb-20 text-center'>
-      <form onSubmit={handleSignIn}>
+    <div className='pt-32 border place-content-center'>
+      <form className='border text-center' onSubmit={handleSignIn}>
         <label className=''>Email</label><br/>
         <input className='border border-black' type="email" id="email" onChange={handleInput}/><br/>
         <label className=''>Contraseña</label><br/>

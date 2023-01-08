@@ -4,7 +4,9 @@ import ReactImageGallery from 'react-image-gallery'
 import ReactPlayer from 'react-player'
 import { NavLink } from 'react-router-dom'
 import { useEffect } from 'react';
+import { useMediaQuery } from 'react-responsive'
 export default function Home() {
+  const isMobile = useMediaQuery({query: "(max-width: 800px)"});
   const imagesUrls = [{original:require("../media/GaleriaEj/Galeria1.jpg"),alt:"ImagenCollage1",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"},
                       {original:require("../media/GaleriaEj/Galeria2.jpg"),alt:"ImagenCollage2",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"},
                       {original:require("../media/GaleriaEj/Galeria4.jpg"),alt:"ImagenCollage4",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"},
@@ -12,7 +14,7 @@ export default function Home() {
                       {original:require("../media/GaleriaEj/Galeria6.jpg"),alt:"ImagenCollage6",originalClass:"xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default"}
   ]
   useEffect(() => {
-    //window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   },[])
   return (
     <motion.div className="grid bg-slate-100 md:gap-y-4 gap-y-5 md:pt-15 pt-20 place-items-center" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}}>
@@ -21,7 +23,11 @@ export default function Home() {
       <div className="flex flex-col text-center">
           <span className="pb-4 pt-1 xl:text-8xl text-6xl">Alwatoba</span>
           <span className="pt-2 xl:text-2xl text-1xl custom-ColorMain ">Quienes somos y que nos inspira</span>
-            <ReactPlayer width='60vw' height='27vw' url='www.youtube.com/watch?v=cFPkypL_ap8'/>
+            {/* Video Nosotras */}
+            {isMobile 
+              ?<ReactPlayer width='100vw' height='50vw' url='www.youtube.com/watch?v=cFPkypL_ap8'/>
+              :<ReactPlayer width='60vw' height='27vw' url='www.youtube.com/watch?v=cFPkypL_ap8'/>
+            }
           <NavLink className="mt-2 text-center md:text-3xl text-2xl custom-Color4 transition-all delay-75 " to="/Blogs">Leer más</NavLink>
         </div>
       {/* Collage fotos */}

@@ -21,13 +21,13 @@ export default function Navbar(){
         :"visible flex flex-col mt-5 h-screen place-content-evenly sm:whitespace-nowrap text-center opacity-100 lg:text-4xl text-3xl sm:font-semibold font-bold transition-all ease-in-out duration-500 delay-500"
       }>
         <>
-        <NavLink className="text-center cursor-pointer text-5xl custom-Color4 transition-all delay-75" to="/Alwatoba" onClick={()=>setNavButton(!navButton)}>Inicio</NavLink>
-        <NavLink className="hover:text-slate-50 text-slate-700 xl:text-4xl text-3xl transition-all delay-75" to="/Catalog/All" onClick={()=>setNavButton(!navButton)}>Catalogo</NavLink>
-        <NavLink className="hover:text-slate-50 text-slate-700 xl:text-3xl text-2xl transition-all delay-75" to="/Blogs" onClick={()=>setNavButton(!navButton)}>Nosotras</NavLink>
-        <NavLink className="hover:text-slate-50 text-slate-700 xl:text-3xl text-2xl transition-all delay-75" to="/Catalog/Autoctona/all" onClick={()=>setNavButton(!navButton)}>Indumentaria Autoctona</NavLink>
-        <NavLink className="hover:text-slate-50 text-slate-700 xl:text-3xl text-2xl transition-all delay-75" to="/Catalog/Colecciones/all" onClick={()=>setNavButton(!navButton)}>Colecciones</NavLink>
-        <NavLink className="hover:text-slate-50 text-slate-700 xl:text-3xl text-3xl transition-all delay-75" to="/Catalog/ArteYDisenio/all" onClick={()=>setNavButton(!navButton)}>Arte y Diseño</NavLink>
-        <span className="text-center cursor-pointer text-5xl custom-Color4 transition-all delay-75 mt-10" onClick={()=>setNavButton(!navButton)}>Cerrar</span>
+        <NavLink className="text-center text-slate-100 cursor-pointer text-5xl transition-all delay-75" to="/Alwatoba" onClick={()=>setNavButton(!navButton)}>Inicio</NavLink>
+        <NavLink className="text-black xl:text-4xl text-3xl transition-all delay-75" to="/Catalog/All" onClick={()=>setNavButton(!navButton)}>Catalogo</NavLink>
+        <NavLink className="text-black xl:text-3xl text-2xl transition-all delay-75" to="/Blogs" onClick={()=>setNavButton(!navButton)}>Nosotras</NavLink>
+        <NavLink className="text-black xl:text-3xl text-2xl transition-all delay-75" to="/Catalog/Autoctona/all" onClick={()=>setNavButton(!navButton)}>Indumentaria Autoctona</NavLink>
+        <NavLink className="text-black xl:text-3xl text-2xl transition-all delay-75" to="/Catalog/Colecciones/all" onClick={()=>setNavButton(!navButton)}>Colecciones</NavLink>
+        <NavLink className="text-black xl:text-3xl text-3xl transition-all delay-75" to="/Catalog/ArteYDisenio/all" onClick={()=>setNavButton(!navButton)}>Arte y Diseño</NavLink>
+        <span className="text-center text-slate-100 cursor-pointer text-5xl transition-all delay-75 mt-10" onClick={()=>setNavButton(!navButton)}>Cerrar</span>
         </>
         <NavLink className="hover:text-slate-50 text-xl absolute right-10 bottom-5 transition-all delay-75" to="/login" onClick={()=>setNavButton(!navButton)}>Admin</NavLink>
       </div>

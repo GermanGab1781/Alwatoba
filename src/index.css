@@ -92,8 +92,8 @@
 
 .customButtonSwal:hover{
   background-color: rgb(46,41,29);
-
-  trnasition:0.50s;
+  transition:0.50s;
   transition-delay:0.09s;
   color:white
 }
+

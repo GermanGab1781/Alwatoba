@@ -19,30 +19,29 @@ export default function Home() {
   function FirstSlide() {
     if (!isMobile) {
       return <motion.div className='relative cursor-default custom-ColorMain custom-ColorMain'>
-        <img src={require("../media/NubeAlwaHorizontal.png")} alt="XD" style={{ height: '90vh' }} className='object-fill cursor-default w-screen relative'></img>
-        <motion.span className='absolute flex flex-col gap-y-16 top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-5  h-fit w-fit'>
-          <motion.span initial={{ opacity: 0.8, y: -700 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.9 }} className='text-5xl p-2 rounded-md custom-BgColor3 font-bold'>
-            Nuestra Pasión y Herencia
-          </motion.span>
-          <motion.span initial={{ opacity: 0.8, y: 300 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.9 }}>
-            <NavLink className='p-5 border border-black custom-BgColor3 w-full text-end cursor-pointer' to="/Blogs">
-              &#10132;Conocenos
-            </NavLink>
-          </motion.span>
-        </motion.span>
-      </motion.div>
-    }
-    return <motion.div className='relative cursor-default custom-Color1'>
-      <img src={require("../media/NubeAlwaHorizontal.png")} alt="XD" style={{ height: '60vh' }} className='object-fill cursor-default w-screen relative'></img>
-      <motion.span className='absolute flex flex-col gap-y-10 transform bottom-5 left-7 -translate-y-1/2 '>
-        <motion.span initial={{ opacity: 0.8, y: -700 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.9 }} className='text-xl p-2 rounded-md custom-BgColorMain font-bold'>
-          Nuestra Pasión y Herencia
-        </motion.span>
-        <motion.span initial={{ opacity: 0.8, y: 300 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6, duration: 0.9 }}>
-          <NavLink className='p-3 text-md border border-black custom-BgColor3 w-full text-end cursor-pointer' to="/Blogs">
+        <img src={require("../media/NubeAlwaHorizontal.jpg")} alt="XD" style={{ height: '90vh' }} className='object-fill cursor-default w-screen relative'></img>
+        <motion.span
+          className='absolute flex flex-col gap-y-16 bottom-10 right-10 transform -translate-x-1/2 -translate-y-1/2 p-5 h-fit w-fit'
+          initial={{ opacity: 0, y: -300 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.9 }}
+        >
+          <NavLink className='p-5 border border-black custom-BgColor3 w-full text-end cursor-pointer' to="/Blogs">
             &#10132;Conocenos
           </NavLink>
         </motion.span>
+      </motion.div>
+    }
+    return <motion.div className='relative cursor-default custom-ColorMain'>
+      <img src={require("../media/NubeAlwaVertical.jpg")} alt="XD" style={{ height: '60vh' }} className='object-fill cursor-default w-screen relative'></img>
+      <motion.span
+        className='absolute flex flex-col gap-y-10 transform bottom-5 right-7 -translate-y-1/2 '
+        initial={{ opacity: 0, y: -300 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.9 }}>
+        <NavLink className='p-4 text-md border border-black custom-BgColor3 w-full text-end cursor-pointer' to="/Blogs">
+          &#10132;Conocenos
+        </NavLink>
       </motion.span>
     </motion.div>
   }
@@ -50,18 +49,18 @@ export default function Home() {
   function SecondSlide() {
     if (!isMobile) {
       return <div className=''>
-        <ReactPlayer width='100vw' height='90vh' url='www.youtube.com/watch?v=cFPkypL_ap8' />
+        <ReactPlayer width='98vw' height='90vh' url='www.youtube.com/watch?v=cFPkypL_ap8' />
         <span className='absolute bottom-10 left-10 custom-BgColorMain p-1 rounded-md text-5xl'>¿Quienes Somos?</span>
       </div>
     }
     return <div className='h-full'>
-      <ReactPlayer width='100vw' height='60vh' url='www.youtube.com/watch?v=cFPkypL_ap8' />
+      <ReactPlayer width='98vw' height='60vh' url='www.youtube.com/watch?v=cFPkypL_ap8' />
       <span className='absolute bottom-10 left-10 custom-BgColorMain p-1 rounded-md text-3xl'>¿Quienes Somos?</span>
     </div>
   }
   const imagesUrls2 = [
-    { original: require("../media/NubeAlwaHorizontal.png"), alt: "ImagenCollage1", renderItem: FirstSlide },
-    { original: require("../media/GaleriaEj/Galeria2.jpg"), alt: "ImagenCollage2", renderItem:  SecondSlide }
+    { original: require("../media/NubeAlwaHorizontal.jpg"), alt: "ImagenCollage1", renderItem: FirstSlide },
+    { original: require("../media/GaleriaEj/Galeria2.jpg"), alt: "ImagenCollage2", renderItem: SecondSlide }
   ]
 
   useEffect(() => {
@@ -70,18 +69,7 @@ export default function Home() {
   return (
     <motion.div className="grid bg-slate-100 md:gap-y-4 gap-y-5 md:pt-15 pt-16 place-items-center " initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       {/* Main Slider */}
-      <ReactImageGallery items={imagesUrls2} showThumbnails={false} showFullscreenButton={false} showPlayButton={false} slideInterval={6000} autoPlay={true} additionalClass={''} />
-      {/* Presentacion */}
-
-      <div className="flex flex-col my-5 text-center custom-BgColor4 w-screen place-items-center">
-        <span className="py-2 xl:text-3xl text-1xl custom-Color3 ">Quienes somos y que nos inspira</span>
-        {/* Video Nosotras */}
-        {isMobile
-          ? <ReactPlayer width='100vw' height='50vw' url='www.youtube.com/watch?v=cFPkypL_ap8' />
-          : <ReactPlayer width='60vw' height='27vw' url='www.youtube.com/watch?v=cFPkypL_ap8' />
-        }
-        <NavLink className="mt-2 text-center md:text-3xl text-2xl custom-ColorMain transition-all delay-75 " to="/Blogs">Leer más</NavLink>
-      </div>
+      <ReactImageGallery items={imagesUrls2} showThumbnails={false} showFullscreenButton={false} showPlayButton={true} slideInterval={9000} autoPlay={false} additionalClass={''} />
       {/* Collage fotos */}
       <div className='row-start-3 custom-BgColor4 w-full text-center py-16 mb-10'>
         <span className="xl:text-7xl md:text-6xl sm:text-5xl text-4xl custom-ColorMain text-center">Indumentaria</span>

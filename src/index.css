@@ -27,6 +27,10 @@
   src:url("../src/fonts/static/Comfortaa-Regular.ttf")
 }
 
+.custom-minH90{
+  min-height:90vh;
+}
+
 .custom-ColorMain{
   color: rgb(223,213,178);
 }
@@ -96,4 +100,3 @@
   transition-delay:0.09s;
   color:white
 }
-

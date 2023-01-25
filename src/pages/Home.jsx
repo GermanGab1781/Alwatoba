@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import ReactImageGallery from 'react-image-gallery'
-import ReactPlayer from 'react-player'
 import { NavLink } from 'react-router-dom'
 import { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive'
+import SvgImg from '../media/UNO.svg'
+import SvgImg2 from '../media/DOS.svg'
+import SvgImg3 from '../media/TRES.svg'
 export default function Home() {
   const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
 
@@ -18,8 +20,8 @@ export default function Home() {
 
   function FirstSlide() {
     if (!isMobile) {
-      return <motion.div className='relative cursor-default custom-ColorMain custom-ColorMain'>
-        <img src={require("../media/NubeAlwaHorizontal.jpg")} alt="XD" style={{ height:"100%" }} className='cursor-default w-screen relative'></img>
+      return <motion.div className='relative cursor-default custom-ColorMain custom-ColorMain custom-minH90'>
+        <img src={SvgImg2} alt="Cargando Imagen" style={{ height: "100%" }} className='cursor-default w-screen relative'></img>
         <motion.span
           className='absolute flex flex-col gap-y-16 bottom-1/4 right-10 transform -translate-x-1/2 -translate-y-1/2 p-5 h-fit w-fit'
           initial={{ opacity: 0, y: -800 }}
@@ -32,8 +34,8 @@ export default function Home() {
         </motion.span>
       </motion.div>
     }
-    return <motion.div className='relative cursor-default custom-ColorMain'>
-      <img src={require("../media/NubeAlwaVertical.jpg")} alt="XD" style={{ height:"100%" }} className='cursor-default w-screen relative'></img>
+    return <motion.div className='relative cursor-default custom-ColorMain custom-minH90'>
+      <img src={SvgImg2} alt="Cargando Imagen" style={{ height: "100%" }} className='cursor-default w-screen relative'></img>
       <motion.span
         className='absolute flex flex-col gap-y-10 transform bottom-5 right-7 -translate-y-1/2 '
         initial={{ opacity: 0, y: -300 }}
@@ -48,19 +50,67 @@ export default function Home() {
 
   function SecondSlide() {
     if (!isMobile) {
-      return <div className=''>
-        <ReactPlayer width='98vw' height='110vh' url='www.youtube.com/watch?v=cFPkypL_ap8' />
-        <span className='absolute bottom-1/4 left-10 custom-BgColorMain p-1 rounded-md text-5xl'>¿Quienes Somos?</span>
-      </div>
+      return <motion.div className='relative cursor-default custom-ColorMain custom-ColorMain custom-minH90'>
+        <img src={SvgImg} alt="Cargando Imagen" style={{ height: "100%" }} className='cursor-default w-screen relative'></img>
+        <motion.span
+          className='absolute flex flex-col gap-y-16 bottom-1/4 right-10 transform -translate-x-1/2 -translate-y-1/2 p-5 h-fit w-fit'
+          initial={{ opacity: 0, y: -800 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.9 }}
+        >
+          <NavLink className='p-4 text-xl border border-black custom-BgColor3 w-full text-end cursor-pointer' to="/Blogs">
+            &#10132;Conocenos
+          </NavLink>
+        </motion.span>
+      </motion.div>
     }
-    return <div className='h-full'>
-      <ReactPlayer width='98vw' height='81vh' url='www.youtube.com/watch?v=cFPkypL_ap8' />
-      <span className='absolute bottom-10 left-10 custom-BgColorMain p-1 rounded-md text-3xl'>¿Quienes Somos?</span>
-    </div>
+    return <motion.div className='relative cursor-default custom-ColorMain custom-minH90'>
+      <img src={SvgImg} alt="Cargando Imagen" style={{ height: "100%" }} className='cursor-default w-screen relative'></img>
+      <motion.span
+        className='absolute flex flex-col gap-y-10 transform bottom-5 right-7 -translate-y-1/2 '
+        initial={{ opacity: 0, y: -300 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.9 }}>
+        <NavLink className='p-4 text-md border border-black custom-BgColor3 w-full text-end cursor-pointer' to="/Blogs">
+          &#10132;Conocenos
+        </NavLink>
+      </motion.span>
+    </motion.div>
+  }
+
+  function ThirdSlide() {
+    if (!isMobile) {
+      return <motion.div className='relative cursor-default custom-ColorMain custom-ColorMain custom-minH90'>
+        <img src={SvgImg3} alt="Cargando Imagen" style={{ height: "100%" }} className='cursor-default w-screen relative'></img>
+        <motion.span
+          className='absolute flex flex-col gap-y-16 bottom-1/4 right-10 transform -translate-x-1/2 -translate-y-1/2 p-5 h-fit w-fit'
+          initial={{ opacity: 0, y: -800 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.9 }}
+        >
+          <NavLink className='p-4 text-xl border border-black custom-BgColor3 w-full text-end cursor-pointer' to="/Blogs">
+            &#10132;Conocenos
+          </NavLink>
+        </motion.span>
+      </motion.div>
+    }
+    return <motion.div className='relative cursor-default custom-ColorMain custom-minH90'>
+      <img src={SvgImg3} alt="Cargando Imagen" style={{ height: "100%" }} className='cursor-default w-screen relative'></img>
+      <motion.span
+        className='absolute flex flex-col gap-y-10 transform bottom-5 right-7 -translate-y-1/2 '
+        initial={{ opacity: 0, y: -300 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.9 }}>
+        <NavLink className='p-4 text-md border border-black custom-BgColor3 w-full text-end cursor-pointer' to="/Blogs">
+          &#10132;Conocenos
+        </NavLink>
+      </motion.span>
+    </motion.div>
   }
   const imagesUrls2 = [
     { original: require("../media/NubeAlwaHorizontal.jpg"), alt: "ImagenCollage1", renderItem: FirstSlide },
-    { original: require("../media/GaleriaEj/Galeria2.jpg"), alt: "ImagenCollage2", renderItem: SecondSlide }
+    { original: require("../media/GaleriaEj/Galeria2.jpg"), alt: "ImagenCollage2", renderItem: SecondSlide },
+    { original: require("../media/GaleriaEj/Galeria2.jpg"), alt: "ImagenCollage2", renderItem: ThirdSlide }
   ]
 
   useEffect(() => {

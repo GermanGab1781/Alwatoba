@@ -1,27 +1,26 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import ReactImageGallery from 'react-image-gallery'
-import { NavLink } from 'react-router-dom'
 import { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive'
-import SvgImg from '../media/UNO.svg'
-import SvgImg2 from '../media/DOS.svg'
-import SvgImg3 from '../media/TRES.svg'
+import SvgImg from '../media/UNO2.svg'
+import SvgImg2 from '../media/DOS2.svg'
+import SvgImg3 from '../media/TRES2.svg'
 export default function Home() {
   const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
-
-  const imagesUrls = [{ original: require("../media/GaleriaEj/Galeria1.jpg"), alt: "ImagenCollage1", originalClass: "xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default" },
+  
+  /*const imagesUrls = [{ original: require("../media/GaleriaEj/Galeria1.jpg"), alt: "ImagenCollage1", originalClass: "xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default" },
   { original: require("../media/GaleriaEj/Galeria2.jpg"), alt: "ImagenCollage2", originalClass: "xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default" },
   { original: require("../media/GaleriaEj/Galeria4.jpg"), alt: "ImagenCollage4", originalClass: "xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default" },
   { original: require("../media/GaleriaEj/Galeria5.jpg"), alt: "ImagenCollage5", originalClass: "xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default" },
   { original: require("../media/GaleriaEj/Galeria6.jpg"), alt: "ImagenCollage6", originalClass: "xl:w-96 xl:h-96 sm:w-64 w-48 h-48 cursor-default" }
-  ]
+  ] */
 
 
   function FirstSlide() {
     if (!isMobile) {
       return <motion.div style={{minHeight:"90vh",height:"95vh"}} className='relative cursor-default custom-ColorMain custom-ColorMain w-screen'>
-        <img src={SvgImg2} alt="Primer Slide de la presentacion" className='2xl:object-fit xl:object-cover w-full h-full'/>
+        <img src={SvgImg2} alt="Primer Slide de la presentacion" className='2xl:object-fit xl:object-cover h-full w-full'/>
       </motion.div> 
     }
     return <motion.div className='relative cursor-default custom-ColorMain '>

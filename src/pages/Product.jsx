@@ -32,9 +32,9 @@ export default function Product() {
         <span style="font-family:'COMFORTAA';font-size:30px;">Contactanos</span>
         <div style="display:flex;flex-wrap:wrap; gap:5px; justify-content:center; margin-top:20px;"> 
           
-          <a class="customButtonSwal" href="https://wa.me/5493704413281?text=Hola, queria consultar sobre el producto ${productContact.link}" target="_blank" rel='noreferrer'>Mensaje por Whatsapp</a>
-          <a class="customButtonSwal" href="https://www.instagram.com/alwatoba" target="_blank" rel='noreferrer'>Nuestro Instagram</a>
-          <a class="customButtonSwal" href="mailto:alwatoba@gmail.com?subject=Consulta sobre ${productContact.name}&body=Hola, queria consultar sobre el producto ${productContact.link}" target="_blank" rel='noreferrer'>Envianos un Mail</a>
+          <a class="customButtonSwal" href="https://wa.me/2215770092?text=Hola, queria consultar sobre el producto ${productContact.link}" target="_blank" rel='noreferrer'>Mensaje por Whatsapp</a>
+          <a class="customButtonSwal" href="https://www.instagram.com/german_gabriel__" target="_blank" rel='noreferrer'>Nuestro Instagram</a>
+          <a class="customButtonSwal" href="mailto:germangabriel1998@gmail.com?subject=Consulta sobre ${productContact.name}&body=Hola, queria consultar sobre el producto ${productContact.link}" target="_blank" rel='noreferrer'>Envianos un Mail</a>
         </div>
       `
     })

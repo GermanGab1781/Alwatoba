@@ -63,7 +63,7 @@ function AnimatedRoutes() {
     <AnimatePresence exitBeforeEnter>
       <Routes location={location} key={location.pathname}>
         <Route path='/Alwatoba' element={<HomePage/>}/>
-        <Route path='/' element={<Construction/>}/>
+        <Route path='/' element={<HomePage/>}/>
         {/* Tests */}
         <>
         <Route path='/test' element={<TestPage/>}>

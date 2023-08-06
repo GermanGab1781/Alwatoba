@@ -7,19 +7,17 @@ export default function Blogs() {
     window.scrollTo(0, 0);
   }, [])
   return (
-    <motion.div className="grid py-24 custom-Color3 custom-BgColor4">
+    <motion.div className="grid py-24 custom-BgColor4 relative">
       {/* Titulo */}
-      <span className="row-start-1 text-center text-6xl font-bold pb-4 custom-ColorMain">Historia</span>
-      <div className="flex flex-col gap-y-3 relative row-start-2 md:mx-20 mx-3 h-fit p-4 my-1 md:text-xl text-lg indent-3 text-justify">
+      <span className="row-start-1 text-center text-6xl font-bold py-5 text-white custom-BgColor4 z-20">Historia</span>
+      {/* Imagen Fondo*/}
+      <img className="absolute shadow h-full cover-full opacity-75 shadow-black z-10" src={require("../media/BlogEj/Blog2.jpg")} alt="Imagen fondo" />
+      <div className="flex flex-col custom-Color3 bg-black bg-opacity-70 gap-y-3 z-20 relative row-start-2 md:mx-20 mx-3 h-fit p-4 my-1 md:text-xl text-lg indent-3 text-justify">       
         <span>
           <span className=" font-bold custom-ColorMain">Somos Mariana y Yandyra Chagra</span>
           , crecimos en Formosa, con el sol como regente y la naturaleza a cada paso en siestas eternas de juegos sin tiempo, en una familia de artistas donde floreció nuestro gusto por el arte y el diseño. Entre pinceles, telas y máquinas de coser el arte de “hacer a mano” se desarrollaba diariamente entre juegos y creación de atuendos para usar en fiestas o eventos.
         </span>
-        {/* Imagenes Nosotras */}
-        <div className="flex flex-row h-96 gap-x-2 w-full place-content-evenly">
-          <img className="w-1/2 h-full shadow shadow-black rounded-full " src={require("../media/Nosotras/Nosotras1.jpg")} alt="Imagen fondo" />
-          <img className="w-1/4 h-full shadow shadow-black  " src={require("../media/Nosotras/Nosotras3.jpg")} alt="Imagen fondo" />
-        </div>
+        
         <span>
           <span className=" font-bold custom-ColorMain">La valoración</span> de las artesanías indígenas vendría por añadidura, por ser expresión cultural de pueblos ancestrales de la zona.
         </span>
@@ -36,11 +34,6 @@ export default function Blogs() {
         <span>
           <span className=" font-bold custom-ColorMain">El nombre AlwaToba</span>, está formado por dos vocablos: Alwa, que significa tierra en lengua qom, también posee su definición en lengua aymara, que significa “Nuevos comienzos”. Para nosotras retomar el arte materno era volver al pasado pero con nueva forma, era comenzar de nuevo algo nuestro que amábamos pero que por distintas razones habíamos dejado suspendido en el tiempo. Y Toba que es la manera en que llamaban de forma despectiva los guaraníes a los “guerreros qom” y que quedó como denominación del pueblo entero… pero que fue acuñado por nosotras con el fin de representar nuestra alma “guerrera” en estas tierras, de pelear la vida constantemente. El momento en el que elegimos el nombre estábamos ambas luchando nuestras guerras internas.
         </span>
-        {/* Imagen Naturaleza y Co-creadora */}
-        <div className="flex flex-row gap-x-2 w-full">
-          <img className="h-96 w-2/5 mt-auto ml-auto rounded-xl shadow shadow-black" src={require("../media/BlogEj/Blog1.jpg")} alt="Imagen fondo" />
-          <img className="h-1/5 w-1/2 mt-auto mr-auto ml-1 rounded-xl shadow shadow-black" src={require("../media/BlogEj/Blog2.jpg")} alt="Imagen fondo" />
-        </div>
         <span>
           <span className=" font-bold custom-ColorMain">Fue así</span> que nos identificamos con la definición “Tierra de Guerreros” - “Tierra Toba” - “AlwaToba” y un “Nuevo comienzo” de la herencia materna.
         </span>

@@ -20,33 +20,33 @@ export default function Home() {
   function FirstSlide() {
     if (!isMobile) {
       return <motion.div style={{minHeight:"90vh",height:"95vh"}} className='relative cursor-default custom-ColorMain custom-ColorMain w-screen'>
-        <img src={SvgImg2} alt="Primer Slide de la presentacion" className='2xl:object-fit xl:object-cover h-full w-full'/>
+        <img src={SvgImg2} alt="Primer Slide de la presentacion" className='xl:object-cover h-full w-full'/>
       </motion.div> 
     }
     return <motion.div className='relative cursor-default custom-ColorMain '>
-      <img src={SvgImg2} alt="Primer Slide de la presentacion" className='2xl:object-fit xl:object-cover h-full w-full'></img>
+      <img src={SvgImg2} alt="Primer Slide de la presentacion" className='xl:object-cover h-full w-full'></img>
     </motion.div>
   }
 
   function SecondSlide() {
     if (!isMobile) {
       return <motion.div style={{minHeight:"90vh",height:"95vh"}} className='relative cursor-default custom-ColorMain custom-ColorMain w-screen'>
-        <img src={SvgImg} alt="Segundo Slide de la presentacion" className='2xl:object-fit xl:object-cover h-full w-full'></img>
+        <img src={SvgImg} alt="Segundo Slide de la presentacion" className='xl:object-cover h-full w-full'></img>
       </motion.div>
     }
     return <motion.div className='relative cursor-default custom-ColorMain custom-minH90'>
-      <img src={SvgImg} alt="Segundo Slide de la presentacion" className='2xl:object-fit xl:object-cover h-full w-full'></img>
+      <img src={SvgImg} alt="Segundo Slide de la presentacion" className='xl:object-cover h-full w-full'></img>
     </motion.div>
   }
 
   function ThirdSlide() {
     if (!isMobile) {
       return <motion.div style={{minHeight:"90vh",height:"95vh"}} className='relative cursor-default custom-ColorMain custom-ColorMain w-screen'>
-        <img src={SvgImg3} alt="Tercer Slide de la presentacion" className='2xl:object-fit xl:object-cover h-full w-full'></img>
+        <img src={SvgImg3} alt="Tercer Slide de la presentacion" className='xl:object-cover h-full w-full'></img>
       </motion.div>
     }
     return <motion.div className='relative cursor-default custom-ColorMain custom-minH90'>
-      <img src={SvgImg3} alt="Tercer Slide de la presentacion" className='2xl:object-fit xl:object-cover h-full w-full'></img>
+      <img src={SvgImg3} alt="Tercer Slide de la presentacion" className='xl:object-cover h-full w-full'></img>
     </motion.div>
   }
 

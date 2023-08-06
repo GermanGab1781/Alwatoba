@@ -47,7 +47,10 @@ export default function Login() {
         <label className=''>Contraseña</label><br/>
         <input className='border border-black' type="password" id="password" onChange={handleInput}/><br/>
         <button className='border p-3 hover:bg-green-600'>Loguearse</button>
+        <div>usuario:  admin@test.com</div>
+        <div>contraseña:  admintest</div>
       </form>
+      
     </div>
   )
 }
